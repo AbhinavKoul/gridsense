@@ -19,4 +19,4 @@ What's next:
 4. Per-Eircode precision. ESB Networks smart-meter data takes the forecast from county level to street level, so any household or data centre can plug in its own meter.
 5. Siting intelligence. Tell new data centres and factories where wind is in surplus (Kerry, Donegal, Leitrim), before they apply to connect.
 
-Live demo: https://gridsense-ireland-df3d7260a568.herokuapp.com/  ·  Deck: https://gridsense-ireland-df3d7260a568.herokuapp.com/deck/  ·  Code: https://github.com/AbhinavKoul/gridsense
+Live demo: https://gridsense-ireland-df3d7260a568.herokuapp.com/  ·  Video: https://www.youtube.com/watch?v=chCNufY8-lY  ·  Deck: https://gridsense-ireland-df3d7260a568.herokuapp.com/deck/  ·  Code: https://github.com/AbhinavKoul/gridsense

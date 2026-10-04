@@ -282,6 +282,7 @@ body.shownotes .notes li::before{background:var(--paper)}
 .sec h1{font-size:6em}.sec .lede{font:1.4em/1.35 var(--body);color:#A9B8C8;margin-top:.6em;max-width:36ch}
 .rail{position:absolute;left:6%;right:6%;bottom:11%;display:grid;grid-template-columns:repeat(7,1fr);gap:.8em;font:500 .62em var(--mono);color:#6F8399}
 .rail span{border-top:3px solid #34465E;padding-top:.6em}.rail .done{color:#A9B8C8;border-color:#6F8399}.rail .on{color:var(--paper);border-color:var(--sodium)}
+.vid{align-self:flex-start;margin-top:1.4em;font:500 .8em var(--mono);color:var(--ink);background:var(--sodium);padding:.6em 1em;text-decoration:none}.vid:focus-visible{outline:3px solid var(--paper);outline-offset:3px}
 @page{size:1600px 900px;margin:0}
 @media print{html,body{background:none}.nav{display:none}
   .slide{display:flex!important;position:relative;width:1600px;height:900px;max-width:none;max-height:none;font-size:25px;page-break-after:always;break-after:page}}
@@ -563,6 +564,7 @@ body.shownotes .notes li::before{background:var(--paper)}
   <div class="secnum">Section 05 / 07</div>
   <h1>Live demo</h1>
   <p class="lede">The real dashboard, all 45 areas.</p>
+  <a class="vid" href="https://www.youtube.com/watch?v=chCNufY8-lY" target="_blank" rel="noopener">▶ Watch the demo video · youtube.com/watch?v=chCNufY8-lY</a>
   <div class="rail"><span class="done">The problem</span><span class="done">What GridSense does</span><span class="done">Who it's for</span><span class="done">Impact</span><span class="on">Live demo</span><span class="">What's next</span><span class="">Technical details</span></div>
 </section>
 
@@ -902,7 +904,7 @@ body.shownotes .notes li::before{background:var(--paper)}
 const S=[...document.querySelectorAll(".slide")];let i=+(location.hash.slice(1)||1)-1;
 const show=n=>{i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle("on",k===i));history.replaceState(null,"","#"+(i+1))};
 addEventListener("keydown",e=>{if(["ArrowRight","PageDown"," "].includes(e.key))show(i+1);else if(["ArrowLeft","PageUp"].includes(e.key))show(i-1);else if(e.key==="p")print();else if(e.key==="n")document.body.classList.toggle("shownotes")});
-addEventListener("click",e=>show(i+(e.clientX>innerWidth/2?1:-1)));
+addEventListener("click",e=>e.target.closest("a")||show(i+(e.clientX>innerWidth/2?1:-1)));
 show(i);
 </script>
 </body>

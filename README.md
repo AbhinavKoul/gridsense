@@ -2,7 +2,7 @@
 
 **Forecast where Ireland's load will peak. Route renewables there first.**
 
-**[Live demo](https://gridsense-ireland-df3d7260a568.herokuapp.com/)** · **[Pitch deck](https://gridsense-ireland-df3d7260a568.herokuapp.com/deck/)** ([PDF](deck/GridSense-deck.pdf))
+**[Live demo](https://gridsense-ireland-df3d7260a568.herokuapp.com/)** · **[Demo video](https://www.youtube.com/watch?v=chCNufY8-lY)** · **[Pitch deck](https://gridsense-ireland-df3d7260a568.herokuapp.com/deck/)** ([PDF](deck/GridSense-deck.pdf))
 
 ![GridSense dashboard: forecast peak load per area, with recovered wind routed from Cork, Kerry, Donegal and Galway into Dublin](docs/dashboard-routing.png)
 
