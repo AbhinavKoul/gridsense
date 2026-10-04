@@ -32,7 +32,13 @@ Customers don't have to change their usage. Grid data is national; GridSense tur
 
 **Who it's for:** data-centre operators (carbon proof, no change to operations); EirGrid, SONI, the CRU and government (where demand grows, where to build grid and renewables); industry siting new load (go where the wind is in surplus); households (how green your area's power really is).
 
-**Next:** per-Eircode smart-meter data (ESB Networks), live routing with EirGrid, green-hour tokens for priority renewable access, and micro-turbines on Ireland's canals.
+## What's next
+
+1. **Green-hour tokens.** Companies reserve priority access to renewable hours with tokens. That turns corporate social responsibility into a measurable, tradeable commitment, and funds new renewables.
+2. **Canal micro-turbines.** Small in-flow turbines on Ireland's canals and water-management channels add steady local supply. GridSense maps where it would cover the biggest peaks.
+3. **Live routing with EirGrid and SONI.** Real constraint data and generator lists replace our dispatch-down estimate, and routing runs against live forecasts.
+4. **Per-Eircode precision.** ESB Networks smart-meter data takes forecasts from county to street level.
+5. **Siting intelligence.** Point new data centres and factories to wind-surplus areas (Kerry, Donegal, Leitrim) before they apply to connect.
 
 ## Repo layout
 

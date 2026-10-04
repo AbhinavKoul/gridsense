@@ -4,10 +4,19 @@ Ireland's grid has a timing problem. Data centres now use 23.2% of the Republic'
 
 GridSense can. It forecasts hourly load for every one of the island's 45 areas, seven days ahead, with 2.8% error on a real backtest. It ranks the coming peaks (this week: Dublin City 696 MW on Tuesday at 18:00, then Fingal and South Dublin). Then it books wind that would otherwise be curtailed for those peaks first: Cork, Kerry, Donegal and Galway wind flows to Dublin, scheduled through transmission and storage before the peak arrives. Customers don't have to change their usage.
 
-Why it wins:
-• Area-by-area and ahead of the peak. Grid data is national; GridSense turns it into a local, forward-looking routing plan.
-• Built on real data: 12 months of EirGrid 15-minute data covering ROI and NI, plus CSO metered consumption by county and by Dublin postal district.
+What sets it apart:
+• Predictive, not reactive. Most energy dashboards show you what already happened. GridSense plans a week ahead and books renewables for a peak before it arrives.
+• Area by area, and all-island. All 45 areas: 34 ROI local authorities and 11 NI districts. Grid data is national; GridSense turns it into a local plan.
+• Every flow has a number. Each line on the map shows the energy it carries, for example Cork County → Dublin City, 485 MWh this week. Every area shows its CO₂ cut, for example Fingal −9.3 kt over 12 months.
+• Real data and a working product. 12 months of EirGrid 15-minute data covering ROI and NI, plus CSO metered consumption by county and Dublin postal district. Every number is labelled as measured or modelled.
 • Modelled impact on 12 months of real data: wind + solar share rises from 37.6% to 39.1%, putting 621 GWh of wind to work and avoiding 71.2 kt of CO₂ a year. Load stays the same.
 • Hourly-matched proof that data centres can use for 24/7 carbon-free and Scope 2 reporting. EirGrid, the CRU and government can use the same evidence for connection and siting decisions.
+
+What's next:
+1. Green-hour tokens. Companies reserve priority access to renewable hours with tokens. That turns corporate social responsibility into a measurable, tradeable commitment, and funds new renewables.
+2. Canal micro-turbines. Ireland has hundreds of kilometres of canals and water-management channels. Small in-flow turbines can add steady local renewable supply. GridSense maps where it would cover the biggest peaks.
+3. Live routing with EirGrid and SONI. Replace our dispatch-down estimate with their real constraint data and generator lists, then route against live forecasts.
+4. Per-Eircode precision. ESB Networks smart-meter data takes the forecast from county level to street level, so any household or data centre can plug in its own meter.
+5. Siting intelligence. Tell new data centres and factories where wind is in surplus (Kerry, Donegal, Leitrim), before they apply to connect.
 
 Live demo: https://gridsense-ireland-df3d7260a568.herokuapp.com/  ·  Deck: https://gridsense-ireland-df3d7260a568.herokuapp.com/deck/  ·  Code: https://github.com/AbhinavKoul/gridsense
