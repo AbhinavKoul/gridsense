@@ -599,24 +599,6 @@ body.shownotes .notes li::before{background:var(--paper)}
 </section>
 
 <section class="slide" data-n="22">
-  <div class="eyebrow">Roadmap</div>
-  <h2 style="max-width:none">From open data to live routing.</h2>
-  <ol class="b-road">
-    <li class="b-done"><time>Now</time><b>Island-wide view, real data</b></li>
-    <li><time>Next</time><b>Per-Eircode forecasts</b></li>
-    <li><time>Then</time><b>Live routing with EirGrid + SONI</b></li>
-    <li><time>Later</time><b>Hourly 24/7 CFE certificates</b></li>
-  </ol>
-  <p class="b-addon">Add-on: flex signals for customers who want more</p>
-  <aside class="notes"><ul>
-    <li>Now: island-wide observability and forecast-led routing plans on real EirGrid data (this prototype).</li>
-    <li>Next: per-Eircode load forecasts from ESB Networks smart meters.</li>
-    <li>Then: live day-ahead routing plans with EirGrid and SONI.</li>
-    <li>Later: hourly certificates for 24/7 CFE and Scope 2 reporting.</li>
-    <li>Flex is an add-on only, never the pitch.</li>
-  </ul></aside>
-</section>
-<section class="slide" data-n="23">
   <div class="eyebrow">The ask</div>
   <h2 style="max-width:none">Three things get us live.</h2>
   <div class="b-ask">
@@ -631,7 +613,7 @@ body.shownotes .notes li::before{background:var(--paper)}
   </ul></aside>
 </section>
 
-<section class="slide" data-n="24">
+<section class="slide" data-n="23">
   <div class="eyebrow">Next · bet 1 of 2</div>
   <h2 style="max-width:none">Green-hour tokens.</h2>
   <div class="b-bet"><svg class="b-tok" viewBox="-20 0 980 150" role="img" aria-label="24 hourly tokens for 2026-10-02, sized by renewable share">
@@ -646,7 +628,7 @@ body.shownotes .notes li::before{background:var(--paper)}
     <li>Every token spent is an hourly record for CSR and Scope 2 reports. The circles are a real day of ROI wind + solar share.</li>
   </ul></aside>
 </section>
-<section class="slide" data-n="25">
+<section class="slide" data-n="24">
   <div class="eyebrow">Next · bet 2 of 2</div>
   <h2 style="max-width:none">Micro-turbines on Ireland's canals.</h2>
   <div class="b-bet b-bet2"><svg class="b-lock" viewBox="0 0 520 300" role="img" aria-label="Canal lock with a small turbine where the water drops">
@@ -668,7 +650,7 @@ body.shownotes .notes li::before{background:var(--paper)}
   </ul></aside>
 </section>
 
-<section class="slide title" data-n="26" style="align-items:center;text-align:center">
+<section class="slide title" data-n="25" style="align-items:center;text-align:center">
   <svg class="bunny" viewBox="0 -30 240 260" role="img" aria-label="A bunny dancing next to a spinning wind turbine">
     <line x1="200" y1="60" x2="200" y2="215" stroke="var(--ink)" stroke-width="4"/>
     <g class="blade" fill="var(--wind)"><path d="M200 60 L196 18 L204 18Z"/><path d="M200 60 L236 80 L232 87Z"/><path d="M200 60 L164 80 L168 87Z"/></g>
@@ -692,14 +674,14 @@ body.shownotes .notes li::before{background:var(--paper)}
   <p class="hk"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#430098"/><path d="M9 6h3.6v8.2c1.6-1.1 3.7-1.7 5.7-1.4 2.9.4 4.7 2.3 4.7 5.3V26h-3.6v-7.8c0-1.6-.9-2.4-2.4-2.4-1.6 0-3.2.8-4.4 1.6V26H9z" fill="#fff"/><path d="M18.5 6h3.8c-.4 1.6-1.2 3.1-2.4 4.2h-3.3c1-1.2 1.6-2.6 1.9-4.2z" fill="#fff"/></svg><span>Proudly deployed on good old <b>Heroku</b>. Yeah, it’s not dead. Nostalgic?</span></p>
 </section>
 
-<section class="slide sec" data-n="27">
+<section class="slide sec" data-n="26">
   <div class="secnum">Appendix</div>
   <h1>Technical details</h1>
   <p class="lede">The data, the forecast, the routing. Read at your own pace.</p>
   <div class="rail"><span class="done">The problem</span><span class="done">What GridSense does</span><span class="done">Who it's for</span><span class="done">Impact</span><span class="done">Live demo</span><span class="done">What's next</span><span class="on">Technical details</span></div>
 </section>
 
-<section class="slide" data-n="28">
+<section class="slide" data-n="27">
   <div class="eyebrow">How it works</div>
   <h2 style="max-width:none">Open data in. One dashboard out.</h2>
   <div class="b-pipe">
@@ -720,7 +702,7 @@ body.shownotes .notes li::before{background:var(--paper)}
   </ul></aside>
 </section>
 
-<section class="slide" data-n="29">
+<section class="slide" data-n="28">
   <div class="eyebrow">Data sources</div>
   <h2 style="max-width:none">All public. All real.</h2>
   <div class="b-tiles">
@@ -738,7 +720,7 @@ body.shownotes .notes li::before{background:var(--paper)}
   </ul></aside>
 </section>
 
-<section class="slide c-t" data-n="30">
+<section class="slide c-t" data-n="29">
   <div class="eyebrow">Technical details · the model</div>
   <h2>Five steps from open data to a routing plan.</h2>
 
@@ -753,7 +735,7 @@ body.shownotes .notes li::before{background:var(--paper)}
   <aside class="notes"><ul><li>Everything is Python standard library: no ML framework, no server.</li><li>Inputs: EirGrid Smart Grid Dashboard 15-min demand, wind, solar, CO₂ intensity, wind forecast, 2 Oct 2025 – 3 Oct 2026, averaged to hourly. CSO MEC02 and MEC03.</li><li>Each step feeds the next; the next slides take them one at a time.</li></ul></aside>
 </section>
 
-<section class="slide c-t" data-n="31">
+<section class="slide c-t" data-n="30">
   <div class="eyebrow">Technical details · the model</div>
   <h2>Step 2: share the national load out to 45 areas.</h2>
 
@@ -771,7 +753,7 @@ body.shownotes .notes li::before{background:var(--paper)}
   <aside class="notes"><ul><li>23.2% of ROI metered electricity is data centres (CSO MEC02, last 4 quarters). Modelled as flat baseload at the clusters, with small shares in Kildare, Cork and Clare.</li><li>The rest is split by real 2025 CSO MEC03 consumption. Dublin postal districts mapped to the four Dublin councils; city/county pairs (Cork, Galway, Limerick, Waterford, Tipperary) split by population.</li><li>MEC03 'Not coded' (~30%, mostly large users) is left to the data-centre term.</li><li>Limit: each area is assumed to follow the national hourly shape.</li></ul></aside>
 </section>
 
-<section class="slide c-t" data-n="32">
+<section class="slide c-t" data-n="31">
   <div class="eyebrow">Technical details · forecasting</div>
   <h2>Step 3: forecast every hour of next week.</h2>
 
@@ -796,7 +778,7 @@ body.shownotes .notes li::before{background:var(--paper)}
   <aside class="notes"><ul><li>Method: for each grid take 8 weeks of hourly demand, average by hour of the week (every Tuesday 18:00…), multiply by a trend factor = last week's actual ÷ what the averages predicted.</li><li>Backtest: forecast last week as if it hadn't happened yet, compare with EirGrid actuals. MAPE 2.82% ROI, 5.47% NI.</li><li>Area forecast = its data-centre share + its MEC03 share of the regional forecast.</li><li>Why simple: demand is driven by time of week; this is transparent and hard to overfit. Upgrade: weather inputs, gradient boosting.</li></ul></aside>
 </section>
 
-<section class="slide c-t" data-n="33">
+<section class="slide c-t" data-n="32">
   <div class="eyebrow">Technical details · forecasting</div>
   <h2>Step 4: rank where next week's peaks hit.</h2>
 
@@ -819,7 +801,7 @@ body.shownotes .notes li::before{background:var(--paper)}
   <aside class="notes"><ul><li>Each area's highest forecast hour over the next 7 days, from the 168-hour forecast.</li><li>Routing also uses each day's 6 highest forecast hours.</li><li>Corridor combined peak (Dublin City, Fingal, South Dublin, Meath): 1,845 MW.</li></ul></aside>
 </section>
 
-<section class="slide c-t" data-n="34">
+<section class="slide c-t" data-n="33">
   <div class="eyebrow">Technical details · routing</div>
   <h2>Step 5a: find the wind that gets switched off.</h2>
 
@@ -839,7 +821,7 @@ body.shownotes .notes li::before{background:var(--paper)}
   <aside class="notes"><ul><li>Dispatch-down estimate = EirGrid wind forecast − actual wind, counted only when the grid is ≥ 60% renewable. Gives 9.2% of ROI wind, 12.2% of NI; EirGrid reports ~10%.</li><li>Assumption: 50% is recoverable (the network-constraint share, per EirGrid annual reports) by scheduling transmission and storage against the forecast.</li><li>The pool each day = 50% of that day's dispatch-down.</li></ul></aside>
 </section>
 
-<section class="slide c-t" data-n="35">
+<section class="slide c-t" data-n="34">
   <div class="eyebrow">Technical details · routing</div>
   <h2>Step 5b: share it out, biggest peaks first.</h2>
 
@@ -865,7 +847,7 @@ body.shownotes .notes li::before{background:var(--paper)}
   <aside class="notes"><ul><li>Allocation weight = forecast peak². Biggest peaks get first call, but not winner-takes-all.</li><li>Each area is capped at its fossil load in the peak hours, so it never goes past 100% renewable; overflow is re-shared among areas still under their cap (water-filling).</li><li>Numbers: week-ahead plan, 12.8 GWh in total. Dublin City 3.5 GWh, Fingal 1.9, South Dublin 1.2, Cork County 0.8, Meath 0.5.</li></ul></aside>
 </section>
 
-<section class="slide c-t" data-n="36">
+<section class="slide c-t" data-n="35">
   <div class="eyebrow">Technical details · routing</div>
   <h2>Step 5c: every flow has a source and a number.</h2>
 
@@ -879,7 +861,7 @@ body.shownotes .notes li::before{background:var(--paper)}
   <aside class="notes"><ul><li>Dispatch-down happens at wind farms, so each area supplies the pool in proportion to its wind capacity.</li><li>Shown: the 6 biggest suppliers. Cork County 1.3 GWh, Kerry 1.3, Donegal 1.0, Galway County 0.94, Derry & Strabane 0.72.</li><li>CO₂ saved is priced at the real carbon intensity of each peak hour the wind displaces.</li><li>'Routing' = scheduling transmission, storage and renewable allocation against the forecast, not steering electrons. Starts once 2 weeks of history exist.</li></ul></aside>
 </section>
 
-<section class="slide c-t" data-n="37">
+<section class="slide c-t" data-n="36">
   <div class="eyebrow">Technical details · the dashboard</div>
   <h2>One screen: where peaks hit, where wind comes from.</h2>
 
@@ -890,7 +872,7 @@ body.shownotes .notes li::before{background:var(--paper)}
   <aside class="notes"><ul><li>Header: island wind + solar share 37.6% → 39.1%, 621 GWh routed, 71.2 kt CO₂ avoided (12 months; follows the period buttons).</li><li>Map colourings: Forecast peak load (default, the moat view) · Local generation ÷ use (above 1× = exports wind: Kerry, Donegal, Leitrim) · Wind + solar share (hour-matched; every ROI area ~32.9% over 3 months because generation is national).</li><li>Routing lines: thicker = more energy; hover for MWh. Rank rows and flows are clickable.</li><li>View as: Data centre (1,845 MW corridor, −33.8 kt) · Government (80% target gap) · Siting new load · Household.</li></ul></aside>
 </section>
 
-<section class="slide c-t" data-n="38">
+<section class="slide c-t" data-n="37">
   <div class="eyebrow">Technical details · the dashboard</div>
   <h2>Click any area: see what GridSense saves there.</h2>
 
