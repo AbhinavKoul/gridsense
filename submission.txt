@@ -10,4 +10,4 @@ Why it wins:
 • Modelled impact on 12 months of real data: wind + solar share rises from 37.6% to 39.1%, putting 621 GWh of wind to work and avoiding 71.2 kt of CO₂ a year. Load stays the same.
 • Hourly-matched proof that data centres can use for 24/7 carbon-free and Scope 2 reporting. EirGrid, the CRU and government can use the same evidence for connection and siting decisions.
 
-Live demo: https://gridsense-ireland-df3d7260a568.herokuapp.com/  ·  Deck: /deck/
+Live demo: https://gridsense-ireland-df3d7260a568.herokuapp.com/  ·  Deck: https://gridsense-ireland-df3d7260a568.herokuapp.com/deck/  ·  Code: https://github.com/AbhinavKoul/gridsense
