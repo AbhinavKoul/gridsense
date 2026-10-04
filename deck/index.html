@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GridSense — pitch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#E9EEF1;--paper2:#F5F7F8;--ink:#13233A;--ink2:#4A5B70;--rule:#C5CFD8;--wind:#1F7A8C;--peat:#7A4E2D;--sodium:#E8833A;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;--body:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#0d1828;color:var(--ink);font:1.55vw/1.45 var(--body)}
+.slide{position:absolute;inset:0;margin:auto;width:100vw;height:56.25vw;max-height:100vh;max-width:177.78vh;
+  background:var(--paper);background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);
+  background-size:4% 7.11%;padding:5% 6%;display:none;flex-direction:column;overflow:hidden;font-size:min(1.55vw,2.75vh)}
+.slide.on{display:flex}
+.slide::after{content:attr(data-n);position:absolute;right:3%;bottom:4%;font:500 .7em var(--mono);color:var(--ink2)}
+.eyebrow{font:500 .72em var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--ink2);margin-bottom:1.2em;padding-bottom:.5em;border-bottom:2px solid var(--ink);align-self:flex-start}
+h1{font:800 4.2em/.92 var(--display);letter-spacing:-.03em}
+h2{font:800 2.6em/1 var(--display);letter-spacing:-.025em;max-width:22ch;margin-bottom:.8em}
+.w{color:var(--wind)} .p{color:var(--peat)} .s{color:var(--sodium)}
+p,li{max-width:52ch}
+ul{list-style:none;display:grid;gap:.7em}
+li{padding-left:1.2em;position:relative}
+li::before{content:"";position:absolute;left:0;top:.6em;width:.55em;height:2px;background:var(--ink)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:5%;flex:1}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:4%}
+.card{background:var(--paper2);border:1.5px solid var(--ink);padding:1.1em 1.2em}
+.card h3{font:800 1.25em var(--display);margin-bottom:.4em}
+.stat b{display:block;font:800 3.4em/.9 var(--display);letter-spacing:-.04em}
+.stat small{font:.72em var(--mono);color:var(--ink2);display:block;margin-top:.4em}
+.mono{font-family:var(--mono)}
+.foot{margin-top:auto;font:.65em var(--mono);color:var(--ink2);max-width:none}
+table{border-collapse:collapse;width:100%;font-size:.78em;background:var(--paper2)}
+th,td{text-align:left;padding:.45em .7em;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font:500 .85em var(--mono);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid var(--ink)}
+td:first-child{font-weight:600}
+.flow{display:flex;align-items:stretch;gap:1.2%;margin-top:1em}
+.flow .card{flex:1;font-size:.85em}
+.flow .arr{align-self:center;font:500 1.6em var(--mono);color:var(--ink2)}
+.bar{height:1.3em;display:flex;border:1.5px solid var(--ink);margin:.4em 0 1.4em}
+.bar i{display:block;height:100%}
+.title{justify-content:center}
+.title h1{font-size:6.4em}
+.title .lede{font:1.3em/1.35 var(--body);max-width:34ch;margin-top:1.2em;color:var(--ink2)}
+.honest{border-left:4px solid var(--wind);padding-left:.9em;font-size:.82em;color:var(--ink2);margin-top:1.2em}
+.nav{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);font:12px var(--mono);color:#8fa3b8}
+.bunny{width:30%;margin:0 auto}
+.bunny .bod{transform-origin:100px 200px;animation:dance .9s ease-in-out infinite}
+.bunny .el{transform-origin:82px 70px;animation:earL .45s ease-in-out infinite alternate}
+.bunny .er{transform-origin:118px 70px;animation:earR .45s ease-in-out infinite alternate}
+.bunny .fl{animation:tap .45s ease-in-out infinite alternate}
+.bunny .fr{animation:tap .45s ease-in-out infinite alternate-reverse}
+.bunny .blade{transform-origin:200px 60px;animation:spin 1.2s linear infinite}
+@keyframes dance{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-18px) rotate(8deg)}}
+@keyframes earL{to{transform:rotate(-14deg)}} @keyframes earR{to{transform:rotate(14deg)}}
+@keyframes tap{to{transform:translateY(-8px)}} @keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.bunny *{animation:none!important}}
+@page{size:1600px 900px;margin:0}
+@media print{html,body{background:none}.nav{display:none}
+  .slide{display:flex!important;position:relative;width:1600px;height:900px;max-width:none;max-height:none;font-size:25px;page-break-after:always;break-after:page}}
+</style>
+</head>
+<body>
+
+<section class="slide title" data-n="01">
+  <div class="eyebrow">Hackathon 2026 · EirGrid + CSO open data</div>
+  <h1>Grid<span class="w">Sense</span></h1>
+  <p class="lede">Forecast where Ireland's load will peak. Route renewables there first. From Kerry to Belfast.</p>
+</section>
+
+<section class="slide" data-n="02">
+  <div class="eyebrow">The problem</div>
+  <h2>Ireland's wind is there. It doesn't reach the loads that need it.</h2>
+  <div class="cols">
+    <div>
+      <div class="stat"><b class="w">37.6%</b><small>of island electricity was renewable, Oct 2025 – Oct 2026 (EirGrid, 15-min actuals, ROI + NI)</small></div>
+      <div class="bar"><i style="width:37.6%;background:var(--wind)"></i><i style="flex:1;background:var(--peat)"></i></div>
+      <div class="stat"><b class="p">23.2%</b><small>of ROI metered electricity goes to data centres, as flat 24/7 baseload (CSO MEC02, 2025)</small></div>
+    </div>
+    <ul>
+      <li>On windy nights, wind farms are <b>dispatched down</b> because demand isn't there to absorb them.</li>
+      <li>At the evening peak, gas fills the gap and the biggest loads run on it.</li>
+      <li>Nobody can see <b>where</b> renewable power actually goes, by county, by hour.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="slide" data-n="03">
+  <div class="eyebrow">Ireland's data-centre power fight · 2022 – 2026</div>
+  <h2 style="max-width:none">The grid said no. The rules changed.</h2>
+  <div class="cols" style="grid-template-columns:1.5fr 1fr">
+    <ul style="font-size:.92em">
+      <li><b class="mono">Jan 2022</b> EirGrid: no new data-centre connections in Dublin until 2028.</li>
+      <li><b class="mono">Apr 2024</b> AWS limits capacity in its Dublin region. GPU nodes "maxed out power-wise"; customers pointed to Sweden and other EU regions.</li>
+      <li><b class="mono">Aug 2024</b> Google's Grange Castle expansion refused over grid capacity (overturned on appeal, Sep 2026).</li>
+      <li><b class="mono">Dec 2025</b> CRU's new policy: new data centres must bring their own dispatchable generation or storage, and source <b>80%</b> of annual demand from new Irish renewables within 6 years.</li>
+      <li><b class="mono">Apr 2026</b> Amazon backs a €150m Midlands wind farm to power its data centres.</li>
+    </ul>
+    <div class="card" style="align-self:start"><h3>Where GridSense fits</h3>
+      <ul style="font-size:.9em">
+        <li>Operators must now <b>prove</b> how renewable their load is. GridSense measures it hour by hour.</li>
+        <li>It forecasts where the next peak will hit and books recovered wind for it, easing the peak that triggered the moratorium.</li>
+        <li>Councils and CRU get the same per-area numbers.</li>
+      </ul></div>
+  </div>
+  <p class="foot">Sources: RTÉ / DCD, Jan 2022 · The Register via DCD, 10 Apr 2024 · Techerati, Sep 2026 · CRU decision via William Fry, 15 Dec 2025 · Irish Examiner, 27 Apr 2026</p>
+</section>
+
+<section class="slide" data-n="04">
+  <div class="eyebrow">What GridSense does · our moat</div>
+  <h2 style="max-width:none">Forecast every region's peak. Route renewables to it first.</h2>
+  <div class="flow" style="margin-top:0">
+    <div class="card"><h3>1 · Forecast regional peaks</h3><p>Hourly load for each of 45 areas, 7 days ahead, from the trailing 8 weeks of real EirGrid data.</p>
+      <p class="mono" style="margin-top:.6em;font-size:.8em">Backtest error <b>2.8%</b> ROI · <b>5.5%</b> NI</p></div>
+    <div class="arr">→</div>
+    <div class="card"><h3>2 · Route renewables to them</h3><p>Wind that would be dispatched down is scheduled, through network and storage capacity, into the biggest forecast peaks first.</p>
+      <p class="mono" style="margin-top:.6em;font-size:.8em">Dublin City <b>696 MW</b> Tue 18:00<br>Cork County → Dublin City <b>485 MWh</b></p></div>
+    <div class="arr">→</div>
+    <div class="card"><h3>3 · Prove it, per area</h3><p>Wind + solar share and CO₂ for any county or district, hour by hour, over 1, 3 or 12 months.</p></div>
+  </div>
+  <p class="honest" style="border-left-color:var(--sodium);color:var(--ink);font-size:.95em;max-width:none"><b>The moat:</b> others report national averages after the fact. GridSense forecasts <b>where and when</b> each region will peak, at 2.8% error, and routes renewables there before it happens.</p>
+  <p class="honest" style="max-width:none">Electrons can't be steered. "Routing" means scheduling transmission, storage and renewable allocation against the forecast, so wind reaches the peak instead of being constrained off.</p>
+</section>
+
+<section class="slide" data-n="05">
+  <div class="eyebrow">Use case · Data centres</div>
+  <h2>Same workload. More wind behind it.</h2>
+  <div class="cols">
+    <ul>
+      <li>Your load stays exactly as it is. GridSense forecasts your peak and books renewables for it.</li>
+      <li>The Dublin–Meath corridor's combined forecast peak: <b>1,845 MW</b> this week.</li>
+      <li>Over 12 months the corridor gets <b class="s">299 GWh</b> of recovered wind at its peak hours, cutting <b class="s">33.8 kt</b> CO₂ from a 2.36 Mt footprint.</li>
+      <li>The forecast retrains every day, so routing keeps up as your load grows.</li>
+    </ul>
+    <div class="card" style="align-self:start">
+      <h3>What the customer gets</h3>
+      <ul style="font-size:.9em">
+        <li>Hourly-matched evidence for <b>24/7 carbon-free energy</b> claims</li>
+        <li>Location-based <b>Scope 2</b> figures per site</li>
+        <li>An answer to CRU's 80% renewable rule, with no change to SLAs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-n="06">
+  <div class="eyebrow">Use case · Government &amp; lawmakers</div>
+  <h2>Evidence for where the next wind farm and cable should go.</h2>
+  <div class="cols">
+    <ul>
+      <li>Per-county demand growth set against local renewable supply.</li>
+      <li>The <b class="p">Dublin–Meath data-centre corridor</b> consumes. The <b class="w">western wind belt</b> (Kerry, Mayo, Donegal) generates.</li>
+      <li>Hard numbers to lobby for more wind and solar, and for grid reinforcement where demand is rising.</li>
+    </ul>
+    <div class="card" style="align-self:start"><h3>Questions it answers</h3>
+      <ul style="font-size:.9em"><li>Which counties' demand is outpacing renewables?</li><li>How much wind is lost to dispatch-down, and where?</li><li>Where will next week's peaks hit, and how much wind can reach them?</li></ul></div>
+  </div>
+</section>
+
+<section class="slide" data-n="07">
+  <div class="eyebrow">Use case · Siting new industry</div>
+  <h2>Pick the site with the surplus, not the congestion.</h2>
+  <div class="cols">
+    <ul>
+      <li>See which regions are net renewable generators: the west and north-west.</li>
+      <li>Compare wind + solar share and dispatch-down across candidate counties before committing to a site.</li>
+      <li>A site near surplus wind starts out greener and puts less strain on the grid.</li>
+    </ul>
+    <div class="card" style="align-self:start"><h3>For investors</h3><p>Renewable %, forecast peak load and routing headroom for every county and NI district, in one view.</p></div>
+  </div>
+</section>
+
+<section class="slide" data-n="08">
+  <div class="eyebrow">Use case · Households</div>
+  <h2>"How much of my power was renewable this month?"</h2>
+  <div class="cols">
+    <ul>
+      <li>Pick your area on the map and see its wind + solar share for the last month, quarter or year.</li>
+      <li>See your area's CO₂ footprint as a plain number.</li>
+      <li>Next: per-Eircode views from smart-meter data, with consent.</li>
+    </ul>
+    <div class="card" style="align-self:start"><h3>Why it matters</h3><p>Seeing the number builds trust in the transition and makes flexible tariffs (EV charging, heat pumps) an easy choice.</p></div>
+  </div>
+</section>
+
+<section class="slide" data-n="09">
+  <div class="eyebrow">Corporate carbon responsibility · 12-month model</div>
+  <h2>Observability first. Then measurable cuts.</h2>
+  <div class="cols3" style="margin-bottom:1.4em">
+    <div class="stat"><b class="s">+621 GWh</b><small>dispatched-down wind routed to forecast peaks</small></div>
+    <div class="stat"><b class="s">71.2 kt</b><small>CO₂ avoided</small></div>
+    <div class="stat"><b><span class="w">37.6%</span> <span class="mono" style="font-size:.5em">→</span> <span class="s">39.1%</span></b><small>island wind + solar share</small></div>
+  </div>
+  <ul>
+    <li>Every area gets an hourly CO₂ footprint from EirGrid's real carbon intensity.</li>
+    <li>Corporates report against measured hourly data instead of annual averages.</li>
+  </ul>
+  <p class="foot">Modelled figures. Real EirGrid demand, wind, solar, CO₂ and wind forecast data (Oct 2025 – Oct 2026). Assumptions: the area split (CSO MEC03 consumption, ROI; population, NI); dispatch-down = wind forecast minus actual when renewables ≥ 60% (9.2% of ROI wind, close to EirGrid's ~10%); routing recovers 50% of it (the network-constraint share) into the 6 forecast peak hours, weighted by forecast peak².</p>
+</section>
+
+<section class="slide" data-n="10">
+  <div class="eyebrow">How it works</div>
+  <h2>Open data in, one static dashboard out.</h2>
+  <div class="flow">
+    <div class="card"><h3>EirGrid API</h3><p>15-min demand, wind, solar, CO₂ intensity, wind forecast. ROI + NI.</p></div>
+    <div class="card"><h3>CSO + Census</h3><p>MEC02 data-centre consumption, MEC03 county consumption, NISRA populations, OSi/OSNI boundaries.</p></div>
+    <div class="arr">→</div>
+    <div class="card"><h3>Python model</h3><p>Area load split, per-area peak forecast, routing of recovered wind from wind areas (by capacity) to the biggest peaks, CO₂ accounting.</p></div>
+    <div class="arr">→</div>
+    <div class="card"><h3>Dashboard</h3><p>Leaflet map of all 45 areas plus Chart.js. A static site with no server.</p></div>
+  </div>
+</section>
+
+<section class="slide" data-n="11">
+  <div class="eyebrow">Data sources</div>
+  <h2>All public. All real.</h2>
+  <div class="cols" style="grid-template-columns:1.6fr 1fr">
+    <table>
+      <tr><th>Source</th><th>What we use</th></tr>
+      <tr><td>EirGrid Smart Grid Dashboard API</td><td>15-min demand, wind, solar, CO₂ intensity, wind forecast. ROI + NI, 12 months</td></tr>
+      <tr><td>CSO PxStat MEC02</td><td>Data-centre share of metered electricity, quarterly, 2015–2025</td></tr>
+      <tr><td>CSO PxStat MEC03</td><td>Metered consumption by county and Dublin postal district, 2025</td></tr>
+      <tr><td>NISRA</td><td>Population by NI local government district</td></tr>
+      <tr><td>OSi / OSNI</td><td>County and LGD boundaries</td></tr>
+    </table>
+    <div class="card" style="align-self:start"><h3>Next data</h3>
+      <ul style="font-size:.85em"><li>ESB Networks smart-meter data per Eircode, with consent</li><li>EirGrid connected wind-farm list per node</li><li>SEAI energy statistics</li></ul></div>
+  </div>
+</section>
+
+<section class="slide title" data-n="12">
+  <div class="eyebrow">Prototype</div>
+  <h1 style="font-size:5.6em">Live demo</h1>
+  <ul style="margin-top:1.6em;font-size:1.15em">
+    <li>Read the <b>Highest forecast load</b> ranking: where next week's peaks hit</li>
+    <li>Click <b>Dublin City</b>, then <b>Fingal</b>, Ireland's data-centre hub</li>
+    <li>Toggle <b class="s">With GridSense routing</b> and switch to <b>12 months</b></li>
+    <li>Hover a routing line: <b>Cork County → Dublin City, 485 MWh</b> this week</li>
+    <li>Read <b>Where the routed wind comes from</b>: Cork County 1.3 GWh, Kerry 1.3, Donegal 1.0; 12.8 GWh planned</li>
+  </ul>
+</section>
+
+<section class="slide" data-n="13">
+  <div class="eyebrow">Roadmap &amp; ask</div>
+  <h2>From open data to live routing.</h2>
+  <div class="cols">
+    <ul>
+      <li><b>Now:</b> island-wide observability on real EirGrid data</li>
+      <li><b>Next:</b> per-Eircode load forecasts from ESB Networks smart meters</li>
+      <li><b>Then:</b> live day-ahead routing plans with EirGrid and SONI</li>
+      <li><b>Later:</b> hourly certificates for 24/7 CFE and Scope 2 reporting</li>
+      <li><b>Add-on:</b> flex signals for customers who want to go further</li>
+    </ul>
+    <div class="card" style="align-self:start"><h3>The ask</h3>
+      <ul style="font-size:.9em"><li>Node-level wind data from EirGrid and SONI</li><li>A data-centre pilot partner in Fingal or Meath</li><li>A policy sponsor for forecast-led grid scheduling</li></ul></div>
+  </div>
+</section>
+
+<section class="slide" data-n="14">
+  <div class="eyebrow">Next steps</div>
+  <h2 style="max-width:none">Two bets beyond the prototype.</h2>
+  <div class="cols">
+    <div class="card"><h3>1 · Green-hour tokens</h3>
+      <p>Rate-limit the island's forecast renewable output into hourly tokens, the same way an API rations requests.</p>
+      <ul style="font-size:.88em;margin-top:.8em">
+        <li>Companies earn <b>priority access</b> to green hours by funding new renewables.</li>
+        <li>A per-company cap stops any one buyer from cornering the wind.</li>
+        <li>Unused tokens go back to the pool for everyone else.</li>
+        <li>Every token spent is an auditable hourly record for CSR and Scope 2 reports.</li>
+      </ul></div>
+    <div class="card"><h3>2 · Micro-turbines on Ireland's canals</h3>
+      <p>The Grand, Royal, Barrow and Shannon–Erne waterways and their feeders were built to manage water flow. That flow can turn small turbines too.</p>
+      <ul style="font-size:.88em;margin-top:.8em">
+        <li>Fit small turbines at locks, weirs and sluices, where the water drops.</li>
+        <li>Unlike wind, the output is steady day and night.</li>
+        <li>GridSense picks sites where local generation is lowest compared with demand.</li>
+        <li>Partners: Waterways Ireland, local councils and community energy groups.</li>
+      </ul></div>
+  </div>
+  <p class="honest" style="max-width:none">Canal water moves slowly, so most of the energy is at the drops (locks and weirs), not in the open channel. A pilot at one lock would show the real yield.</p>
+</section>
+
+<section class="slide title" data-n="15" style="align-items:center;text-align:center">
+  <svg class="bunny" viewBox="0 -30 240 260" role="img" aria-label="A bunny dancing next to a spinning wind turbine">
+    <line x1="200" y1="60" x2="200" y2="215" stroke="var(--ink)" stroke-width="4"/>
+    <g class="blade" fill="var(--wind)"><path d="M200 60 L196 18 L204 18Z"/><path d="M200 60 L236 80 L232 87Z"/><path d="M200 60 L164 80 L168 87Z"/></g>
+    <circle cx="200" cy="60" r="5" fill="var(--ink)"/>
+    <line x1="10" y1="216" x2="230" y2="216" stroke="var(--ink)" stroke-width="3"/>
+    <g class="bod" stroke="var(--ink)" stroke-width="3">
+      <ellipse class="el" cx="82" cy="40" rx="11" ry="34" fill="var(--paper2)"/>
+      <ellipse class="er" cx="118" cy="40" rx="11" ry="34" fill="var(--paper2)"/>
+      <circle cx="140" cy="172" r="10" fill="#fff"/>
+      <ellipse cx="100" cy="160" rx="42" ry="44" fill="var(--paper2)"/>
+      <circle cx="100" cy="98" r="32" fill="var(--paper2)"/>
+      <circle cx="89" cy="94" r="3.5" fill="var(--ink)" stroke="none"/><circle cx="111" cy="94" r="3.5" fill="var(--ink)" stroke="none"/>
+      <path d="M94 108 Q100 115 106 108" fill="none"/>
+      <path d="M60 140 L36 112" stroke-linecap="round"/><path d="M140 140 L164 112" stroke-linecap="round"/>
+      <ellipse class="fl" cx="80" cy="206" rx="16" ry="7" fill="var(--paper2)"/>
+      <ellipse class="fr" cx="120" cy="206" rx="16" ry="7" fill="var(--paper2)"/>
+    </g>
+  </svg>
+  <h1 style="font-size:5.6em;margin-top:.3em">Thank <span class="w">you.</span></h1>
+  <p class="lede" style="margin:1em auto 0">This bunny's moves are powered by wind that would otherwise have been switched off. Questions?</p>
+</section>
+
+<div class="nav">← → / space · P to print</div>
+<script>
+const S=[...document.querySelectorAll(".slide")];let i=+(location.hash.slice(1)||1)-1;
+const show=n=>{i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle("on",k===i));history.replaceState(null,"","#"+(i+1))};
+addEventListener("keydown",e=>{if(["ArrowRight","PageDown"," "].includes(e.key))show(i+1);else if(["ArrowLeft","PageUp"].includes(e.key))show(i-1);else if(e.key==="p")print()});
+addEventListener("click",e=>show(i+(e.clientX>innerWidth/2?1:-1)));
+show(i);
+</script>
+</body>
+</html>

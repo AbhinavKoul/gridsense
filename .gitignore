@@ -1,0 +1,6 @@
+.DS_Store
+.claude/
+site/
+brag-output/
+data/
+__pycache__/

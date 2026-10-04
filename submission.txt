@@ -1,0 +1,13 @@
+GridSense: forecast where Ireland's load will peak, and route renewables there first.
+
+Ireland's grid has a timing problem. Data centres now use 23.2% of the Republic's electricity (CSO), 6.2× more than in 2015. That led to Dublin's 2022 grid moratorium and pushed AWS to build elsewhere. Meanwhile about 10% of Irish wind is dispatched down because the power can't reach the demand at the right moment. EirGrid only publishes grid-wide numbers, so nobody can see where and when the next peak will hit.
+
+GridSense can. It forecasts hourly load for every one of the island's 45 areas, seven days ahead, with 2.8% error on a real backtest. It ranks the coming peaks (this week: Dublin City 696 MW on Tuesday at 18:00, then Fingal and South Dublin). Then it books wind that would otherwise be curtailed for those peaks first: Cork, Kerry, Donegal and Galway wind flows to Dublin, scheduled through transmission and storage before the peak arrives. Customers don't have to change their usage.
+
+Why it wins:
+• Area-by-area and ahead of the peak. Grid data is national; GridSense turns it into a local, forward-looking routing plan.
+• Built on real data: 12 months of EirGrid 15-minute data covering ROI and NI, plus CSO metered consumption by county and by Dublin postal district.
+• Modelled impact on 12 months of real data: wind + solar share rises from 37.6% to 39.1%, putting 621 GWh of wind to work and avoiding 71.2 kt of CO₂ a year. Load stays the same.
+• Hourly-matched proof that data centres can use for 24/7 carbon-free and Scope 2 reporting. EirGrid, the CRU and government can use the same evidence for connection and siting decisions.
+
+Live demo: https://gridsense-ireland-df3d7260a568.herokuapp.com/  ·  Deck: /deck/

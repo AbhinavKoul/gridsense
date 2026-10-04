@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GridSense — renewable observability for the island of Ireland</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="data.js"></script>
+<style>
+:root{
+  --paper:#E9EEF1; --paper2:#F5F7F8; --ink:#13233A; --ink2:#4A5B70; --rule:#C5CFD8;
+  --wind:#1F7A8C; --peat:#7A4E2D; --sodium:#E8833A;
+  --display:"Bricolage Grotesque",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:14px/1.45 var(--body);
+  background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);
+  background-size:48px 48px;background-attachment:fixed}
+header{display:flex;align-items:flex-end;gap:28px;padding:18px 28px 14px;border-bottom:2px solid var(--ink);background:var(--paper2);flex-wrap:wrap}
+.mark{font:800 34px/0.9 var(--display);letter-spacing:-.02em}
+.mark span{color:var(--wind)}
+.tag{font:12px var(--mono);color:var(--ink2);max-width:30ch}
+.kpis{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+.kpi b{display:block;font:500 24px var(--mono);letter-spacing:-.02em}
+.kpi small{font:11px var(--mono);color:var(--ink2);text-transform:uppercase;letter-spacing:.06em}
+.kpi.up b{color:var(--sodium)}
+main{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(380px,1fr);min-height:calc(100vh - 90px)}
+#mapwrap{position:relative;border-right:2px solid var(--ink)}
+#map{position:absolute;inset:0;background:transparent}
+.leaflet-container{background:transparent;font-family:var(--body)}
+.ctrl{position:absolute;z-index:500;left:16px;top:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.seg{display:inline-flex;border:1.5px solid var(--ink);background:var(--paper2)}
+.seg button{font:500 12px var(--mono);border:0;background:none;padding:6px 10px;cursor:pointer;color:var(--ink)}
+.seg button+button{border-left:1.5px solid var(--ink)}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper2)}
+button:focus-visible{outline:3px solid var(--sodium);outline-offset:2px}
+.legend{position:absolute;z-index:500;left:16px;bottom:16px;background:var(--paper2);border:1.5px solid var(--ink);padding:10px 12px;font:11px var(--mono)}
+.legend .bar{width:220px;height:10px;margin:6px 0 4px;background:linear-gradient(90deg,var(--peat),#C9B48A,#9FC7C9,var(--wind))}
+.legend .row{display:flex;justify-content:space-between}
+.hint{position:absolute;z-index:500;right:16px;bottom:16px;font:11px var(--mono);color:var(--ink2);background:var(--paper2);padding:6px 8px;border:1px solid var(--rule)}
+.flow{stroke-dasharray:2 10;animation:flow 1.1s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-12}}
+@media (prefers-reduced-motion:reduce){.flow{animation:none;stroke-dasharray:none}}
+aside{background:var(--paper2);overflow:auto;max-height:calc(100vh - 90px)}
+.sec{padding:18px 24px;border-bottom:1px solid var(--rule)}
+.eyebrow{font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink2);margin-bottom:6px}
+h1{font:800 30px/1 var(--display);letter-spacing:-.02em}
+h1 .sub{display:block;font:400 12px var(--mono);color:var(--ink2);margin-top:6px;letter-spacing:0}
+.big{display:flex;align-items:baseline;gap:14px;margin-top:14px;flex-wrap:wrap}
+.big .n{font:800 64px/0.9 var(--display);letter-spacing:-.04em;color:var(--wind)}
+.big .arrow{font:500 28px var(--mono);color:var(--sodium)}
+.big .gs{font:800 44px/0.9 var(--display);color:var(--sodium)}
+.big .lbl{font:11px var(--mono);color:var(--ink2);flex-basis:100%}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.cell{border-top:2px solid var(--ink);padding-top:6px}
+.cell b{font:500 18px var(--mono);display:block}
+.cell small{font:11px var(--mono);color:var(--ink2)}
+canvas{max-height:200px}
+.note{font:12px var(--body);color:var(--ink2);margin-top:8px}
+.note b{color:var(--ink)}
+.lens{display:flex;flex-wrap:wrap;gap:0;border:1.5px solid var(--ink);margin-top:2px}
+.lens button{flex:1;font:500 12px var(--mono);border:0;background:none;padding:8px 6px;cursor:pointer;color:var(--ink)}
+.lens button+button{border-left:1.5px solid var(--ink)}
+.lens button[aria-pressed=true]{background:var(--ink);color:var(--paper2)}
+#insight{margin-top:12px;font:15px/1.5 var(--body);color:var(--ink);border-left:4px solid var(--wind);padding:2px 0 2px 12px}
+#insight b{font-weight:600}
+#insight .k{font-family:var(--mono);color:var(--wind);font-weight:500}
+#insight .u{font-family:var(--mono);color:#B0571A;font-weight:500}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.chip{font:11px var(--mono);border:1px solid var(--ink);padding:2px 6px;background:none;cursor:pointer;color:var(--ink)}
+#rank{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:2px}
+#rank button{display:grid;grid-template-columns:22px 1fr 76px 78px 62px;align-items:center;gap:8px;width:100%;font:12px var(--mono);color:var(--ink);background:none;border:0;border-bottom:1px solid var(--rule);padding:5px 0;cursor:pointer;text-align:left}
+#rank button:hover,#rank button[aria-pressed=true]{background:var(--paper)}
+#rank .nm{font:600 13px var(--body);position:relative}
+#rank .nm i{position:absolute;left:0;bottom:-3px;height:3px;background:var(--ink)}
+#rank .rt{color:#B0571A;text-align:right}
+#flows{list-style:none;padding:0;margin:8px 0 0}
+#flows button{display:grid;grid-template-columns:1fr 18px 1fr 70px;gap:6px;align-items:center;width:100%;font:12px var(--mono);color:var(--ink);background:none;border:0;border-bottom:1px solid var(--rule);padding:5px 0;cursor:pointer;text-align:left}
+#flows button:hover{background:var(--paper)}
+#flows .s{color:var(--wind);font-weight:500} #flows .v{text-align:right;color:#B0571A}
+.legend .fl{display:flex;align-items:center;gap:6px;margin-top:8px;padding-top:6px;border-top:1px solid var(--rule)}
+.legend .fl i{display:inline-block;width:26px;border-top:4px dotted var(--wind)}
+details.how{font:13px/1.5 var(--body)}
+details.how summary{cursor:pointer;font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.06em}
+details.how dl{margin-top:10px} details.how dt{font-weight:600;margin-top:8px} details.how dd{margin:2px 0 0;color:var(--ink2)}
+.tagm,.tagx{font:10px var(--mono);padding:0 4px;border:1px solid;margin-left:4px;vertical-align:1px}
+.tagm{color:var(--wind)} .tagx{color:#B0571A}
+.value{margin-top:16px;background:#FDF1E7;border-left:5px solid var(--sodium);padding:12px 16px}
+.value .n{font:800 46px/1 var(--display);letter-spacing:-.03em;color:#B0571A}
+.value .l{font:11px var(--mono);color:var(--ink2);text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
+.value .ft{display:flex;gap:10px;align-items:baseline;margin-top:10px;font:500 18px var(--mono)}
+.value .ft s{color:var(--ink2);text-decoration-color:var(--sodium)}
+.value p{margin-top:8px;font:14px/1.45 var(--body)}
+#rankhd{font:10px var(--mono);color:var(--ink2);text-transform:uppercase;letter-spacing:.06em;display:grid;grid-template-columns:22px 1fr 76px 78px 62px;gap:8px}
+footer{padding:14px 24px;font:11px/1.6 var(--mono);color:var(--ink2)}
+footer a{color:var(--wind)}
+@media (max-width:900px){main{grid-template-columns:1fr}#mapwrap{height:70vh;border-right:0;border-bottom:2px solid var(--ink)}aside{max-height:none}}
+</style>
+</head>
+<body>
+<header>
+  <div><div class="mark">Grid<span>Sense</span></div><div class="tag">Forecast where Ireland's load will peak. Route renewables there first.</div></div>
+  <div class="kpis" id="kpis"></div>
+</header>
+<main>
+  <div id="mapwrap">
+    <div id="map" role="application" aria-label="Map of Ireland by renewable share"></div>
+    <div class="ctrl">
+      <div class="seg" role="group" aria-label="Period">
+        <button data-p="30">1 month</button><button data-p="90" aria-pressed="true">3 months</button><button data-p="365">12 months</button>
+      </div>
+      <div class="seg" role="group" aria-label="Scenario">
+        <button data-s="base" aria-pressed="true">Today's grid</button><button data-s="gs">With GridSense routing</button>
+      </div>
+      <div class="seg" role="group" aria-label="Map colour"><button data-m="peak" aria-pressed="true">Forecast peak load</button><button data-m="gen">Local generation ÷ use</button><button data-m="share">Wind + solar share</button></div>
+      <div class="seg" role="group" aria-label="Flows"><button id="flowbtn" aria-pressed="true">Show routing lines</button></div>
+    </div>
+    <div class="legend"><div id="legtitle">Renewable share of consumption</div><div class="bar"></div><div class="row"><span id="lmin"></span><span id="lmax"></span></div><div class="fl" id="flkey"><i></i>recovered wind, wind areas → forecast peaks · hover a line</div></div>
+    <div class="hint">Click an area · Shift-click to add areas · Esc for all-island</div>
+  </div>
+  <aside>
+    <section class="sec">
+      <details class="how">
+        <summary>How to read this · where the data comes from</summary>
+        <dl>
+          <dt>Forecast peak load (default map)</dt>
+          <dd>Each area's highest hourly load over the next 7 days. Darker means a bigger peak. This is what GridSense routes against.</dd>
+          <dt>Routing lines</dt>
+          <dd>Wind that the grid would otherwise switch off (dispatch-down), booked for the biggest forecast peaks. Each line runs from a wind area to a peak area. Thicker lines carry more energy. Hover a line for the MWh, or see the table "Where the routed wind comes from".</dd>
+          <dt>Wind + solar share</dt>
+          <dd>The share of an area's electricity met by wind and solar, matched hour by hour. Hydro and bioenergy aren't counted. EirGrid publishes generation for the whole grid, not per county. So <b>every area on the same grid draws the same hourly mix</b>, and before routing all ROI areas show nearly the same number (for example 32.9% over 3 months). That's correct: wind is pooled nationally. Small differences come only from <i>when</i> each area uses power. Switch to "With GridSense routing" to see the peak areas pull ahead.</dd>
+          <dt>Local generation ÷ use</dt>
+          <dd>Renewables generated in an area divided by what it uses. Above 1× means the area exports wind (for example Kerry, Donegal, Leitrim). These are the sources the routing draws from.</dd>
+          <dt>Today's grid / With GridSense routing</dt>
+          <dd>The same 12 months of real demand and weather, without and with forecast-led routing.</dd>
+        </dl>
+        <dl>
+          <dt>Measured <span class="tagm">real data</span></dt>
+          <dd>EirGrid Smart Grid Dashboard, 15-minute data for ROI and NI, Oct 2025 – Oct 2026: demand, wind, solar, CO₂ intensity and wind forecast. CSO MEC02: data centres use 23.2% of ROI electricity. CSO MEC03: 2025 metered consumption by county and Dublin postal district. Census 2022 / NISRA populations.</dd>
+          <dt>Modelled <span class="tagx">estimate</span></dt>
+          <dd>Area load: system demand split by MEC03 consumption (ROI) or population (NI), with data-centre load sited at known clusters. County wind and solar capacity: approximate weights. Dispatch-down: wind forecast minus actual when the grid is ≥60% renewable. Half of that is treated as recoverable by scheduling transmission and storage against the forecast.</dd>
+        </dl>
+      </details>
+    </section>
+    <section class="sec">
+      <div class="eyebrow">Highest forecast load · next 7 days</div>
+      <div class="hd" id="rankhd"></div>
+      <ol id="rank"></ol>
+      <p class="note" id="ranknote"></p>
+    </section>
+    <section class="sec">
+      <div class="eyebrow">Where the routed wind comes from · next 7 days</div>
+      <ol id="flows"></ol>
+      <p class="note" id="flownote"></p>
+    </section>
+    <section class="sec">
+      <div class="eyebrow">View as</div>
+      <div class="lens" role="group" aria-label="Stakeholder view">
+        <button data-l="dc">Data centre</button><button data-l="gov">Government</button><button data-l="site">Siting new load</button><button data-l="home">Household</button>
+      </div>
+      <p id="insight">Pick who you are to see what GridSense means for you, or click any area on the map.</p>
+    </section>
+    <section class="sec" id="areasec">
+      <div class="eyebrow" id="where">Selected area</div>
+      <h1 id="title">Island of Ireland<span class="sub" id="subtitle"></span></h1>
+      <div class="big"><span class="n" id="pct"></span><span class="arrow">→</span><span class="gs" id="pctgs"></span>
+        <span class="lbl">wind + solar share today → with GridSense routing</span></div>
+      <div class="value" aria-live="polite">
+        <div class="n" id="avoid"></div><div class="l" id="avoidl"></div>
+        <div class="ft"><s id="co2a"></s><span>→</span><b id="co2b"></b><span id="co2p" style="color:#B0571A"></span></div>
+        <p id="valtxt"></p>
+      </div>
+      <div class="grid3">
+        <div class="cell"><b id="dem"></b><small>electricity used</small></div>
+        <div class="cell"><b id="co2"></b><small>CO₂ footprint today</small></div>
+        <div class="cell"><b id="pk"></b><small>forecast peak, next 7 days</small></div>
+      </div>
+    </section>
+    <section class="sec">
+      <div class="eyebrow">Renewable vs fossil, by week</div>
+      <canvas id="cWeek" aria-label="Weekly renewable and fossil energy"></canvas>
+    </section>
+    <section class="sec">
+      <div class="eyebrow">Load forecast, next 7 days</div>
+      <canvas id="cFc" aria-label="Demand forecast"></canvas>
+      <p class="note" id="fcnote"></p>
+    </section>
+    <section class="sec" id="dcsec">
+      <div class="eyebrow">Renewables routed to the peak, last 48 hours</div>
+      <canvas id="cDc" aria-label="Renewables routed into the forecast peak hours"></canvas>
+      <p class="note" id="dcnote"></p>
+      <div class="chips" id="dcchips"></div>
+    </section>
+    <footer>
+      Real data: <a href="https://www.smartgriddashboard.com">EirGrid Smart Grid Dashboard</a> (15-min demand, wind, solar, CO₂ intensity, wind forecast — ROI &amp; NI) ·
+      <a href="https://data.cso.ie/table/MEC02">CSO MEC02</a> data-centre consumption · <a href="https://data.cso.ie/table/MEC03">CSO MEC03</a> county consumption · Census 2022 / NISRA populations · OSi &amp; OSNI boundaries.
+      Area load split, county wind capacity and recoverable dispatch-down are modelled. <span id="built"></span>
+    </footer>
+  </aside>
+</main>
+<script>
+const G = window.GS, D = G.days, N = D.length;
+let period = 90, periodLabel = "3 months", scen = "base", sel = new Set(), flowsOn = true, metric = "peak", lens = null;
+const fmtE = mwh => mwh >= 1e6 ? (mwh/1e6).toFixed(2)+" TWh" : mwh >= 1e3 ? (mwh/1e3).toFixed(1)+" GWh" : mwh.toFixed(0)+" MWh";
+const fmtT = t => t >= 1e6 ? (t/1e6).toFixed(2)+" Mt" : t >= 1e3 ? (t/1e3).toFixed(1)+" kt" : t.toFixed(0)+" t";
+const pct = x => (100*x).toFixed(1)+"%";
+const names = Object.keys(G.areas);
+
+function agg(list, from = N - period, to = N) {
+  const s = [0,0,0,0,0,0];
+  for (const a of list) for (let i = from; i < to; i++) { const r = G.daily[a][i]; for (let k = 0; k < 6; k++) s[k] += r[k]; }
+  return {dem:s[0], ren:s[1], gs:s[2], co2:s[3], co2gs:s[4], gen:s[5]};
+}
+const share = a => { const x = agg([a]); return (scen === "gs" ? x.gs : x.ren) / x.dem; };
+// local renewable generation as a fraction of local consumption; log-scaled for colour since it spans 0..10x
+const genRatio = a => { const x = agg([a]); return x.gen / x.dem; };
+const mval = a => metric === "peak" ? G.plan[a].peak : metric === "gen" ? Math.log10(0.05 + genRatio(a)) : share(a);
+const when = iso => new Date(iso).toLocaleString("en-IE", {weekday:"short", hour:"2-digit", minute:"2-digit"});
+const byPeak = [...names].sort((a, b) => G.plan[b].peak - G.plan[a].peak);
+
+// ---- map
+const map = L.map("map", {zoomControl:false, attributionControl:false, zoomSnap:.25}).setView([53.6,-7.8], 7);
+L.control.zoom({position:"topright"}).addTo(map);
+const lerp = (a,b,t) => a.map((v,i) => Math.round(v + (b[i]-v)*t));
+const STOPS = [[122,78,45],[201,180,138],[159,199,201],[31,122,140]];
+const LOAD = [[233,238,241],[163,176,192],[84,104,130],[19,35,58]];  // load = paper -> ink, so teal keeps meaning "wind"
+function color(t){ const S = metric === "peak" ? LOAD : STOPS; t = Math.max(0, Math.min(.999, t)); const i = Math.floor(t*3); const c = lerp(S[i], S[i+1], t*3 - i); return `rgb(${c})`; }
+let lo = 0, hi = 1;
+const layer = L.geoJSON(G.geo, {
+  style: () => ({weight:1, color:"#13233A", fillOpacity:.92}),
+  onEachFeature: (f, l) => {
+    l.on("click", e => { const n = f.properties.name;
+      if (e.originalEvent.shiftKey) sel.has(n) ? sel.delete(n) : sel.add(n); else sel = new Set([n]);
+      render(); showArea(); });
+    l.bindTooltip(() => { const n = f.properties.name, p = G.plan[n];
+      return `<b>${n}</b><br>forecast peak ${p.peak} MW, ${when(p.at)}<br>next 7 days: receives ${fmtE(p.routed)} · supplies ${fmtE(p.sent)} of routed wind<br>CO₂ avoided with GridSense: <b>${fmtT(agg([n]).co2 - agg([n]).co2gs)}</b> (${periodLabel})<br>${pct(share(n))} wind + solar<br>generates ${genRatio(n).toFixed(2)}× its own use in renewables`; }, {sticky:true});
+  }}).addTo(map);
+map.fitBounds(layer.getBounds(), {padding:[20,20]});
+const centre = {}; layer.eachLayer(l => centre[l.feature.properties.name] = l.getBounds().getCenter());
+const flowLayer = L.layerGroup().addTo(map);
+
+function paintMap() {
+  const v = names.map(mval); lo = Math.min(...v); hi = Math.max(...v);
+  layer.eachLayer(l => { const n = l.feature.properties.name, s = mval(n);
+    l.setStyle({fillColor: color((s - lo) / (hi - lo || 1)), weight: sel.has(n) ? 3.5 : 1, color: sel.has(n) ? "#E8833A" : "#13233A"});
+    if (sel.has(n)) l.bringToFront(); });
+  const lab = x => metric === "peak" ? x.toFixed(0)+" MW" : metric === "gen" ? Math.max(0, 10**x - 0.05).toFixed(2)+"×" : pct(x);
+  document.getElementById("lmin").textContent = lab(lo); document.getElementById("lmax").textContent = lab(hi);
+  document.querySelector(".legend .bar").style.background = metric === "peak" ? "linear-gradient(90deg,#E9EEF1,#A3B0C0,#546882,#13233A)" : "";
+  document.getElementById("legtitle").textContent = metric === "peak" ? "Forecast peak load, next 7 days" : metric === "gen" ? "Renewables generated locally ÷ local use" : scen === "gs" ? "Wind + solar share with GridSense" : "Wind + solar share of consumption";
+  // routing plan for the next 7 days: the biggest source -> peak flows, line weight = MWh
+  flowLayer.clearLayers(); document.getElementById("flkey").style.display = flowsOn ? "" : "none"; if (!flowsOn) return;
+  const top = G.flows.slice(0, 14), maxf = top[0][2];
+  top.forEach(([s, d, mwh]) => L.polyline([centre[s], centre[d]], {className:"flow", color:"#1F7A8C", weight: 1.5 + 8*mwh/maxf, opacity:.85})
+    .bindTooltip(`<b>${s} → ${d}</b><br>${fmtE(mwh)} of recovered wind, next 7 days`, {sticky:true}).addTo(flowLayer));
+}
+
+// ---- charts
+Chart.defaults.font.family = "IBM Plex Mono"; Chart.defaults.font.size = 10; Chart.defaults.color = "#4A5B70";
+const mk = (id, cfg) => new Chart(document.getElementById(id), cfg);
+const cWeek = mk("cWeek", {type:"bar", data:{labels:[], datasets:[
+  {label:"Renewable", backgroundColor:"#1F7A8C", data:[], stack:"s"},
+  {label:"Fossil", backgroundColor:"#7A4E2D", data:[], stack:"s"},
+  {label:"Extra renewable via GridSense", backgroundColor:"#E8833A", data:[], stack:"s"}]},
+  options:{animation:false, plugins:{legend:{labels:{boxWidth:10}}}, scales:{x:{stacked:true, grid:{display:false}}, y:{stacked:true, title:{display:true, text:"GWh"}}}}});
+const cFc = mk("cFc", {type:"line", data:{datasets:[]}, options:{animation:false, parsing:false, elements:{point:{radius:0}},
+  plugins:{legend:{labels:{boxWidth:10}}}, scales:{x:{type:"linear", ticks:{callback:v => new Date(v).toLocaleDateString("en-IE",{weekday:"short", day:"numeric"})}}, y:{title:{display:true, text:"MW"}}}}});
+const cDc = mk("cDc", {data:{labels:[], datasets:[]}, options:{animation:false, elements:{point:{radius:0}},
+  plugins:{legend:{labels:{boxWidth:10}}}, scales:{x:{type:"category", stacked:true}, y:{stacked:true, title:{display:true, text:"MW"}}}}});
+
+// area MW from region MW: data-centre baseload share + metered-consumption share (MEC03; population in NI) of the rest
+function areaMW(list, region, mw, meanD) {
+  const dcMW = region === "ROI" ? G.dc_frac * meanD : 0;
+  return list.reduce((s, a) => { const m = G.areas[a]; return m.region !== region ? s : s + dcMW*m.dc + (mw - dcMW)*m.popshare; }, 0);
+}
+function regionsOf(list){ return [...new Set(list.map(a => G.areas[a].region))]; }
+
+function render() {
+  const list = sel.size ? [...sel] : names;
+  const x = agg(list), all = agg(names);
+  document.getElementById("kpis").innerHTML = [
+    ["Island wind + solar share", pct(all.ren/all.dem), ""], ["With GridSense", pct(all.gs/all.dem), "up"],
+    ["Wind routed to peaks", fmtE(all.gs - all.ren), "up"], ["CO₂ avoided", fmtT(all.co2 - all.co2gs), "up"]]
+    .map(([l,v,c]) => `<div class="kpi ${c}"><b>${v}</b><small>${l} · ${periodLabel}</small></div>`).join("");
+  document.getElementById("title").firstChild.textContent = sel.size === 0 ? "Island of Ireland" : sel.size === 1 ? list[0] : `${sel.size} areas`;
+  document.getElementById("subtitle").textContent = `${D[N-period]} → ${D[N-1]} · ` + (sel.size > 1 ? list.join(", ") : regionsOf(list).map(r => r === "ROI" ? "Republic of Ireland" : "Northern Ireland").join(" + "));
+  document.getElementById("where").textContent = sel.size ? "Selected area" : "All 45 areas";
+  document.getElementById("pct").textContent = pct(x.ren/x.dem);
+  document.getElementById("pctgs").textContent = pct(x.gs/x.dem);
+  document.getElementById("dem").textContent = fmtE(x.dem);
+  document.getElementById("co2").textContent = fmtT(x.co2);
+  // the customer value, up front: CO2 cut, footprint before -> after, and what delivered it
+  const who = sel.size === 1 ? list[0] : sel.size ? "These areas" : "The island", cut = x.co2 - x.co2gs;
+  document.getElementById("avoid").textContent = `−${fmtT(cut)} CO₂`;
+  document.getElementById("avoidl").textContent = `avoided with GridSense · ${periodLabel}`;
+  document.getElementById("co2a").textContent = fmtT(x.co2); document.getElementById("co2b").textContent = fmtT(x.co2gs);
+  document.getElementById("co2p").textContent = `−${pct(cut / x.co2)}`;
+  document.getElementById("valtxt").innerHTML = `${who} gets <b>${fmtE(x.gs - x.ren)}</b> more wind, delivered in its forecast peak hours, when the grid would otherwise burn gas. Wind + solar share goes from <b>${pct(x.ren / x.dem)}</b> to <b>${pct(x.gs / x.dem)}</b>. The load stays the same and nothing changes on site.`;
+  document.getElementById("pk").textContent = `${list.reduce((s, a) => s + G.plan[a].peak, 0).toLocaleString()} MW`;
+
+  // weekly bars
+  const L_ = [], R_ = [], F_ = [], X_ = [];
+  for (let i = N - period; i < N; i += 7) { const w = agg(list, i, Math.min(i+7, N));
+    L_.push(D[i].slice(5)); R_.push(w.ren/1e3); F_.push((w.dem - w.ren - (scen === "gs" ? w.gs - w.ren : 0))/1e3); X_.push(scen === "gs" ? (w.gs - w.ren)/1e3 : 0); }
+  Object.assign(cWeek.data, {labels:L_}); [R_,F_,X_].forEach((d,i) => cWeek.data.datasets[i].data = d); cWeek.update();
+
+  // forecast (sum across the selection's regions)
+  const sets = {actual:[], backtest:[], forward:[]}; let mapeTxt = [];
+  for (const r of regionsOf(list)) { const fc = G.forecast[r], meanD = fc.actual.reduce((s,p) => s+p[1], 0)/fc.actual.length;
+    for (const k in sets) fc[k].forEach(([t, mw], i) => { const ts = Date.parse(t); const v = areaMW(list, r, mw, meanD);
+      if (sets[k][i]) sets[k][i].y += v; else sets[k].push({x:ts, y:v}); });
+    mapeTxt.push(`${r} ${fc.mape}%`); }
+  const actual7 = sets.actual.slice(-168);
+  cFc.data.datasets = [
+    {label:"Actual (EirGrid)", data:actual7, borderColor:"#13233A", borderWidth:1.5},
+    {label:"Backtest forecast", data:sets.backtest, borderColor:"#4A5B70", borderDash:[3,3], borderWidth:1},
+    {label:"GridSense forecast", data:sets.forward, borderColor:"#E8833A", borderWidth:2}];
+  cFc.update();
+  const peak = sets.forward.reduce((a,b) => b.y > a.y ? b : a);
+  document.getElementById("fcnote").innerHTML = `Forecast peak <b>${peak.y.toFixed(0)} MW</b> on <b>${new Date(peak.x).toLocaleString("en-IE",{weekday:"long", hour:"2-digit", minute:"2-digit"})}</b>. Model: same hour-of-week mean over the last 8 weeks, trend-adjusted. Backtest error (MAPE) on last week: ${mapeTxt.join(" · ")}.`;
+
+  renderRank(); renderFlows(); renderDC(list); paintMap(); renderLens();
+}
+
+// ---- stakeholder lenses: each picks a selection and explains the numbers for that audience
+const cso = G.cso, yr = (arr, k) => arr.slice(k, k + 4).reduce((a, b) => a + b, 0);
+const dc2015 = yr(cso.dc, 0), dcNow = yr(cso.dc, cso.dc.length - 4);
+const LENS = {
+  dc:   () => names.filter(a => G.areas[a].dc >= 0.1),
+  gov:  () => [],
+  site: () => [...names].sort((a, b) => genRatio(b) - genRatio(a)).slice(0, 5),
+  home: () => ["Dublin City"],
+};
+function renderLens() {
+  const el = document.getElementById("insight");
+  document.querySelectorAll("[data-l]").forEach(x => x.setAttribute("aria-pressed", x.dataset.l === lens));
+  if (!lens) return;
+  const list = sel.size ? [...sel] : names, x = agg(list), yrs = period / 365;
+  if (lens === "dc") { const pk = list.reduce((s, a) => s + G.plan[a].peak, 0);
+    el.innerHTML = `<b>Dublin–Meath data-centre corridor.</b> Combined forecast peak this week: <span class="k">${pk.toLocaleString()} MW</span>. GridSense routes recovered wind into the corridor at its peak hours: <span class="u">${fmtE(x.gs - x.ren)}</span> over ${periodLabel}, cutting <span class="u">${fmtT(x.co2 - x.co2gs)}</span> CO₂ from a <span class="k">${fmtT(x.co2)}</span> footprint. Your workloads run exactly as before. Hourly matched, so it stands up in 24/7 carbon-free and Scope 2 reporting.`; }
+  if (lens === "gov") { const share_ = x.ren / x.dem, gap = Math.max(0, 0.8 - share_) * x.dem / yrs;
+    el.innerHTML = `<b>Demand is outrunning supply.</b> Data-centre use grew <span class="k">${(dcNow / dc2015).toFixed(1)}×</span> since 2015 (${(dc2015 / 1e3).toFixed(1)} → ${(dcNow / 1e3).toFixed(1)} TWh, CSO), now <span class="k">${pct(G.dc_frac)}</span> of ROI electricity. Island renewable share: <span class="k">${pct(share_)}</span>. Hitting the 80% renewable-electricity target needs about <span class="u">${fmtE(gap)}/yr</span> more renewables. The map shows where the extra demand sits.`; }
+  if (lens === "site") el.innerHTML = `<b>Where renewable power is in surplus.</b> These areas generate the most renewable energy relative to what they use: ${list.map(a => `${a} <span class="k">${genRatio(a).toFixed(2)}×</span>`).join(", ")}. New data centres or factories sited here use wind close to where it's made, instead of drawing on the congested east coast.`;
+  if (lens === "home") { const pop = list.reduce((s, a) => s + G.areas[a].pop, 0);
+    el.innerHTML = `<b>${list.length === 1 ? list[0] : "Your area"}:</b> <span class="k">${pct(x.ren / x.dem)}</span> of electricity was renewable over ${periodLabel}, or <span class="u">${pct(x.gs / x.dem)}</span> with GridSense. That's about <span class="k">${(x.co2 * 1000 / pop).toFixed(0)} kg</span> CO₂ per resident (all sectors). Click any area to compare.`; }
+}
+document.querySelectorAll("[data-l]").forEach(b => b.onclick = () => { lens = b.dataset.l; sel = new Set(LENS[lens]()); render(); });
+
+function renderRank() {
+  const top = byPeak.slice(0, 8), max = G.plan[top[0]].peak, el = document.getElementById("rank");
+  document.getElementById("rankhd").innerHTML = "<span>#</span><span>Area</span><span>Peak</span><span>When</span><span style='text-align:right'>Routed</span>";
+  el.innerHTML = top.map((a, i) => `<li><button data-a="${a}" aria-pressed="${sel.has(a)}"><span>${i + 1}</span><span class="nm">${a}<i style="width:${100 * G.plan[a].peak / max}%"></i></span><span>${G.plan[a].peak} MW</span><span>${when(G.plan[a].at)}</span><span class="rt">${fmtE(G.plan[a].routed)}</span></button></li>`).join("");
+  el.querySelectorAll("button").forEach(b => b.onclick = () => { sel = new Set([b.dataset.a]); render(); showArea(); });
+  const tot = names.reduce((s, a) => s + G.plan[a].routed, 0);
+  document.getElementById("ranknote").innerHTML = `GridSense forecasts every area's hourly load (backtest error ${G.forecast.ROI.mape}% ROI), then books renewable supply for the biggest peaks first. Planned this week: <b>${fmtE(tot)}</b> of wind that would otherwise be dispatched down, routed to forecast peaks.`;
+}
+
+const showArea = () => { const aside = document.querySelector("aside");  // scroll only the side panel, not the page
+  aside.scrollTo({top: document.getElementById("areasec").offsetTop - aside.offsetTop, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); };
+function renderFlows() {
+  const el = document.getElementById("flows"), tot = G.flows.reduce((s, f) => s + f[2], 0);
+  el.innerHTML = G.flows.slice(0, 8).map(([s, d, mwh]) => `<li><button data-a="${d}"><span class="s">${s}</span><span>→</span><span>${d}</span><span class="v">${fmtE(mwh)}</span></button></li>`).join("");
+  el.querySelectorAll("button").forEach(b => b.onclick = () => { sel = new Set([b.dataset.a]); render(); showArea(); });
+  const src = [...names].sort((a, b) => G.plan[b].sent - G.plan[a].sent).slice(0, 5);
+  document.getElementById("flownote").innerHTML = `Dispatch-down happens at wind farms, so each area supplies the routed pool in proportion to its wind capacity. Biggest suppliers: ${src.map(a => `<b>${a}</b> ${fmtE(G.plan[a].sent)}`).join(", ")}. Total moved between areas: <b>${fmtE(tot)}</b>. ROI wind serves ROI peaks and NI wind serves NI peaks.`;
+}
+
+function renderDC(list) {
+  const dcAreas = list.filter(a => G.areas[a].dc > 0);
+  const chips = document.getElementById("dcchips");
+  chips.innerHTML = "Jump to a data-centre cluster: " + names.filter(a => G.areas[a].dc > 0).sort((a,b) => G.areas[b].dc - G.areas[a].dc)
+    .map(a => `<button class="chip" data-a="${a}">${a}</button>`).join("");
+  chips.querySelectorAll("button").forEach(b => b.onclick = () => { sel = new Set([b.dataset.a]); render(); });
+  // last 48h for the selection: modelled load, renewable share it got today, and the recovered wind GridSense routed into its forecast peak hours
+  let labels = [], load = [], ren = [], rt = [];
+  for (const r of regionsOf(list)) { const H = G.forecast[r].hourly.slice(-48), meanD = G.forecast[r].actual.reduce((s,p) => s+p[1], 0)/G.forecast[r].actual.length;
+    H.forEach((h, i) => { const l = areaMW(list, r, h[1], meanD), x = list.reduce((s, a) => s + (G.areas[a].region === r ? (G.route48[a] || {})[h[0]] || 0 : 0), 0);
+      labels[i] = h[0].slice(11, 16); load[i] = (load[i] || 0) + l; ren[i] = (ren[i] || 0) + l * h[4]; rt[i] = (rt[i] || 0) + x; }); }
+  cDc.data.labels = labels;
+  cDc.data.datasets = [
+    {type:"line", label:"Load", data:load, borderColor:"#13233A", borderWidth:1.5},
+    {type:"bar", label:"Renewable today", data:ren, backgroundColor:"rgba(31,122,140,.55)", stack:"r"},
+    {type:"bar", label:"Routed by GridSense", data:rt, backgroundColor:"#E8833A", stack:"r"}];
+  cDc.update();
+  const who = sel.size ? list.join(", ") : "the island", routed = rt.reduce((a, b) => a + b, 0);
+  document.getElementById("dcnote").innerHTML = `${who}: GridSense forecast the peak hours and routed <b>${fmtE(routed)}</b> of recovered wind into them over the last 48 hours. Nothing changes on the customer's side. Data centres alone use <b>${pct(G.dc_frac)}</b> of ROI electricity (CSO), so their peaks get first call.`;
+}
+
+document.querySelectorAll("[data-p]").forEach(b => b.onclick = () => { period = Math.min(+b.dataset.p, N); periodLabel = b.textContent; /* data may cover slightly < 365 days */ document.querySelectorAll("[data-p]").forEach(x => x.setAttribute("aria-pressed", x === b)); render(); });
+document.querySelectorAll("[data-s]").forEach(b => b.onclick = () => { scen = b.dataset.s; document.querySelectorAll("[data-s]").forEach(x => x.setAttribute("aria-pressed", x === b)); render(); });
+document.querySelectorAll("[data-m]").forEach(b => b.onclick = () => { metric = b.dataset.m; document.querySelectorAll("[data-m]").forEach(x => x.setAttribute("aria-pressed", x === b)); paintMap(); });
+document.getElementById("flowbtn").onclick = e => { flowsOn = !flowsOn; e.target.setAttribute("aria-pressed", flowsOn); paintMap(); };
+addEventListener("keydown", e => { if (e.key === "Escape") { sel.clear(); render(); } });
+document.getElementById("built").textContent = `Data ${D[0]} → ${D[N-1]}, built ${G.built}.`;
+if (location.hash) { const a = decodeURIComponent(location.hash.slice(1)); if (G.areas[a]) sel = new Set([a]); }
+render();
+</script>
+</body>
+</html>
