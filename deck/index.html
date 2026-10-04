@@ -63,6 +63,225 @@ td:first-child{font-weight:600}
 .tech .cols{gap:3%} .tech ol{padding-left:1.3em;display:grid;gap:.5em} .tech ol li{padding-left:.2em} .tech ol li::before{display:none}
 @media print{.slide.tech{font-size:21px}.slide.tech.roomy{font-size:24px}.slide.tech.mid{font-size:23px}}
 .tech.roomy{font-size:min(1.6vw,2.85vh)}
+.tlkey{display:flex;gap:1.6em;font:.68em var(--mono);color:var(--ink2);margin-bottom:1.4em}
+.tlkey i{display:inline-block;width:.8em;height:.8em;border-radius:50%;margin-right:.45em;vertical-align:-.05em}
+.tl{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:1.2%;position:relative;padding-top:1.9em}
+.tl::before{content:"";position:absolute;left:0;right:0;top:.55em;height:3px;background:var(--ink)}
+.tl li{max-width:none;padding:0;position:relative}
+.tl li::before{content:"";position:absolute;left:0;top:-1.75em;width:1.1em;height:1.1em;border-radius:50%;background:var(--peat);border:3px solid var(--paper);box-sizing:content-box}
+.tl li.rule::before{background:var(--ink)} .tl li.yes::before{background:var(--wind)}
+.tl time{display:block;font:500 .72em var(--mono);color:var(--ink2);letter-spacing:.06em;text-transform:uppercase}
+.tl b{display:block;font:800 1.15em/1.08 var(--display);letter-spacing:-.01em;margin:.3em 0 .45em;color:var(--peat)}
+.tl li.rule b{color:var(--ink)} .tl li.yes b{color:var(--wind)}
+.tl p{font-size:.78em;line-height:1.38;color:var(--ink);padding-top:.5em;border-top:1.5px solid var(--rule)}
+.tl p b{display:inline;font:600 1em var(--body);color:inherit;margin:0}
+.fit{margin-top:1.8em;display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:1.4em;align-items:start;background:var(--paper2);border-left:5px solid var(--sodium);padding:.9em 1.2em;font-size:.8em}
+.fit>b{font:800 1.05em var(--display);color:#B0571A}
+.a-hero{display:grid;grid-template-columns:1fr 1fr;gap:4%;align-items:center;height:100%}
+.a-hero h1{font-size:5.4em}
+.a-hero img{height:100%;max-height:100%;width:100%;object-fit:contain;min-height:0}
+.a-head{display:flex;justify-content:space-between;align-items:flex-start;gap:4%}
+.a-head h2{max-width:24ch;margin-bottom:.4em}
+.a-corner{text-align:right;flex:none}.a-corner b{font-size:2.6em}
+.a-key{display:flex;gap:1.8em;font:.7em var(--mono);color:var(--ink2);margin-bottom:.6em}
+.a-key i{display:inline-block;width:1em;height:.8em;margin-right:.45em;vertical-align:-.05em;border:1px solid var(--ink)}
+.a-k-ren{background:var(--wind)}.a-k-dd{background:rgba(31,122,140,.35);border:1px dashed var(--wind)!important}.a-k-fos{background:#D9C7B8}
+.a-chart{width:100%;flex:1;min-height:0;display:block}
+.a-chart text{font-family:var(--mono)}.a-ax{font-size:20px;fill:var(--ink2)}
+.a-grid{stroke:var(--rule);stroke-width:1}
+.a-fossil{fill:#D9C7B8}.a-ren{fill:var(--wind)}.a-dd{fill:var(--wind);fill-opacity:.35;stroke:var(--wind);stroke-width:1.5;stroke-dasharray:4 4}
+.a-dem{fill:none;stroke:var(--ink);stroke-width:4}
+.a-call{font:800 26px var(--display);font-family:var(--display)!important}.a-call.p{fill:var(--peat)}.a-call.w{fill:var(--wind)}.a-call.in{fill:#fff}
+.a-bar{fill:var(--ink2)}.a-bar1{fill:var(--peat)}.a-val{font:800 34px var(--display);font-family:var(--display)!important;fill:var(--ink)}
+.a-tl b{font-size:2em!important;line-height:1!important;margin:.25em 0 .35em!important;white-space:nowrap}
+.a-tl p{font-size:.85em!important}
+.a-fit{margin-top:2em;max-width:none;font-size:1.05em;border-left:5px solid var(--sodium);padding:.5em 1em;background:var(--paper2)}
+.a-fit b{font-family:var(--display);color:#B0571A}
+.a-shot{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;background:var(--paper2);border:1.5px solid var(--ink);padding:1em}
+.a-shot img{max-width:100%;max-height:100%;object-fit:contain}
+.a-val{background:none;border:0;padding:0;flex-direction:column}.a-val .a-cap{align-self:flex-start}.a-val img{box-shadow:0 .4em 1.4em rgba(19,35,58,.18)}
+.a-labels{display:grid;grid-template-columns:repeat(3,1fr);gap:3%;margin-top:1em;font-size:.95em}
+.a-labels span{border-top:2px solid var(--ink);padding-top:.4em}.a-labels b{font:800 1.5em var(--display);display:block}
+.a-split{display:grid;grid-template-columns:1fr 1fr;gap:4%;flex:1;min-height:0;align-items:center}
+.a-split img{height:100%;width:100%;object-fit:contain;min-height:0}
+.a-split h2{font-size:2.4em}
+.a-flows{list-style:none;display:grid;gap:.5em;font-size:1.05em}
+.a-flows li{max-width:none;padding:0 0 .4em;display:flex;justify-content:space-between;gap:1em;border-bottom:1.5px solid var(--rule)}
+.a-flows li::before{display:none}.a-flows span{font-family:var(--mono);color:var(--wind)}.a-flows b{font-family:var(--mono);color:#B0571A}
+.a-sum{margin-top:1.2em;font-size:1.1em}.a-sum b{font:800 2em var(--display)}
+.a-cap{margin-top:.9em;font:.8em var(--mono);color:var(--ink2);max-width:none}
+.a-nums{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:4%;align-items:start;align-content:center}
+.a-nums .stat{border-top:3px solid var(--ink);padding-top:.8em}.a-nums b{font-size:3.6em}.a-nums small{font-size:.85em}
+.a-tiles{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:3%;align-content:center}
+.a-tiles div{background:var(--paper2);border:1.5px solid var(--ink);border-top:6px solid var(--wind);padding:1.4em 1.2em 1.6em}
+.a-tiles b{display:block;font:800 3.4em/1 var(--display);letter-spacing:-.03em;margin-bottom:.35em}
+.a-tiles span{font-size:1.05em}
+.a-legend{list-style:none;display:grid;gap:1em;margin:.4em 0 .6em}
+.a-legend li{padding:0;display:flex;gap:.8em;align-items:flex-start;max-width:none}.a-legend li::before{display:none}
+.a-legend i{flex:none;width:1.4em;height:1.4em;margin-top:.15em;border:1.5px solid var(--ink)}
+.a-legend b{display:block;font:800 1.25em var(--display)}
+.b-body{flex:1;min-height:0;display:flex;gap:4%;align-items:center}
+.b-mapw{position:relative;height:100%;flex:none;max-width:50%}
+.b-mapw img,.b-mapw svg{position:absolute;inset:0;width:100%;height:100%}
+.b-ml{font:600 15px var(--body);fill:var(--ink);paint-order:stroke;stroke:var(--paper2);stroke-width:4px;text-anchor:middle}
+.b-mlp{fill:var(--peat)}
+.b-side{flex:1;display:grid;gap:1.6em;align-content:center;font-size:1.15em}
+.b-scale{display:grid;grid-template-columns:1fr auto 1fr;font:.68em var(--mono);color:var(--ink2);row-gap:.4em;max-width:22em}
+.b-scale i{grid-column:1/-1;height:.9em;background:linear-gradient(90deg,#7A4E2D,#DCE6EA 50%,#1F7A8C);border:1.5px solid var(--ink)}
+.b-scale span:nth-child(3){text-align:center}.b-scale span:last-child{text-align:right}
+.b-call{display:grid;grid-template-columns:6.6em 1fr;gap:.8em;align-items:center}
+.b-call b{font:800 2.4em/1 var(--display);letter-spacing:-.03em}
+.b-call span{max-width:20ch}
+.b-phone{flex:none;width:15em;height:100%;max-height:26em;border:.5em solid var(--ink);border-radius:2em;background:var(--paper2);padding:1.6em 1.3em;display:flex;flex-direction:column;gap:1em;align-items:center;justify-content:center}
+.b-pt{font:500 .62em var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink2)}
+.b-dw{position:relative;width:11em;aspect-ratio:1;display:grid;place-content:center;text-align:center}
+.b-donut{position:absolute;inset:0;width:100%;height:100%}
+.b-dw b{font:800 2.3em/1 var(--display);color:var(--wind);letter-spacing:-.03em}
+.b-dw small{font:.65em var(--mono);color:var(--ink2)}
+.b-pr{font-size:.85em;width:100%;border-top:1px solid var(--rule);padding-top:.5em}
+.b-pr span{font:600 1.15em var(--mono);margin-right:.3em}
+.b-big{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:3%;margin-top:1.4em}
+.b-big b{display:block;font:800 4.2em/.95 var(--display);letter-spacing:-.04em;white-space:nowrap}
+.b-big b i{font:500 .45em var(--mono);color:var(--ink2);margin:0 .25em;vertical-align:.4em;font-style:normal}
+.b-big>div>span{display:block;font:.8em var(--mono);color:var(--ink2);margin-top:.6em}
+.b-share{display:flex;height:2.2em;border:2px solid var(--ink);margin-top:2.6em;background:var(--peat)}
+.b-share i.w{background:var(--wind)}.b-share i.s{background:var(--sodium)}
+.b-chart{width:100%;height:100%}
+.b-ax{font:500 17px var(--mono);fill:var(--ink2)}
+.b-ann{font:600 18px var(--body);fill:var(--ink)}
+.b-pipe{flex:1;display:flex;align-items:center;gap:2.5%;justify-content:center}
+.b-src{display:grid;gap:1.4em}
+.b-node{display:grid;justify-items:center;text-align:center;gap:.3em}
+.b-ic{width:6.5em;height:6.5em;border-radius:50%;border:2px solid var(--ink);background:var(--paper2);display:grid;place-items:center}
+.b-ic svg,.b-ic img{width:55%;height:55%}
+.b-src .b-ic{width:5em;height:5em}
+.b-out .b-ic{width:9em;height:9em;border-width:3px}.b-out .b-ic img{width:62%;height:62%}
+.b-node b{font:800 1.3em var(--display)}
+.b-node span{font:.72em var(--mono);color:var(--ink2)}
+.b-arr{font:500 2.4em var(--mono);color:var(--ink2)}
+.b-tiles{flex:1;min-height:0;display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:1.2em}
+.b-tile{background:var(--paper2);border:1.5px solid var(--ink);padding:1em 1.2em;display:flex;flex-direction:column;gap:.25em;min-height:0;overflow:hidden}
+.b-tile b{font:800 1.5em/1.05 var(--display)}
+.b-tile span{font:.72em var(--mono);color:var(--ink2)}
+.b-tile small{font:.6em var(--mono);color:var(--ink2)}
+.b-t1{grid-area:1/1/3/2}.b-t1 b{font-size:2.2em}
+.b-t3{grid-area:1/3/3/4}
+.b-pair{grid-area:2/2/3/3;display:grid;grid-template-columns:1fr 1fr;gap:1.2em;min-height:0}
+.b-spark{width:100%;flex:1;min-height:2em;margin-top:.6em}
+.b-tmap{flex:1;min-height:0;width:100%;object-fit:contain;margin-top:.5em}
+.b-demo{align-items:stretch;gap:3%}
+.b-shot{position:relative;height:100%;aspect-ratio:1.6;flex:none;border:2px solid var(--ink);background:url() center/cover}
+.b-shot img{display:block;width:100%;height:100%}
+.b-shot i,.b-steps i{display:inline-grid;place-items:center;width:1.7em;height:1.7em;border-radius:50%;background:var(--ink);color:var(--paper2);font:600 .9em var(--mono);font-style:normal;border:3px solid var(--paper2);box-sizing:content-box}
+.b-shot i{position:absolute;transform:translate(-50%,-50%);box-shadow:0 0 0 2px var(--ink)}
+.b-steps{list-style:none;display:grid;align-content:center;gap:1.1em;flex:1}
+.b-steps li{padding:0;display:grid;grid-template-columns:auto 1fr;gap:.6em;align-items:center;font-size:1em;line-height:1.25;max-width:none}
+.b-steps li::before{display:none}
+.b-steps i{border:0;box-shadow:none}
+.b-road{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:2%;position:relative;padding-top:3.2em;margin-top:2.4em}
+.b-road::before{content:"";position:absolute;left:0;right:0;top:1em;height:4px;background:var(--ink)}
+.b-road li{padding:0;max-width:none}
+.b-road li::before{content:"";position:absolute;left:0;top:-3.1em;width:1.6em;height:1.6em;border-radius:50%;background:var(--paper);border:4px solid var(--ink)}
+.b-road li.b-done::before{background:var(--wind);border-color:var(--wind)}
+.b-road li{position:relative}
+.b-road time{display:block;font:500 .8em var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink2)}
+.b-road b{display:block;font:800 1.6em/1.1 var(--display);margin-top:.3em;max-width:12ch}
+.b-road .b-done b{color:var(--wind)}
+.b-addon{margin-top:auto;align-self:flex-start;font:.8em var(--mono);color:var(--ink2);border:1.5px dashed var(--ink2);padding:.5em .9em;max-width:none}
+.b-ask{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:3%;align-items:center}
+.b-ask div{display:grid;justify-items:center;text-align:center;gap:.4em;background:var(--paper2);border:1.5px solid var(--ink);padding:2em 1em}
+.b-ask svg{width:4.5em;height:4.5em;margin-bottom:.6em}
+.b-ask b{font:800 1.5em/1.1 var(--display)}
+.b-ask span{font:.8em var(--mono);color:var(--ink2)}
+.b-bet{flex:1;min-height:0;display:grid;grid-template-rows:1fr auto;gap:2em}
+.b-bet2{grid-template-rows:none;grid-template-columns:1.2fr 1fr;align-items:center}
+.b-tok,.b-lock{width:100%;height:100%;min-height:0}
+.b-pts{display:grid;grid-template-columns:repeat(3,1fr);gap:3%}
+.b-bet2 .b-pts{grid-template-columns:1fr;gap:1.2em}
+.b-pts li{font:600 1.15em/1.25 var(--body);max-width:none;padding-left:1.1em}
+.b-pts li::before{width:.6em;height:3px;top:.55em;background:var(--wind)}
+.b-sharel{display:flex;font:500 .8em var(--mono);margin-top:.6em}
+.b-sharel span{flex:none}
+/* fork C: visual tech slides */
+.c-t h2{font-size:2.2em;max-width:none;margin-bottom:.55em}
+.c-svg{display:block;width:100%;height:auto;overflow:visible}
+.c-svg text{font-family:var(--mono);fill:var(--ink)}
+.c-svg .c-wt{fill:#fff;font:600 22px var(--body)} .c-svg .c-wt.c-sm{font:400 17px var(--mono)} .c-svg .c-wt.c-big{font:800 26px var(--display)}
+.c-svg .c-cap,.c-svg .c-ax{font-size:17px;fill:var(--ink2)} .c-svg .c-lab{font-size:19px;fill:var(--ink2);text-transform:uppercase;letter-spacing:.06em}
+.c-svg .c-ann{font:400 21px var(--body)} .c-svg .c-mute{fill:var(--ink2)} .c-svg .c-key{font:600 21px var(--body)}
+.c-svg .c-nm{font:600 22px var(--body)} .c-svg .c-v{font:500 20px var(--mono)} .c-svg .c-big2{font:800 34px var(--display)}
+.c-svg .c-br,.c-svg .c-lead{fill:none;stroke:var(--ink2);stroke-width:2}
+.c-svg .c-gl{stroke:var(--rule);stroke-width:1} .c-svg .c-gv{stroke-dasharray:2 6}
+.c-svg .c-ln{fill:none;stroke-width:3;stroke-linejoin:round} .c-act{stroke:var(--ink)} .c-bt{stroke:var(--wind);stroke-dasharray:9 6} .c-fw{stroke:var(--wind);stroke-width:4}
+.c-svg .c-now{stroke:var(--ink);stroke-width:2;stroke-dasharray:4 4}
+.c-grow{flex:1;min-height:0}
+.c-row{display:flex;flex-wrap:wrap;gap:.8em;margin-top:auto;padding-top:.8em;font-size:.78em}
+.c-chip{border:1.5px solid var(--ink);background:var(--paper2);padding:.35em .8em;font-family:var(--mono);font-size:.92em}
+.c-chip.c-ok{border-color:var(--wind);color:var(--wind)} .c-chip.s{border-color:var(--sodium);color:#B0571A;font-weight:500}
+.c-stats{align-items:baseline;gap:2.4em;font-size:.85em} .c-stats b{font:800 2.2em/1 var(--display);margin-right:.2em;vertical-align:-.12em}
+.c-recipe{margin-left:auto;font:.85em var(--mono);color:var(--ink2);border-left:3px solid var(--wind);padding-left:.8em}
+.c-recipe i{font-style:normal;color:var(--ink);font-weight:600}
+.c-tag{margin-top:auto;font:600 .9em var(--body);color:#B0571A;max-width:none}
+/* pipeline */
+.c-pipe{font-size:1.1em;list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:2%;margin:auto 0 0;counter-reset:s}
+.c-pipe li{max-width:none;padding:0;position:relative;display:flex;flex-direction:column;align-items:flex-start}
+.c-pipe li::before{display:none}
+.c-pipe li:not(:last-child)::after{content:"";position:absolute;top:2.1em;left:4.6em;right:-1.2em;height:3px;background:repeating-linear-gradient(90deg,var(--ink) 0 10px,transparent 10px 16px)}
+.c-ic{width:4.2em;height:4.2em;border-radius:50%;background:var(--paper2);border:2.5px solid var(--ink);display:grid;place-items:center;position:relative;z-index:1}
+.c-pipe li:last-child .c-ic{border-color:var(--sodium);background:#FBE7D8}
+.c-ic svg{width:2.3em;height:2.3em;fill:none;stroke:var(--ink);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.c-pipe i{font:500 .7em var(--mono);color:var(--ink2);margin-top:1em;font-style:normal}
+.c-pipe b{font:800 1.3em/1.05 var(--display);margin:.15em 0 .3em}
+.c-pipe small{font:.78em/1.35 var(--body);color:var(--ink2)}
+.c-pipe em{font:500 .78em var(--mono);font-style:normal;margin-top:.7em;padding:.25em .55em;white-space:nowrap;background:var(--ink);color:#fff}
+.c-pipe li:last-child em{background:var(--sodium);color:var(--ink)}
+.c-brace{display:grid;grid-template-columns:repeat(5,1fr);gap:2%;margin:2em 0 auto;font:.7em var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink2)}
+.c-brace span{border-top:3px solid var(--ink2);padding-top:.5em;text-align:center}
+.c-brace span.s{border-color:var(--sodium);color:#B0571A}
+/* screenshots with pins */
+.c-shot{display:grid;grid-template-columns:2.6fr 1fr;gap:2.2em;align-items:center;flex:1;min-height:0}
+.c-shot2{grid-template-columns:1.6fr 1fr}
+.c-shot figure{position:relative;border:1.5px solid var(--ink);box-shadow:.4em .4em 0 rgba(19,35,58,.12);line-height:0}
+.c-shot img{width:100%;display:block}
+.c-pin{position:absolute;transform:translate(-50%,-50%);width:1.5em;height:1.5em;border-radius:50%;background:var(--sodium);color:var(--ink);border:2.5px solid var(--paper2);font:600 .8em/1.25em var(--mono);text-align:center;box-shadow:0 0 0 2px var(--ink)}
+.c-legend{list-style:none;display:grid;gap:.75em;counter-reset:p;font-size:.85em}
+.c-legend li{counter-increment:p;padding-left:2.1em;max-width:none;line-height:1.25}
+.c-legend li::before{content:counter(p);width:1.5em;height:1.5em;top:-.05em;border-radius:50%;background:var(--sodium);font:600 .9em/1.5em var(--mono);text-align:center;color:var(--ink)}
+/* experiments */
+.c-exps{display:grid;grid-template-columns:1fr 1fr;gap:1.2em 3em;margin:auto 0}
+.c-exp h3{font:800 1.15em var(--display);margin-bottom:.3em;padding-bottom:.25em;border-bottom:2px solid var(--ink)}
+.c-exp p{font-size:.8em;color:var(--ink2);margin-top:.3em;max-width:none}
+/* terminal */
+.c-term{margin:auto 0;background:var(--ink);color:#DCE4EA;font:.82em/1.6 var(--mono);padding:1.3em 1.6em;border-left:6px solid var(--wind)}
+.c-term .c-cmd{color:#fff;font-weight:500;margin-bottom:.3em}
+.c-term .c-mute2{color:#8FA3B8} .c-term .c-mute2 span{color:#8FA3B8}
+.c-term ul{gap:.15em;margin:.6em 0 .7em}
+.c-term li{max-width:none;padding-left:1.8em;font-size:1.12em;color:#fff}
+.c-term li::before{content:"✓";background:none;width:auto;height:auto;top:0;color:#5FC4D4;font-weight:600}
+.c-term li i{font-style:normal;color:#8FA3B8}
+/* measured vs modelled */
+.c-mm{display:grid;grid-template-columns:1fr 1.25fr;gap:3em;margin:auto 0}
+.c-mm h3{font:800 1.3em var(--display);margin-bottom:.6em;display:flex;align-items:center;gap:.5em}
+.c-sw{display:inline-block;width:1.6em;height:1em;border:3px solid var(--ink);background:var(--paper2)} .c-sw.c-d{border-style:dashed;border-color:var(--peat)}
+.c-mm>div{display:flex;flex-direction:column;gap:.55em}
+.c-m,.c-x{display:flex;justify-content:space-between;gap:1em;padding:.5em .8em;font-size:.85em;background:var(--paper2);border:2.5px solid var(--ink)}
+.c-x{border:2.5px dashed var(--peat);background:transparent}
+.c-x em{font:500 .85em var(--mono);font-style:normal;color:var(--wind);white-space:nowrap}
+/* Q&A */
+.c-qa{gap:.9em;margin:auto 0}
+.c-qa li{display:grid;grid-template-columns:1fr 1.3fr;gap:1.4em;align-items:center;padding:0;max-width:none}
+.c-qa li::before{display:none}
+.c-qa b{font:800 1.08em var(--display);background:var(--ink);color:#fff;padding:.55em .9em;border-radius:.2em .9em .9em .9em;justify-self:start}
+.c-qa span{font-size:.92em;border-left:3px solid var(--wind);padding-left:.8em}
+.notes{display:none}
+body.shownotes .slide.on .notes{display:block;position:absolute;left:6%;right:6%;bottom:9%;z-index:9;background:var(--ink);color:var(--paper);font:.62em/1.45 var(--body);padding:.8em 1.1em;max-height:45%;overflow:auto}
+body.shownotes .notes li::before{background:var(--paper)}
+@media print{.notes{display:none!important}}
+.sec{background:var(--ink);background-image:linear-gradient(rgba(233,238,241,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(233,238,241,.06) 1px,transparent 1px);color:var(--paper);justify-content:center}
+.sec::after{color:#8fa3b8}.secnum{font:500 .8em var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--sodium);margin-bottom:1em}
+.sec h1{font-size:6em}.sec .lede{font:1.4em/1.35 var(--body);color:#A9B8C8;margin-top:.6em;max-width:36ch}
+.rail{position:absolute;left:6%;right:6%;bottom:11%;display:grid;grid-template-columns:repeat(7,1fr);gap:.8em;font:500 .62em var(--mono);color:#6F8399}
+.rail span{border-top:3px solid #34465E;padding-top:.6em}.rail .done{color:#A9B8C8;border-color:#6F8399}.rail .on{color:var(--paper);border-color:var(--sodium)}
 @page{size:1600px 900px;margin:0}
 @media print{html,body{background:none}.nav{display:none}
   .slide{display:flex!important;position:relative;width:1600px;height:900px;max-width:none;max-height:none;font-size:25px;page-break-after:always;break-after:page}}
@@ -71,336 +290,646 @@ td:first-child{font-weight:600}
 <body>
 
 <section class="slide title" data-n="01">
-  <div class="eyebrow">Hackathon 2026 · EirGrid + CSO open data</div>
-  <h1>Grid<span class="w">Sense</span></h1>
-  <p class="lede">Forecast where Ireland's load will peak. Route renewables there first. From Kerry to Belfast.</p>
+  <div class="a-hero">
+    <div>
+      <div class="eyebrow">Hackathon 2026 · EirGrid + CSO open data</div>
+      <h1>Grid<span class="w">Sense</span></h1>
+      <p class="lede">Forecast where Ireland's load will peak. Route renewables there first.</p>
+    </div>
+    <img src="img/a-map-routing.png" alt="GridSense map: recovered wind flowing from Cork, Kerry, Donegal and Galway to Dublin's forecast peaks">
+  </div>
+  <aside class="notes"><ul>
+    <li>This is the live product: every dotted line is wind we would otherwise switch off, booked for next week's biggest peak.</li>
+    <li>All 45 areas of the island, ROI and NI. From Kerry to Belfast.</li>
+    <li>Built on 12 months of real EirGrid 15-minute data plus CSO metered consumption.</li>
+  </ul></aside>
 </section>
 
-<section class="slide" data-n="02">
-  <div class="eyebrow">The problem</div>
-  <h2>Ireland's wind is there. It doesn't reach the loads that need it.</h2>
-  <div class="cols">
-    <div>
-      <div class="stat"><b class="w">37.6%</b><small>of island electricity was renewable, Oct 2025 – Oct 2026 (EirGrid, 15-min actuals, ROI + NI)</small></div>
-      <div class="bar"><i style="width:37.6%;background:var(--wind)"></i><i style="flex:1;background:var(--peat)"></i></div>
-      <div class="stat"><b class="p">23.2%</b><small>of ROI metered electricity goes to data centres, as flat 24/7 baseload (CSO MEC02, 2025)</small></div>
-    </div>
-    <ul>
-      <li>On windy nights, wind farms are <b>dispatched down</b> because demand isn't there to absorb them.</li>
-      <li>At the evening peak, gas fills the gap and the biggest loads run on it.</li>
-      <li>Nobody can see <b>where</b> renewable power actually goes, by county, by hour.</li>
-    </ul>
-  </div>
+<section class="slide sec" data-n="02">
+  <div class="secnum">Section 01 / 07</div>
+  <h1>The problem</h1>
+  <p class="lede">Wind gets switched off while the grid says no.</p>
+  <div class="rail"><span class="on">The problem</span><span class="">What GridSense does</span><span class="">Who it's for</span><span class="">Impact</span><span class="">Technical details</span><span class="">Live demo</span><span class="">What's next</span></div>
 </section>
 
 <section class="slide" data-n="03">
-  <div class="eyebrow">Ireland's data-centre power fight · 2022 – 2026</div>
-  <h2 style="max-width:none">The grid said no. The rules changed.</h2>
-  <div class="cols" style="grid-template-columns:1.5fr 1fr">
-    <ul style="font-size:.92em">
-      <li><b class="mono">Jan 2022</b> EirGrid: no new data-centre connections in Dublin until 2028.</li>
-      <li><b class="mono">Apr 2024</b> AWS limits capacity in its Dublin region. GPU nodes "maxed out power-wise"; customers pointed to Sweden and other EU regions.</li>
-      <li><b class="mono">Aug 2024</b> Google's Grange Castle expansion refused over grid capacity (overturned on appeal, Sep 2026).</li>
-      <li><b class="mono">Dec 2025</b> CRU's new policy: new data centres must bring their own dispatchable generation or storage, and source <b>80%</b> of annual demand from new Irish renewables within 6 years.</li>
-      <li><b class="mono">Apr 2026</b> Amazon backs a €150m Midlands wind farm to power its data centres.</li>
-    </ul>
-    <div class="card" style="align-self:start"><h3>Where GridSense fits</h3>
-      <ul style="font-size:.9em">
-        <li>Operators must now <b>prove</b> how renewable their load is. GridSense measures it hour by hour.</li>
-        <li>It forecasts where the next peak will hit and books recovered wind for it, easing the peak that triggered the moratorium.</li>
-        <li>Councils and CRU get the same per-area numbers.</li>
-      </ul></div>
-  </div>
-  <p class="foot">Sources: RTÉ / DCD, Jan 2022 · The Register via DCD, 10 Apr 2024 · Techerati, Sep 2026 · CRU decision via William Fry, 15 Dec 2025 · Irish Examiner, 27 Apr 2026</p>
+  <div class="eyebrow">The problem</div>
+  <div class="a-head"><h2>Wind gets switched off. Then gas runs the peak.</h2>
+    <div class="stat a-corner"><b class="w">37.6%</b><small>island wind + solar share, 12 months</small></div></div>
+  <div class="a-key"><span><i class="a-k-ren"></i>Wind + solar used</span><span><i class="a-k-dd"></i>Wind switched off (est.)</span><span><i class="a-k-fos"></i>Gas and other</span></div>
+  <svg class="a-chart" viewBox="0 0 1400 480" role="img" aria-label="Ireland, 29 to 30 September 2026: wind is switched off overnight while gas fills the evening peak"><line x1="70" x2="1380" y1="430" y2="430" class="a-grid"/><text x="60" y="436" text-anchor="end" class="a-ax">0</text><line x1="70" x2="1380" y1="348" y2="348" class="a-grid"/><text x="60" y="354" text-anchor="end" class="a-ax">1 GW</text><line x1="70" x2="1380" y1="266" y2="266" class="a-grid"/><text x="60" y="272" text-anchor="end" class="a-ax">2 GW</text><line x1="70" x2="1380" y1="184" y2="184" class="a-grid"/><text x="60" y="190" text-anchor="end" class="a-ax">3 GW</text><line x1="70" x2="1380" y1="101.99999999999999" y2="101.99999999999999" class="a-grid"/><text x="60" y="107.99999999999999" text-anchor="end" class="a-ax">4 GW</text><line x1="70" x2="1380" y1="20" y2="20" class="a-grid"/><text x="60" y="26" text-anchor="end" class="a-ax">5 GW</text><path d="M70.0,133.3L97.9,141.2L125.7,137.3L153.6,136.4L181.5,147.2L209.4,145.9L237.2,124.0L265.1,79.2L293.0,59.5L320.9,52.8L348.7,53.4L376.6,51.7L404.5,49.0L432.3,48.9L460.2,51.3L488.1,50.4L516.0,43.8L543.8,34.3L571.7,29.8L599.6,29.3L627.4,41.1L655.3,66.2L683.2,97.1L711.1,117.5L738.9,129.7L766.8,140.0L794.7,137.1L822.6,141.5L850.4,150.7L878.3,149.0L906.2,122.9L934.0,78.4L961.9,63.5L989.8,65.6L1017.7,74.9L1045.5,91.7L1073.4,100.9L1101.3,105.7L1129.1,109.9L1157.0,104.0L1184.9,90.0L1212.8,70.3L1240.6,57.8L1268.5,46.2L1296.4,48.0L1324.3,70.5L1352.1,98.9L1380.0,120.0L1380.0,272.0L1352.1,285.4L1324.3,281.3L1296.4,279.6L1268.5,278.1L1240.6,268.0L1212.8,238.3L1184.9,202.9L1157.0,203.7L1129.1,204.0L1101.3,199.9L1073.4,198.2L1045.5,199.4L1017.7,202.4L989.8,201.1L961.9,217.5L934.0,229.6L906.2,242.3L878.3,256.8L850.4,256.4L822.6,246.3L794.7,242.2L766.8,247.2L738.9,251.3L711.1,228.5L683.2,216.0L655.3,207.0L627.4,198.3L599.6,191.9L571.7,197.4L543.8,196.3L516.0,192.2L488.1,180.2L460.2,174.9L432.3,172.4L404.5,178.0L376.6,174.1L348.7,181.8L320.9,179.7L293.0,184.3L265.1,197.5L237.2,210.6L209.4,214.3L181.5,212.5L153.6,208.8L125.7,209.9L97.9,212.5L70.0,212.0Z" class="a-fossil"/><path d="M70.0,212.0L97.9,212.5L125.7,209.9L153.6,208.8L181.5,212.5L209.4,214.3L237.2,210.6L265.1,197.5L293.0,184.3L320.9,179.7L348.7,181.8L376.6,174.1L404.5,178.0L432.3,172.4L460.2,174.9L488.1,180.2L516.0,192.2L543.8,196.3L571.7,197.4L599.6,191.9L627.4,198.3L655.3,207.0L683.2,216.0L711.1,228.5L738.9,251.3L766.8,247.2L794.7,242.2L822.6,246.3L850.4,256.4L878.3,256.8L906.2,242.3L934.0,229.6L961.9,217.5L989.8,201.1L1017.7,202.4L1045.5,199.4L1073.4,198.2L1101.3,199.9L1129.1,204.0L1157.0,203.7L1184.9,202.9L1212.8,238.3L1240.6,268.0L1268.5,278.1L1296.4,279.6L1324.3,281.3L1352.1,285.4L1380.0,272.0L1380.0,430.0L1352.1,430.0L1324.3,430.0L1296.4,430.0L1268.5,430.0L1240.6,430.0L1212.8,430.0L1184.9,430.0L1157.0,430.0L1129.1,430.0L1101.3,430.0L1073.4,430.0L1045.5,430.0L1017.7,430.0L989.8,430.0L961.9,430.0L934.0,430.0L906.2,430.0L878.3,430.0L850.4,430.0L822.6,430.0L794.7,430.0L766.8,430.0L738.9,430.0L711.1,430.0L683.2,430.0L655.3,430.0L627.4,430.0L599.6,430.0L571.7,430.0L543.8,430.0L516.0,430.0L488.1,430.0L460.2,430.0L432.3,430.0L404.5,430.0L376.6,430.0L348.7,430.0L320.9,430.0L293.0,430.0L265.1,430.0L237.2,430.0L209.4,430.0L181.5,430.0L153.6,430.0L125.7,430.0L97.9,430.0L70.0,430.0Z" class="a-ren"/><path d="M70.0,204.4L97.9,197.5L125.7,182.7L153.6,172.0L181.5,162.5L209.4,151.7L237.2,139.1L265.1,132.9L293.0,119.2L320.9,109.8L348.7,104.9L376.6,93.9L404.5,91.2L432.3,89.7L460.2,95.9L488.1,106.0L516.0,114.4L543.8,196.3L571.7,197.4L599.6,191.9L627.4,198.3L655.3,111.3L683.2,129.7L711.1,150.8L738.9,251.3L766.8,190.8L794.7,197.0L822.6,196.5L850.4,188.0L878.3,175.3L906.2,165.0L934.0,229.6L961.9,217.5L989.8,144.1L1017.7,125.0L1045.5,113.5L1073.4,104.4L1101.3,111.6L1129.1,120.0L1157.0,133.3L1184.9,148.7L1212.8,238.3L1240.6,268.0L1268.5,278.1L1296.4,279.6L1324.3,281.3L1352.1,285.4L1380.0,272.0L1380.0,272.0L1352.1,285.4L1324.3,281.3L1296.4,279.6L1268.5,278.1L1240.6,268.0L1212.8,238.3L1184.9,202.9L1157.0,203.7L1129.1,204.0L1101.3,199.9L1073.4,198.2L1045.5,199.4L1017.7,202.4L989.8,201.1L961.9,217.5L934.0,229.6L906.2,242.3L878.3,256.8L850.4,256.4L822.6,246.3L794.7,242.2L766.8,247.2L738.9,251.3L711.1,228.5L683.2,216.0L655.3,207.0L627.4,198.3L599.6,191.9L571.7,197.4L543.8,196.3L516.0,192.2L488.1,180.2L460.2,174.9L432.3,172.4L404.5,178.0L376.6,174.1L348.7,181.8L320.9,179.7L293.0,184.3L265.1,197.5L237.2,210.6L209.4,214.3L181.5,212.5L153.6,208.8L125.7,209.9L97.9,212.5L70.0,212.0Z" class="a-dd"/><polyline points="70.0,133.3 97.9,141.2 125.7,137.3 153.6,136.4 181.5,147.2 209.4,145.9 237.2,124.0 265.1,79.2 293.0,59.5 320.9,52.8 348.7,53.4 376.6,51.7 404.5,49.0 432.3,48.9 460.2,51.3 488.1,50.4 516.0,43.8 543.8,34.3 571.7,29.8 599.6,29.3 627.4,41.1 655.3,66.2 683.2,97.1 711.1,117.5 738.9,129.7 766.8,140.0 794.7,137.1 822.6,141.5 850.4,150.7 878.3,149.0 906.2,122.9 934.0,78.4 961.9,63.5 989.8,65.6 1017.7,74.9 1045.5,91.7 1073.4,100.9 1101.3,105.7 1129.1,109.9 1157.0,104.0 1184.9,90.0 1212.8,70.3 1240.6,57.8 1268.5,46.2 1296.4,48.0 1324.3,70.5 1352.1,98.9 1380.0,120.0" class="a-dem"/><text x="70" y="462" text-anchor="middle" class="a-ax">Tue 29 Sep</text><text x="237.2340425531915" y="462" text-anchor="middle" class="a-ax">06:00</text><text x="404.468085106383" y="462" text-anchor="middle" class="a-ax">12:00</text><text x="571.7021276595744" y="462" text-anchor="middle" class="a-ax">18:00</text><text x="738.936170212766" y="462" text-anchor="middle" class="a-ax">Wed 30 Sep</text><text x="906.1702127659574" y="462" text-anchor="middle" class="a-ax">06:00</text><text x="1073.404255319149" y="462" text-anchor="middle" class="a-ax">12:00</text><text x="1240.6382978723404" y="462" text-anchor="middle" class="a-ax">18:00</text><text x="1268.5106382978724" y="126.60000000000001" text-anchor="middle" class="a-call p">Evening peak:</text><text x="1268.5106382978724" y="158.60000000000002" text-anchor="middle" class="a-call p">gas fills the gap</text><text x="390.531914893617" y="149.55999999999997" text-anchor="middle" class="a-call in">Wind switched off</text><text x="404.468085106383" y="323.4" text-anchor="middle" class="a-call in">wind + solar used</text></svg>
+  <p class="foot">EirGrid Smart Grid Dashboard, ROI hourly, 29–30 Sep 2026. Switched-off wind estimated as wind forecast − actual when the grid is ≥ 60% renewable.</p>
+  <aside class="notes"><ul>
+    <li>Two real days from EirGrid. Overnight and midday, the grid is over 60% renewable and wind farms are dispatched down.</li>
+    <li>At 18:00–20:00 demand peaks, there is no surplus left, and gas fills the gap.</li>
+    <li>About 10% of Irish wind is dispatched down every year. EirGrid only publishes island-wide numbers, so nobody sees <b>where</b> the power goes, by county, by hour.</li>
+  </ul></aside>
 </section>
-
 <section class="slide" data-n="04">
-  <div class="eyebrow">What GridSense does · our moat</div>
-  <h2 style="max-width:none">Forecast every region's peak. Route renewables to it first.</h2>
-  <div class="flow" style="margin-top:0">
-    <div class="card"><h3>1 · Forecast regional peaks</h3><p>Hourly load for each of 45 areas, 7 days ahead, from the trailing 8 weeks of real EirGrid data.</p>
-      <p class="mono" style="margin-top:.6em;font-size:.8em">Backtest error <b>2.8%</b> ROI · <b>5.5%</b> NI</p></div>
-    <div class="arr">→</div>
-    <div class="card"><h3>2 · Route renewables to them</h3><p>Wind that would be dispatched down is scheduled, through network and storage capacity, into the biggest forecast peaks first.</p>
-      <p class="mono" style="margin-top:.6em;font-size:.8em">Dublin City <b>696 MW</b> Tue 18:00<br>Cork County → Dublin City <b>485 MWh</b></p></div>
-    <div class="arr">→</div>
-    <div class="card"><h3>3 · Prove it, per area</h3><p>Wind + solar share and CO₂ for any county or district, hour by hour, over 1, 3 or 12 months.</p></div>
-  </div>
-  <p class="honest" style="border-left-color:var(--sodium);color:var(--ink);font-size:.95em;max-width:none"><b>The moat:</b> others report national averages after the fact. GridSense forecasts <b>where and when</b> each region will peak, at 2.8% error, and routes renewables there before it happens.</p>
-  <p class="honest" style="max-width:none">Electrons can't be steered. "Routing" means scheduling transmission, storage and renewable allocation against the forecast, so wind reaches the peak instead of being constrained off.</p>
+  <div class="eyebrow">The problem</div>
+  <div class="a-head"><h2>Data centres now use <span class="p">23.2%</span> of the Republic's electricity.</h2>
+    <div class="stat a-corner"><b>6.2×</b><small>more than in 2015</small></div></div>
+  <svg class="a-chart" viewBox="0 0 1400 530" role="img" aria-label="Data-centre share of Ireland's metered electricity, 5.0% in 2015 to 23.2% in 2025"><rect x="14" y="395.3136306353917" width="99.27272727272727" height="84.68636936460831" class="a-bar"/><text x="63.63636363636363" y="516" text-anchor="middle" class="a-ax">2015</text><text x="63.63636363636363" y="381.3136306353917" text-anchor="middle" class="a-val">5.0%</text><rect x="141.27272727272725" y="381.7377243147308" width="99.27272727272727" height="98.26227568526917" class="a-bar"/><text x="190.9090909090909" y="516" text-anchor="middle" class="a-ax">2016</text><rect x="268.5454545454545" y="364.93508512788617" width="99.27272727272727" height="115.0649148721138" class="a-bar"/><text x="318.1818181818182" y="516" text-anchor="middle" class="a-ax">2017</text><rect x="395.8181818181818" y="342.79685746352413" width="99.27272727272727" height="137.20314253647587" class="a-bar"/><text x="445.45454545454544" y="516" text-anchor="middle" class="a-ax">2018</text><rect x="523.090909090909" y="322.23060670087534" width="99.27272727272727" height="157.76939329912466" class="a-bar"/><text x="572.7272727272727" y="516" text-anchor="middle" class="a-ax">2019</text><rect x="650.3636363636364" y="291.7947959787108" width="99.27272727272727" height="188.20520402128918" class="a-bar"/><text x="700" y="516" text-anchor="middle" class="a-ax">2020</text><rect x="777.6363636363636" y="243.49400126289206" width="99.27272727272727" height="236.50599873710794" class="a-bar"/><text x="827.2727272727273" y="516" text-anchor="middle" class="a-ax">2021</text><rect x="904.9090909090909" y="182.92305113160103" width="99.27272727272727" height="297.076948868399" class="a-bar"/><text x="954.5454545454545" y="516" text-anchor="middle" class="a-ax">2022</text><rect x="1032.181818181818" y="131.76024328831625" width="99.27272727272727" height="348.23975671168375" class="a-bar"/><text x="1081.8181818181818" y="516" text-anchor="middle" class="a-ax">2023</text><rect x="1159.4545454545455" y="112.7632898696088" width="99.27272727272727" height="367.2367101303912" class="a-bar"/><text x="1209.0909090909092" y="516" text-anchor="middle" class="a-ax">2024</text><rect x="1286.7272727272727" y="89.78082274835543" width="99.27272727272727" height="390.21917725164457" class="a-bar1"/><text x="1336.3636363636365" y="516" text-anchor="middle" class="a-ax">2025</text><text x="1336.3636363636365" y="75.78082274835543" text-anchor="middle" class="a-val">23.2%</text></svg>
+  <p class="foot">CSO MEC02: data-centre share of ROI metered electricity, by year, 2015–2025.</p>
+  <aside class="notes"><ul>
+    <li>Real CSO data. From 5% in 2015 to 23.2% in 2025.</li>
+    <li>It's flat 24/7 baseload, clustered in Dublin and Meath: it runs on gas at the evening peak like everything else.</li>
+    <li>This is why Dublin closed to new data centres in 2022.</li>
+  </ul></aside>
 </section>
 
 <section class="slide" data-n="05">
-  <div class="eyebrow">Use case · Data centres</div>
-  <h2>Same workload. More wind behind it.</h2>
-  <div class="cols">
-    <ul>
-      <li>Your load stays exactly as it is. GridSense forecasts your peak and books renewables for it.</li>
-      <li>The Dublin–Meath corridor's combined forecast peak: <b>1,845 MW</b> this week.</li>
-      <li>Over 12 months the corridor gets <b class="s">299 GWh</b> of recovered wind at its peak hours, cutting <b class="s">33.8 kt</b> CO₂ from a 2.36 Mt footprint.</li>
-      <li>The forecast retrains every day, so routing keeps up as your load grows.</li>
-    </ul>
-    <div class="card" style="align-self:start">
-      <h3>What the customer gets</h3>
-      <ul style="font-size:.9em">
-        <li>Hourly-matched evidence for <b>24/7 carbon-free energy</b> claims</li>
-        <li>Location-based <b>Scope 2</b> figures per site</li>
-        <li>An answer to CRU's 80% renewable rule, with no change to SLAs</li>
-      </ul>
-    </div>
-  </div>
+  <div class="eyebrow">Ireland's data-centre power fight · 2022 – 2026</div>
+  <h2 style="max-width:none;margin-bottom:.5em">The grid said no. The rules changed.</h2>
+  <div class="tlkey"><span><i style="background:var(--peat)"></i>Grid says no</span><span><i style="background:var(--ink)"></i>Rules change</span><span><i style="background:var(--wind)"></i>Industry responds</span></div>
+  <ol class="tl a-tl">
+    <li class="no"><time>Jan 2022</time><b>2028</b><p>No new Dublin data centres until then</p></li>
+    <li class="no"><time>Apr 2024</time><b>Maxed out</b><p>AWS runs out of power in Dublin</p></li>
+    <li class="no"><time>Aug 2024</time><b>Refused</b><p>Google expansion blocked over grid capacity</p></li>
+    <li class="rule"><time>Dec 2025</time><b>80%</b><p>New data centres must bring renewables</p></li>
+    <li class="yes"><time>Apr 2026</time><b>€150m</b><p>Amazon funds a Midlands wind farm</p></li>
+  </ol>
+  <p class="a-fit"><b>Where GridSense fits:</b> hour-by-hour, per-area proof of renewable use.</p>
+  <p class="foot">Sources: RTÉ / DCD, Jan 2022 · The Register via DCD, 10 Apr 2024 · Techerati, Sep 2026 · CRU decision via William Fry, 15 Dec 2025 · Irish Examiner, 27 Apr 2026</p>
+  <aside class="notes"><ul>
+    <li>Jan 2022: EirGrid, no new data-centre connections in Dublin until 2028.</li>
+    <li>Apr 2024: AWS GPU capacity in Dublin "maxed out power-wise"; customers sent to Sweden and other EU regions.</li>
+    <li>Aug 2024: Google's Grange Castle expansion refused over grid capacity; overturned on appeal, Sep 2026.</li>
+    <li>Dec 2025: CRU "bring your own power": on-site generation or storage, and 80% of demand from new Irish renewables within 6 years.</li>
+    <li>Apr 2026: Amazon funds a €150m Midlands wind farm.</li>
+    <li>So operators must now <b>prove</b> renewable use. GridSense measures it hourly, forecasts the next peak and books recovered wind for it. Operators, councils and the CRU see the same per-area numbers.</li>
+  </ul></aside>
 </section>
 
-<section class="slide" data-n="06">
-  <div class="eyebrow">Use case · Government &amp; lawmakers</div>
-  <h2>Evidence for where the next wind farm and cable should go.</h2>
-  <div class="cols">
-    <ul>
-      <li>Per-county demand growth set against local renewable supply.</li>
-      <li>The <b class="p">Dublin–Meath data-centre corridor</b> consumes. The <b class="w">western wind belt</b> (Kerry, Mayo, Donegal) generates.</li>
-      <li>Hard numbers to lobby for more wind and solar, and for grid reinforcement where demand is rising.</li>
-    </ul>
-    <div class="card" style="align-self:start"><h3>Questions it answers</h3>
-      <ul style="font-size:.9em"><li>Which counties' demand is outpacing renewables?</li><li>How much wind is lost to dispatch-down, and where?</li><li>Where will next week's peaks hit, and how much wind can reach them?</li></ul></div>
-  </div>
+<section class="slide sec" data-n="06">
+  <div class="secnum">Section 02 / 07</div>
+  <h1>What GridSense does</h1>
+  <p class="lede">Forecast the peak. Route wind to it first.</p>
+  <div class="rail"><span class="done">The problem</span><span class="on">What GridSense does</span><span class="">Who it's for</span><span class="">Impact</span><span class="">Technical details</span><span class="">Live demo</span><span class="">What's next</span></div>
 </section>
 
 <section class="slide" data-n="07">
-  <div class="eyebrow">Use case · Siting new industry</div>
-  <h2>Pick the site with the surplus, not the congestion.</h2>
-  <div class="cols">
-    <ul>
-      <li>See which regions are net renewable generators: the west and north-west.</li>
-      <li>Compare wind + solar share and dispatch-down across candidate counties before committing to a site.</li>
-      <li>A site near surplus wind starts out greener and puts less strain on the grid.</li>
-    </ul>
-    <div class="card" style="align-self:start"><h3>For investors</h3><p>Renewable %, forecast peak load and routing headroom for every county and NI district, in one view.</p></div>
-  </div>
+  <div class="eyebrow">What GridSense does · 1 forecast</div>
+  <h2 style="max-width:none">We forecast every area's peak, a week ahead.</h2>
+  <div class="a-shot"><img src="img/a-forecast.png" alt="Fingal load forecast: EirGrid actuals, backtest forecast and the next 7 days"></div>
+  <div class="a-labels"><span><b class="w">2.8%</b> backtest error, ROI</span><span><b>45</b> areas, hourly, 7 days</span><span><b>696 MW</b> Dublin City, Tue 18:00</span></div>
+  <aside class="notes"><ul>
+    <li>This is Fingal in the live dashboard. Navy is EirGrid actuals, dashed is our forecast for last week made blind, orange is next week.</li>
+    <li>Backtest error 2.8% ROI, 5.5% NI. Hour-of-week mean over 8 weeks × trend.</li>
+    <li>The moat: others report national averages after the fact. We forecast <b>where and when</b> each area peaks.</li>
+  </ul></aside>
 </section>
-
 <section class="slide" data-n="08">
-  <div class="eyebrow">Use case · Households</div>
-  <h2>"How much of my power was renewable this month?"</h2>
-  <div class="cols">
-    <ul>
-      <li>Pick your area on the map and see its wind + solar share for the last month, quarter or year.</li>
-      <li>See your area's CO₂ footprint as a plain number.</li>
-      <li>Next: per-Eircode views from smart-meter data, with consent.</li>
-    </ul>
-    <div class="card" style="align-self:start"><h3>Why it matters</h3><p>Seeing the number builds trust in the transition and makes flexible tariffs (EV charging, heat pumps) an easy choice.</p></div>
+  <div class="eyebrow">What GridSense does · 2 route</div>
+  <div class="a-split">
+    <div>
+      <h2>Then we book spare wind for the biggest peak.</h2>
+      <ol class="a-flows">
+        <li><span>Cork County → Dublin City</span><b>485 MWh</b></li>
+        <li><span>Kerry → Dublin City</span><b>461 MWh</b></li>
+        <li><span>Donegal → Dublin City</span><b>364 MWh</b></li>
+      </ol>
+      <p class="a-sum"><b class="s">12.8 GWh</b> planned this week</p>
+    </div>
+    <img src="img/a-map-routing.png" alt="Routing lines from wind areas to Dublin's forecast peaks">
   </div>
+  <aside class="notes"><ul>
+    <li>Wind that would be dispatched down is scheduled, through network and storage capacity, into the biggest forecast peaks first.</li>
+    <li>Thicker line = more energy. Sources are the wind areas, by installed capacity.</li>
+    <li>Electrons can't be steered. "Routing" means scheduling transmission, storage and renewable allocation against the forecast.</li>
+  </ul></aside>
 </section>
-
 <section class="slide" data-n="09">
-  <div class="eyebrow">Corporate carbon responsibility · 12-month model</div>
-  <h2>Observability first. Then measurable cuts.</h2>
-  <div class="cols3" style="margin-bottom:1.4em">
-    <div class="stat"><b class="s">+621 GWh</b><small>dispatched-down wind routed to forecast peaks</small></div>
-    <div class="stat"><b class="s">71.2 kt</b><small>CO₂ avoided</small></div>
-    <div class="stat"><b><span class="w">37.6%</span> <span class="mono" style="font-size:.5em">→</span> <span class="s">39.1%</span></b><small>island wind + solar share</small></div>
-  </div>
-  <ul>
-    <li>Every area gets an hourly CO₂ footprint from EirGrid's real carbon intensity.</li>
-    <li>Corporates report against measured hourly data instead of annual averages.</li>
-  </ul>
-  <p class="foot">Modelled figures. Real EirGrid demand, wind, solar, CO₂ and wind forecast data (Oct 2025 – Oct 2026). Assumptions: the area split (CSO MEC03 consumption, ROI; population, NI); dispatch-down = wind forecast minus actual when renewables ≥ 60% (9.2% of ROI wind, close to EirGrid's ~10%); routing recovers 50% of it (the network-constraint share) into the 6 forecast peak hours, weighted by forecast peak².</p>
+  <div class="eyebrow">What GridSense does · 3 prove</div>
+  <h2 style="max-width:none">And we prove the cut, area by area.</h2>
+  <div class="a-shot a-val"><img src="img/a-value.png" alt="Fingal: 9.3 kt CO₂ avoided with GridSense over 12 months, 670.3 to 661.0 kt">
+    <p class="a-cap">Fingal, Ireland's data-centre hub · 12 months · live dashboard</p></div>
+  <aside class="notes"><ul>
+    <li>Click any county or district. Wind + solar share and CO₂, hour by hour, over 1, 3 or 12 months.</li>
+    <li>Fingal: 82.3 GWh more wind at its peak hours, share 37.6% → 39.6%, −9.3 kt CO₂. The load doesn't change.</li>
+    <li>CO₂ is priced at EirGrid's real carbon intensity for each peak hour the wind displaces.</li>
+  </ul></aside>
 </section>
 
-<section class="slide" data-n="10">
-  <div class="eyebrow">How it works</div>
-  <h2>Open data in, one static dashboard out.</h2>
-  <div class="flow">
-    <div class="card"><h3>EirGrid API</h3><p>15-min demand, wind, solar, CO₂ intensity, wind forecast. ROI + NI.</p></div>
-    <div class="card"><h3>CSO + Census</h3><p>MEC02 data-centre consumption, MEC03 county consumption, NISRA populations, OSi/OSNI boundaries.</p></div>
-    <div class="arr">→</div>
-    <div class="card"><h3>Python model</h3><p>Area load split, per-area peak forecast, routing of recovered wind from wind areas (by capacity) to the biggest peaks, CO₂ accounting.</p></div>
-    <div class="arr">→</div>
-    <div class="card"><h3>Dashboard</h3><p>Leaflet map of all 45 areas plus Chart.js. A static site with no server.</p></div>
-  </div>
+<section class="slide sec" data-n="10">
+  <div class="secnum">Section 03 / 07</div>
+  <h1>Who it's for</h1>
+  <p class="lede">Data centres, government, new industry, households.</p>
+  <div class="rail"><span class="done">The problem</span><span class="done">What GridSense does</span><span class="on">Who it's for</span><span class="">Impact</span><span class="">Technical details</span><span class="">Live demo</span><span class="">What's next</span></div>
 </section>
 
 <section class="slide" data-n="11">
-  <div class="eyebrow">Data sources</div>
-  <h2>All public. All real.</h2>
-  <div class="cols" style="grid-template-columns:1.6fr 1fr">
-    <table>
-      <tr><th>Source</th><th>What we use</th></tr>
-      <tr><td>EirGrid Smart Grid Dashboard API</td><td>15-min demand, wind, solar, CO₂ intensity, wind forecast. ROI + NI, 12 months</td></tr>
-      <tr><td>CSO PxStat MEC02</td><td>Data-centre share of metered electricity, quarterly, 2015–2025</td></tr>
-      <tr><td>CSO PxStat MEC03</td><td>Metered consumption by county and Dublin postal district, 2025</td></tr>
-      <tr><td>NISRA</td><td>Population by NI local government district</td></tr>
-      <tr><td>OSi / OSNI</td><td>County and LGD boundaries</td></tr>
-    </table>
-    <div class="card" style="align-self:start"><h3>Next data</h3>
-      <ul style="font-size:.85em"><li>ESB Networks smart-meter data per Eircode, with consent</li><li>EirGrid connected wind-farm list per node</li><li>SEAI energy statistics</li></ul></div>
+  <div class="eyebrow">Use case · Data centres</div>
+  <h2 style="max-width:none">Same workload. More wind behind it.</h2>
+  <div class="a-nums">
+    <div class="stat"><b>1,845 MW</b><small>forecast peak, this week</small></div>
+    <div class="stat"><b class="s">+299 GWh</b><small>recovered wind at peak hours</small></div>
+    <div class="stat"><b class="s">−33.8 kt</b><small>CO₂ cut, from 2.36 Mt</small></div>
   </div>
+  <p class="a-cap">Dublin–Meath data-centre corridor · 12 months unless noted</p>
+  <aside class="notes"><ul>
+    <li>Corridor = Dublin City, Fingal, South Dublin, Meath. Combined forecast peak 1,845 MW this week.</li>
+    <li>The customer's load stays exactly as it is. GridSense forecasts the peak and books renewables for it.</li>
+    <li>The forecast retrains every day, so routing keeps up as load grows.</li>
+  </ul></aside>
+</section>
+<section class="slide" data-n="12">
+  <div class="eyebrow">Use case · Data centres</div>
+  <h2 style="max-width:none">What a data centre gets.</h2>
+  <div class="a-tiles">
+    <div><b>24/7</b><span>Hourly-matched carbon-free evidence</span></div>
+    <div><b>Scope 2</b><span>Location-based figures, per site</span></div>
+    <div><b>80%</b><span>An answer to the CRU rule</span></div>
+  </div>
+  <p class="a-cap">No change to workloads or SLAs.</p>
+  <aside class="notes"><ul>
+    <li>24/7 CFE claims need hourly matching, not annual certificates. GridSense gives the hour-by-hour record.</li>
+    <li>Location-based Scope 2 per site, from real hourly carbon intensity.</li>
+    <li>CRU Dec 2025: 80% of new demand from new Irish renewables. This is the evidence trail.</li>
+  </ul></aside>
 </section>
 
-<section class="slide tech mid" data-n="12">
-  <div class="eyebrow">Technical details · 1 / 6 · the model</div>
-  <h2>Five steps, Python standard library only.</h2>
-  <div class="flow" style="margin-top:0">
-    <div class="card"><h3>1 · Real inputs</h3><p>EirGrid 15-min demand, wind, solar, CO₂ intensity and wind forecast, ROI + NI, 2 Oct 2025 – 3 Oct 2026, averaged to hourly. CSO MEC02 (data centres = 23.2%) and MEC03 (2025 consumption by county and Dublin postal district).</p></div>
-    <div class="arr">→</div>
-    <div class="card"><h3>2 · Split into 45 areas</h3><p>23.2% of ROI demand is flat data-centre baseload, placed at the clusters (Fingal, South Dublin, Dublin City, Meath; small shares in Kildare, Cork, Clare). The rest is split by real MEC03 consumption. NI is split by population.</p></div>
-    <div class="arr">→</div>
-    <div class="card"><h3>3 · Forecast</h3><p>Hourly load for each area, 7 days ahead. Hour-of-week mean over 8 weeks × a trend factor.</p></div>
-    <div class="arr">→</div>
-    <div class="card"><h3>4 · Rank peaks</h3><p>Each area's highest forecast hour; each day's 6 highest forecast hours.</p></div>
-    <div class="arr">→</div>
-    <div class="card"><h3>5 · Route</h3><p>Recovered wind goes to the biggest peaks first, attributed to wind areas, with CO₂ priced at the real hourly intensity.</p></div>
-  </div>
-  <p class="honest" style="max-width:none">Dublin postal districts are mapped to the four Dublin councils. City/county pairs (Cork, Galway, Limerick, Waterford, Tipperary) are split by population. MEC03's "Not coded" consumption (~30%, mostly large users) is left to the data-centre term. Check: the areas add up to EirGrid system demand within 1%.</p>
-</section>
-
-<section class="slide tech roomy" data-n="13">
-  <div class="eyebrow">Technical details · 2 / 6 · forecasting</div>
-  <h2>A simple forecast, backtested on real weeks.</h2>
-  <div class="cols">
+<section class="slide" data-n="13">
+  <div class="eyebrow">Use case · Government &amp; lawmakers</div>
+  <div class="a-split">
     <div>
-      <ol>
-        <li>For each grid (ROI and NI), take the last <b>8 weeks</b> of hourly demand.</li>
-        <li>Average it by <b>hour of the week</b> (every Tuesday 18:00, and so on).</li>
-        <li><b>Trend factor</b> = last week's actual ÷ what the averages predicted for last week.</li>
-        <li>Project <b>168 hours</b> ahead: hour-of-week average × trend.</li>
-        <li>Area forecast = its data-centre share + its MEC03 share of the regional forecast.</li>
-      </ol>
-      <p class="honest" style="max-width:none">Why so simple: demand is strongly driven by time of week, and this method is transparent and hard to overfit. Upgrade path: weather inputs and gradient-boosted models.</p>
+      <h2>The west makes the wind. Dublin uses it.</h2>
+      <ul class="a-legend">
+        <li><i style="background:var(--wind)"></i><span><b>Leitrim 1.9× · Kerry 1.6×</b>generate more than they use</span></li>
+        <li><i style="background:var(--peat)"></i><span><b>Dublin ~0.01×</b>imports almost all of it</span></li>
+      </ul>
+      <p class="a-cap">Local generation ÷ use, last 3 months. Where the next wind farm and cable should go.</p>
     </div>
-    <div>
-      <div class="cols" style="grid-template-columns:1fr 1fr;flex:none;margin-bottom:1em">
-        <div class="stat"><b class="w">2.8%</b><small>backtest error (MAPE), ROI</small></div>
-        <div class="stat"><b class="w">5.5%</b><small>backtest error (MAPE), NI: a smaller, noisier system</small></div>
-      </div>
-      <p style="font-size:.85em"><b>Backtest:</b> forecast last week as if it hadn't happened yet, then compare with EirGrid actuals.</p>
-      <table style="margin-top:.8em"><tr><th>Peak this week</th><th>MW</th><th>When</th></tr>
-        <tr><td>Dublin City</td><td>696</td><td>Tue 18:00</td></tr><tr><td>Fingal</td><td>503</td><td>Tue 18:00</td></tr>
-        <tr><td>South Dublin</td><td>395</td><td>Tue 18:00</td></tr><tr><td>Cork County</td><td>333</td><td>Tue 18:00</td></tr><tr><td>Meath</td><td>251</td><td>Tue 18:00</td></tr></table>
-    </div>
+    <img src="img/a-map-gen.png" alt="Map of local renewable generation divided by local use: teal in the west and north-west, brown in Dublin and Belfast">
   </div>
+  <aside class="notes"><ul>
+    <li>Map: renewables generated locally ÷ local use, last 3 months. Teal exports wind, brown imports.</li>
+    <li>The Dublin–Meath data-centre corridor consumes; the western wind belt (Kerry, Mayo, Donegal) generates.</li>
+    <li>Questions it answers: which counties' demand is outpacing renewables? How much wind is lost to dispatch-down, and where? Where will next week's peaks hit?</li>
+    <li>County wind and solar capacity are approximate weights; v2 uses EirGrid/SONI generator lists.</li>
+  </ul></aside>
 </section>
 
-<section class="slide tech roomy" data-n="14">
-  <div class="eyebrow">Technical details · 3 / 6 · routing</div>
-  <h2>Book the wind for the biggest peaks first.</h2>
-  <div class="cols3" style="gap:2.5%">
-    <div class="card"><h3>The pool</h3><p>Estimated dispatch-down = EirGrid wind forecast − actual wind, counted only when the grid is ≥ 60% renewable. That gives 9.2% of ROI wind and 12.2% of NI, close to EirGrid's reported ~10%. We assume <b>50%</b> is recoverable by scheduling transmission and storage against the forecast (the network-constraint share).</p></div>
-    <div class="card"><h3>Allocation</h3><p>The pool goes into each day's 6 forecast peak hours, weighted by <b>forecast peak²</b>: biggest peaks get first call, but not winner-takes-all. Each area is capped at its fossil load in those hours, so it never goes past 100%. Leftover energy is re-shared among the areas still under their cap.</p></div>
-    <div class="card"><h3>Sources and CO₂</h3><p>Dispatch-down happens at wind farms, so each area supplies the pool in proportion to its wind capacity. This week: Cork County → Dublin City 485 MWh, Kerry → Dublin City 461 MWh, 12.8 GWh planned. CO₂ saved uses the <b>real carbon intensity of each peak hour</b> the wind displaces.</p></div>
-  </div>
-  <p class="honest" style="max-width:none">"Routing" means scheduling, not steering electrons. You can't send specific electrons to a specific address on a shared grid. GridSense plans transmission, storage and renewable allocation against the per-area forecast, then accounts for it hour by hour. Routing starts once 2 weeks of history exist.</p>
-</section>
-
-<section class="slide tech roomy" data-n="15">
-  <div class="eyebrow">Technical details · 4 / 6 · every view</div>
-  <h2>How to read the dashboard.</h2>
-  <table>
-    <tr><th>View</th><th>What it shows</th></tr>
-    <tr><td>Header numbers</td><td>Island wind + solar share 37.6% → 39.1% with GridSense, 621 GWh routed, 71.2 kt CO₂ avoided (12 months; they follow the period buttons)</td></tr>
-    <tr><td>1 / 3 / 12 months · Today vs GridSense</td><td>The period for every number; the same real demand and weather, without and with routing</td></tr>
-    <tr><td>Map: Forecast peak load</td><td>Default view. Darker navy = bigger peak in the next 7 days. This is the moat view</td></tr>
-    <tr><td>Map: Local generation ÷ use</td><td>Renewables generated ÷ used. Above 1× means the area exports wind (Kerry, Donegal, Leitrim): the sources</td></tr>
-    <tr><td>Map: Wind + solar share</td><td>Hour-matched share. Every area on one grid draws the same national mix (~32.9% over 3 months in ROI); GridSense makes the peak areas pull ahead</td></tr>
-    <tr><td>Routing lines</td><td>Wind areas → forecast peaks. Thicker = more energy. Hover a line for its MWh</td></tr>
-    <tr><td>Highest forecast load</td><td>Top 8 areas: peak MW, when it hits, wind routed to it. Click a row to select the area</td></tr>
-    <tr><td>Where the routed wind comes from</td><td>Source → peak flows in MWh, plus the biggest suppliers (Cork County 1.3 GWh, Kerry 1.3, Donegal 1.0)</td></tr>
-    <tr><td>View as</td><td>Data centre (1,845 MW corridor, −33.8 kt) · Government (80% target gap) · Siting new load · Household</td></tr>
-    <tr><td>Selected area</td><td>Share today → GridSense; orange value card, e.g. Fingal −9.3 kt CO₂ (670.3 → 661.0 kt, 82.3 GWh more wind)</td></tr>
-    <tr><td>Charts</td><td>Weekly renewable / fossil / GridSense extra · 7-day forecast with backtest overlay · 48-hour routed wind landing in the peak hours</td></tr>
-  </table>
-</section>
-
-<section class="slide tech" data-n="16">
-  <div class="eyebrow">Technical details · 5 / 6 · experiments &amp; testing</div>
-  <h2>What we tried, what we changed, how we check it.</h2>
-  <div class="cols">
-    <ul style="font-size:.85em">
-      <li><b>Forecast backtest:</b> 2.8% error ROI, 5.5% NI, on the last 7 days of real data.</li>
-      <li><b>Dispatch-down check:</b> our estimate gives 9.2% of ROI wind and 12.2% of NI, against EirGrid's ~10%.</li>
-      <li><b>Allocation:</b> greedy "biggest peak takes all" gave Fingal 0 GWh. We switched to peak²-weighted water-filling.</li>
-      <li><b>Area split:</b> population split gave Dublin City 596 MW and Fingal 565 MW. Real MEC03 consumption gives 696 and 503. Island totals were unchanged.</li>
-      <li><b>Pivot from flex to routing:</b> shifting data-centre load into windy hours gave 38.4%, 353 GWh, 48.6 kt. Forecast-led routing gives 39.1%, 621 GWh, 71.2 kt, and customers don't have to change anything.</li>
-    </ul>
-    <div>
-      <div class="card"><h3>Self-checks on every build</h3>
-        <ul style="font-size:.9em"><li>Area demand adds up to system demand (within 1%)</li><li>GridSense only adds renewables and cuts CO₂, never the reverse</li><li>No area goes past 100% renewable</li><li>The biggest peak gets at least as much as the 5th biggest</li><li>The MEC03 split adds up to the CSO total</li><li>Flows add up to what's routed</li></ul></div>
-      <div class="card" style="margin-top:1em"><h3>Data audit and UI tests</h3>
-        <p style="font-size:.9em">We investigated the identical-looking ~32.9% values, confirmed they're correct and relabelled the share as "wind + solar". A headless Chrome script clicks through every control after each change and checks for JS errors and the expected numbers.</p></div>
+<section class="slide" data-n="14">
+  <div class="eyebrow">Use case · Siting new industry · 12 months</div>
+  <h2>Build where the wind is.</h2>
+  <div class="b-body">
+    <div class="b-mapw" style="aspect-ratio:412/528"><img src="img/b-map-gen.svg" alt="Map: renewables generated locally divided by local use, per area, 12 months">
+<svg viewBox="-6 -6 412 528" aria-hidden="true">
+<text class="b-ml " x="202" y="171">Leitrim 2.5×</text><text class="b-ml " x="60" y="434">Kerry 2.0×</text><text class="b-ml " x="208" y="67">Donegal 1.6×</text>
+<path d="M341.6959107806692,264.1944237918215 L352.6959107806692,227.19442379182152" stroke="var(--ink)" stroke-width="1.5" fill="none"/><circle cx="338.6959107806692" cy="267.1944237918215" r="4" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+<text class="b-ml b-mlp" x="352.6959107806692" y="221.19442379182152" style="text-anchor:end">Dublin 0.0×</text>
+</svg></div>
+    <div class="b-side">
+      <div class="b-scale"><i></i><span>uses more</span><span>1×</span><span>makes more</span></div>
+      <div class="b-call"><b class="w">2.5×</b><span>Leitrim makes 2.5× the renewables it uses</span></div>
+      <div class="b-call"><b class="p">0.09×</b><span>Meath and Kildare: the data-centre corridor</span></div>
+      <div class="b-call"><b>→</b><span>Site near the surplus, not the congestion</span></div>
     </div>
   </div>
+  <aside class="notes"><ul>
+    <li>Colour = wind + solar generated in the area ÷ electricity used there, over 12 months. Teal = net exporter, brown = net importer.</li>
+    <li>West and north-west are surplus: Leitrim 2.5×, Kerry 2.0×, Offaly 1.9×, Donegal 1.6×.</li>
+    <li>Compare share and dispatch-down across candidate counties before committing to a site. Near surplus wind = greener from day one, less grid strain.</li>
+    <li>For investors: renewable %, forecast peak and routing headroom for all 45 areas in one view (dashboard "Siting new load").</li>
+  </ul></aside>
 </section>
 
-<section class="slide tech" data-n="17">
-  <div class="eyebrow">Technical details · 6 / 6 · honest limits &amp; Q&amp;A</div>
-  <h2>What's modelled, and what judges ask.</h2>
-  <div class="cols" style="grid-template-columns:1fr 1.25fr">
-    <div class="card" style="align-self:start"><h3>Modelled, not measured</h3>
-      <ul style="font-size:.9em"><li>How hourly load splits across areas (real CSO shares, but each area is assumed to follow the national hourly shape)</li><li>County wind and solar capacity: approximate weights</li><li>Dispatch-down: estimated from EirGrid forecast − actual</li><li>The 50% recoverable share</li></ul>
-      <p style="font-size:.85em;margin-top:.8em"><b>v2 replaces each one:</b> EirGrid dispatch-down reports and generator lists, ESB Networks smart meters per Eircode, live routing with EirGrid and SONI.</p></div>
-    <table>
-      <tr><th>Question</th><th>Answer</th></tr>
-      <tr><td>"You can't route electrons."</td><td>True. We route schedules: transmission, storage and renewable allocation planned against the forecast, then verified hour by hour.</td></tr>
-      <tr><td>"Why is every area ~32.9%?"</td><td>EirGrid only publishes generation for the whole grid. That's exactly the gap GridSense fills.</td></tr>
-      <tr><td>"Why such a simple forecast?"</td><td>2.8% error with a fully explainable baseline. Machine learning plus weather comes next.</td></tr>
-      <tr><td>"Is 621 GWh realistic?"</td><td>ROI wind is about 13 TWh a year, ~9% of it is dispatched down (~1.2 TWh), and we recover half: about 600 GWh.</td></tr>
-      <tr><td>"Who pays?"</td><td>Data centres, for 24/7 carbon-free and Scope 2 proof. EirGrid and the CRU, for connection and siting decisions. Later, green-hour tokens.</td></tr>
-    </table>
+<section class="slide" data-n="15">
+  <div class="eyebrow">Use case · Households</div>
+  <div class="b-body" style="gap:6%">
+    <h2 style="font-size:3.4em;max-width:13ch;margin:0">"How much of my power was renewable?"</h2>
+    <div class="b-phone">
+      <div class="b-pt">Dublin City · last month</div>
+      <div class="b-dw"><svg class="b-donut" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--peat)" stroke-width="5"/>
+<circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--sodium)" stroke-width="5" stroke-dasharray="44.82 100.00" transform="rotate(-90 21 21)"/>
+<circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--wind)" stroke-width="5" stroke-dasharray="41.46 100.00" transform="rotate(-90 21 21)"/></svg><b>41.5%</b><small>wind + solar</small></div>
+      <div class="b-pr"><span class="s">44.8%</span> with GridSense</div>
+      <div class="b-pr"><span>120 kg</span> CO₂ per resident</div>
+    </div>
   </div>
+  <aside class="notes"><ul>
+    <li>Real dashboard numbers: Household lens, Dublin City, 1 month (2026-09-04 → 2026-10-03). The CO₂ per resident covers all sectors.</li>
+    <li>Pick your area on the map: wind + solar share for the last month, quarter or year, and the CO₂ footprint as a plain number.</li>
+    <li>Next: per-Eircode views from smart-meter data, with consent.</li>
+    <li>Why it matters: seeing the number builds trust and makes flexible tariffs (EV charging, heat pumps) an easy choice.</li>
+  </ul></aside>
 </section>
 
-<section class="slide title" data-n="18">
-  <div class="eyebrow">Prototype</div>
-  <h1 style="font-size:5.6em">Live demo</h1>
-  <ul style="margin-top:1.6em;font-size:1.15em">
-    <li>Read the <b>Highest forecast load</b> ranking: where next week's peaks hit</li>
-    <li>Click <b>Dublin City</b>, then <b>Fingal</b>, Ireland's data-centre hub</li>
-    <li>Toggle <b class="s">With GridSense routing</b> and switch to <b>12 months</b></li>
-    <li>Hover a routing line: <b>Cork County → Dublin City, 485 MWh</b> this week</li>
-    <li>Read <b>Where the routed wind comes from</b>: Cork County 1.3 GWh, Kerry 1.3, Donegal 1.0; 12.8 GWh planned</li>
-  </ul>
+<section class="slide sec" data-n="16">
+  <div class="secnum">Section 04 / 07</div>
+  <h1>Impact</h1>
+  <p class="lede">Twelve months of real EirGrid data.</p>
+  <div class="rail"><span class="done">The problem</span><span class="done">What GridSense does</span><span class="done">Who it's for</span><span class="on">Impact</span><span class="">Technical details</span><span class="">Live demo</span><span class="">What's next</span></div>
 </section>
 
-<section class="slide" data-n="19">
-  <div class="eyebrow">Roadmap &amp; ask</div>
-  <h2>From open data to live routing.</h2>
-  <div class="cols">
-    <ul>
-      <li><b>Now:</b> island-wide observability on real EirGrid data</li>
-      <li><b>Next:</b> per-Eircode load forecasts from ESB Networks smart meters</li>
-      <li><b>Then:</b> live day-ahead routing plans with EirGrid and SONI</li>
-      <li><b>Later:</b> hourly certificates for 24/7 CFE and Scope 2 reporting</li>
-      <li><b>Add-on:</b> flex signals for customers who want to go further</li>
-    </ul>
-    <div class="card" style="align-self:start"><h3>The ask</h3>
-      <ul style="font-size:.9em"><li>Node-level wind data from EirGrid and SONI</li><li>A data-centre pilot partner in Fingal or Meath</li><li>A policy sponsor for forecast-led grid scheduling</li></ul></div>
+<section class="slide" data-n="17">
+  <div class="eyebrow">Impact · 12 months, modelled on real data</div>
+  <h2 style="max-width:none">What a year of GridSense does.</h2>
+  <div class="b-big">
+    <div><b class="s">+621 GWh</b><span>wasted wind put to work</span></div>
+    <div><b class="s">71.2 kt</b><span>CO₂ avoided</span></div>
+    <div><b><span class="w">37.6%</span><i>→</i><span class="s">39.1%</span></b><span>island wind + solar share</span></div>
   </div>
+  <div class="b-share"><i class="w" style="width:37.6%"></i><i class="s" style="width:1.5%"></i></div>
+  <div class="b-sharel"><span class="w" style="width:37.6%">wind + solar today</span><span class="s">+ GridSense</span><span class="p" style="margin-left:auto">fossil</span></div>
+  <p class="foot">Modelled on real EirGrid data, Oct 2025 – Oct 2026. Same load, same weather.</p>
+  <aside class="notes"><ul>
+    <li>Real EirGrid demand, wind, solar, CO₂ and wind forecast, 15-min, ROI + NI.</li>
+    <li>Assumptions: area split from CSO MEC03 (ROI) and population (NI); dispatch-down = wind forecast − actual when renewables ≥ 60% (9.2% of ROI wind, close to EirGrid's ~10%); 50% of it recovered (the network-constraint share) into the 6 forecast peak hours, weighted by forecast peak².</li>
+    <li>Every area gets an hourly CO₂ footprint from EirGrid's real carbon intensity, so corporates report against hourly data, not annual averages.</li>
+  </ul></aside>
+</section>
+<section class="slide" data-n="18">
+  <div class="eyebrow">Impact · week by week</div>
+  <h2 style="max-width:none">Windy weeks do the heavy lifting.</h2>
+  <div class="b-body"><svg class="b-chart" viewBox="-44 -50 1060 384" role="img" aria-label="Weekly wind routed to forecast peaks, GWh, 2025-10-02 to 2026-10-03">
+<line x1="0" x2="1000" y1="300" y2="300" stroke="var(--rule)"/><text class="b-ax" x="-10" y="305" text-anchor="end">0</text><line x1="0" x2="1000" y1="225" y2="225" stroke="var(--rule)"/><text class="b-ax" x="-10" y="230" text-anchor="end">10</text><line x1="0" x2="1000" y1="150" y2="150" stroke="var(--rule)"/><text class="b-ax" x="-10" y="155" text-anchor="end">20</text><line x1="0" x2="1000" y1="75" y2="75" stroke="var(--rule)"/><text class="b-ax" x="-10" y="80" text-anchor="end">30</text><line x1="0" x2="1000" y1="0" y2="0" stroke="var(--rule)"/><text class="b-ax" x="-10" y="5" text-anchor="end">40</text>
+<rect x="2.0" y="300.0" width="15.6" height="0.0" fill="var(--sodium)"/><rect x="21.6" y="300.0" width="15.6" height="0.0" fill="var(--sodium)"/><rect x="41.2" y="251.4" width="15.6" height="48.6" fill="var(--sodium)"/><rect x="60.8" y="121.5" width="15.6" height="178.5" fill="var(--sodium)"/><rect x="80.4" y="87.8" width="15.6" height="212.2" fill="var(--sodium)"/><rect x="100.0" y="279.9" width="15.6" height="20.1" fill="var(--sodium)"/><rect x="119.6" y="137.4" width="15.6" height="162.6" fill="var(--sodium)"/><rect x="139.3" y="188.5" width="15.6" height="111.5" fill="var(--sodium)"/><rect x="158.9" y="131.5" width="15.6" height="168.5" fill="var(--sodium)"/><rect x="178.5" y="27.1" width="15.6" height="272.9" fill="var(--sodium)"/><rect x="198.1" y="103.2" width="15.6" height="196.8" fill="var(--sodium)"/><rect x="217.7" y="194.5" width="15.6" height="105.5" fill="var(--sodium)"/><rect x="237.3" y="300.0" width="15.6" height="0.0" fill="var(--sodium)"/><rect x="256.9" y="295.0" width="15.6" height="5.0" fill="var(--sodium)"/><rect x="276.5" y="194.6" width="15.6" height="105.4" fill="var(--sodium)"/><rect x="296.1" y="277.3" width="15.6" height="22.7" fill="var(--sodium)"/><rect x="315.7" y="127.5" width="15.6" height="172.5" fill="var(--sodium)"/><rect x="335.3" y="180.9" width="15.6" height="119.1" fill="var(--sodium)"/><rect x="354.9" y="273.5" width="15.6" height="26.5" fill="var(--sodium)"/><rect x="374.5" y="154.1" width="15.6" height="145.9" fill="var(--sodium)"/><rect x="394.2" y="149.5" width="15.6" height="150.5" fill="var(--sodium)"/><rect x="413.8" y="290.0" width="15.6" height="10.0" fill="var(--sodium)"/><rect x="433.4" y="31.5" width="15.6" height="268.5" fill="var(--sodium)"/><rect x="453.0" y="108.6" width="15.6" height="191.4" fill="var(--sodium)"/><rect x="472.6" y="101.8" width="15.6" height="198.2" fill="var(--sodium)"/><rect x="492.2" y="159.4" width="15.6" height="140.6" fill="var(--sodium)"/><rect x="511.8" y="110.8" width="15.6" height="189.2" fill="var(--sodium)"/><rect x="531.4" y="77.6" width="15.6" height="222.4" fill="var(--sodium)"/><rect x="551.0" y="165.8" width="15.6" height="134.2" fill="var(--sodium)"/><rect x="570.6" y="289.3" width="15.6" height="10.7" fill="var(--sodium)"/><rect x="590.2" y="264.1" width="15.6" height="35.9" fill="var(--sodium)"/><rect x="609.8" y="108.3" width="15.6" height="191.7" fill="var(--sodium)"/><rect x="629.5" y="271.0" width="15.6" height="29.0" fill="var(--sodium)"/><rect x="649.1" y="277.6" width="15.6" height="22.4" fill="var(--sodium)"/><rect x="668.7" y="174.6" width="15.6" height="125.4" fill="var(--sodium)"/><rect x="688.3" y="175.7" width="15.6" height="124.3" fill="var(--sodium)"/><rect x="707.9" y="293.4" width="15.6" height="6.6" fill="var(--sodium)"/><rect x="727.5" y="227.0" width="15.6" height="73.0" fill="var(--sodium)"/><rect x="747.1" y="296.7" width="15.6" height="3.3" fill="var(--sodium)"/><rect x="766.7" y="299.9" width="15.6" height="0.1" fill="var(--sodium)"/><rect x="786.3" y="299.1" width="15.6" height="0.9" fill="var(--sodium)"/><rect x="805.9" y="256.3" width="15.6" height="43.7" fill="var(--sodium)"/><rect x="825.5" y="298.3" width="15.6" height="1.7" fill="var(--sodium)"/><rect x="845.1" y="300.0" width="15.6" height="0.0" fill="var(--sodium)"/><rect x="864.7" y="300.0" width="15.6" height="0.0" fill="var(--sodium)"/><rect x="884.4" y="300.0" width="15.6" height="0.0" fill="var(--sodium)"/><rect x="904.0" y="265.1" width="15.6" height="34.9" fill="var(--sodium)"/><rect x="923.6" y="226.8" width="15.6" height="73.2" fill="var(--sodium)"/><rect x="943.2" y="216.3" width="15.6" height="83.7" fill="var(--sodium)"/><rect x="962.8" y="277.7" width="15.6" height="22.3" fill="var(--sodium)"/><rect x="982.4" y="107.3" width="15.6" height="192.7" fill="var(--sodium)"/>
+<line x1="0" x2="1000" y1="300" y2="300" stroke="var(--ink)" stroke-width="2"/>
+<text class="b-ax" x="2" y="328">Oct</text><text class="b-ax" x="100.03921568627452" y="328">Nov</text><text class="b-ax" x="178.47058823529414" y="328">Dec</text><text class="b-ax" x="256.90196078431376" y="328">Jan</text><text class="b-ax" x="354.9411764705883" y="328">Feb</text><text class="b-ax" x="433.37254901960785" y="328">Mar</text><text class="b-ax" x="511.8039215686275" y="328">Apr</text><text class="b-ax" x="590.2352941176471" y="328">May</text><text class="b-ax" x="668.6666666666667" y="328">Jun</text><text class="b-ax" x="766.7058823529412" y="328">Jul</text><text class="b-ax" x="845.1372549019609" y="328">Aug</text><text class="b-ax" x="923.5686274509804" y="328">Sep</text>
+<text class="b-ax" x="-44" y="-30">GWh / week</text>
+<text class="b-ann" x="204.07843137254906" y="45.137999999999806">Windy week: 36 GWh</text>
+<text class="b-ann" x="784.3137254901961" y="150" text-anchor="middle">Calm summer: little wind to recover</text>
+</svg></div>
+  <aside class="notes"><ul>
+    <li>Each bar = wind that would have been dispatched down, routed into that week's forecast peaks. Total 621 GWh.</li>
+    <li>The first two weeks are empty: the forecast needs 2 weeks of history before routing starts.</li>
+    <li>Summer has little dispatch-down, so little to recover. Winter storms are where GridSense earns its keep.</li>
+  </ul></aside>
+</section>
+
+<section class="slide sec" data-n="19">
+  <div class="secnum">Section 05 / 07</div>
+  <h1>Technical details</h1>
+  <p class="lede">The data, the forecast, the routing.</p>
+  <div class="rail"><span class="done">The problem</span><span class="done">What GridSense does</span><span class="done">Who it's for</span><span class="done">Impact</span><span class="on">Technical details</span><span class="">Live demo</span><span class="">What's next</span></div>
 </section>
 
 <section class="slide" data-n="20">
-  <div class="eyebrow">Next steps</div>
-  <h2 style="max-width:none">Two bets beyond the prototype.</h2>
-  <div class="cols">
-    <div class="card"><h3>1 · Green-hour tokens</h3>
-      <p>Rate-limit the island's forecast renewable output into hourly tokens, the same way an API rations requests.</p>
-      <ul style="font-size:.88em;margin-top:.8em">
-        <li>Companies earn <b>priority access</b> to green hours by funding new renewables.</li>
-        <li>A per-company cap stops any one buyer from cornering the wind.</li>
-        <li>Unused tokens go back to the pool for everyone else.</li>
-        <li>Every token spent is an auditable hourly record for CSR and Scope 2 reports.</li>
-      </ul></div>
-    <div class="card"><h3>2 · Micro-turbines on Ireland's canals</h3>
-      <p>The Grand, Royal, Barrow and Shannon–Erne waterways and their feeders were built to manage water flow. That flow can turn small turbines too.</p>
-      <ul style="font-size:.88em;margin-top:.8em">
-        <li>Fit small turbines at locks, weirs and sluices, where the water drops.</li>
-        <li>Unlike wind, the output is steady day and night.</li>
-        <li>GridSense picks sites where local generation is lowest compared with demand.</li>
-        <li>Partners: Waterways Ireland, local councils and community energy groups.</li>
-      </ul></div>
+  <div class="eyebrow">How it works</div>
+  <h2 style="max-width:none">Open data in. One dashboard out.</h2>
+  <div class="b-pipe">
+    <div class="b-src">
+      <div class="b-node"><div class="b-ic"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="var(--ink)" stroke-width="2.6" stroke-linejoin="round"><path d="M24 4 L14 44 M24 4 L34 44 M10 14 H38 M12 24 H36 M17 32 L31 32 M19 22 L29 34 M29 22 L19 34"/></svg></div><b>EirGrid</b><span>15-min grid data</span></div>
+      <div class="b-node"><div class="b-ic"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="var(--ink)" stroke-width="2.6"><rect x="6" y="8" width="36" height="32"/><path d="M6 18 H42 M6 29 H42 M20 8 V40"/></svg></div><b>CSO + census</b><span>who uses power where</span></div>
+    </div>
+    <div class="b-arr">→</div>
+    <div class="b-node"><div class="b-ic"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="var(--ink)" stroke-width="2.6"><circle cx="24" cy="24" r="7"/><path d="M36.0 24.0 L43.0 24.0 M32.5 32.5 L37.4 37.4 M24.0 36.0 L24.0 43.0 M15.5 32.5 L10.6 37.4 M12.0 24.0 L5.0 24.0 M15.5 15.5 L10.6 10.6 M24.0 12.0 L24.0 5.0 M32.5 15.5 L37.4 10.6"/><circle cx="24" cy="24" r="13"/></svg></div><b>Python model</b><span>split · forecast · route</span></div>
+    <div class="b-arr">→</div>
+    <div class="b-node b-out"><div class="b-ic"><img src="img/b-map-peak.svg" alt=""></div><b>Dashboard</b><span>static site, no server</span></div>
   </div>
-  <p class="honest" style="max-width:none">Canal water moves slowly, so most of the energy is at the drops (locks and weirs), not in the open channel. A pilot at one lock would show the real yield.</p>
+  <aside class="notes"><ul>
+    <li>EirGrid API: 15-min demand, wind, solar, CO₂ intensity, wind forecast. ROI + NI.</li>
+    <li>CSO MEC02 data-centre consumption, MEC03 county consumption, NISRA populations, OSi/OSNI boundaries.</li>
+    <li>Python model: area load split, per-area peak forecast, routing of recovered wind from wind areas (by capacity) to the biggest peaks, CO₂ accounting.</li>
+    <li>Dashboard: Leaflet map of all 45 areas plus Chart.js. A static site with no server. The mini map shows this week's biggest forecast peaks in navy.</li>
+  </ul></aside>
 </section>
 
-<section class="slide title" data-n="21" style="align-items:center;text-align:center">
+<section class="slide" data-n="21">
+  <div class="eyebrow">Data sources</div>
+  <h2 style="max-width:none">All public. All real.</h2>
+  <div class="b-tiles">
+    <div class="b-tile b-t1"><b>EirGrid</b><span>demand · wind · solar · CO₂ · 15-min</span><svg class="b-spark" viewBox="0 0 336 60" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="var(--wind)" stroke-width="2.5" vector-effect="non-scaling-stroke" points="0,46.1 1,49.6 2,48.3 3,50.2 4,53.7 5,55.2 6,53.7 7,49.5 8,43.7 9,39.9 10,39.0 11,42.5 12,44.3 13,45.9 14,48.1 15,46.5 16,40.8 17,31.5 18,24.8 19,22.0 20,21.7 21,30.1 22,39.7 23,45.0 24,48.1 25,51.8 26,49.2 27,50.4 28,52.6 29,51.5 30,42.3 31,25.1 32,17.4 33,16.3 34,19.6 35,24.6 36,29.2 37,32.4 38,33.7 39,30.3 40,23.2 41,15.3 42,12.1 43,11.4 44,10.3 45,19.0 46,30.5 47,37.6 48,42.2 49,46.2 50,44.5 51,44.6 52,47.9 53,48.1 54,39.6 55,23.3 56,16.2 57,16.8 58,20.4 59,22.0 60,21.5 61,21.6 62,21.4 63,19.3 64,15.2 65,10.0 66,8.7 67,8.3 68,9.1 69,17.4 70,28.9 71,35.8 72,40.5 73,45.1 74,43.7 75,45.5 76,48.1 77,47.5 78,38.8 79,22.5 80,17.0 81,19.9 82,26.1 83,30.7 84,33.7 85,35.9 86,35.9 87,33.3 88,26.4 89,17.4 90,13.0 91,11.2 92,10.3 93,18.7 94,30.8 95,39.2 96,43.7 97,48.4 98,47.1 99,48.8 100,52.1 101,50.7 102,41.9 103,26.1 104,18.8 105,17.2 106,18.1 107,19.3 108,20.4 109,21.2 110,22.2 111,20.7 112,17.0 113,11.9 114,10.9 115,9.4 116,10.9 117,19.0 118,29.5 119,36.8 120,41.4 121,45.4 122,44.0 123,45.8 124,48.2 125,47.7 126,39.3 127,23.2 128,15.6 129,14.5 130,18.0 131,22.9 132,26.4 133,28.4 134,32.1 135,31.7 136,29.9 137,25.0 138,19.0 139,17.1 140,16.6 141,24.1 142,32.0 143,37.8 144,42.3 145,47.2 146,45.9 147,48.0 148,51.3 149,52.1 150,49.1 151,43.4 152,36.3 153,32.3 154,32.6 155,36.1 156,40.4 157,42.8 158,44.0 159,41.5 160,36.0 161,28.9 162,24.1 163,22.0 164,24.3 165,32.1 166,39.6 167,44.4 168,47.8 169,51.7 170,50.8 171,52.4 172,54.7 173,56.0 174,54.2 175,48.3 176,41.5 177,33.7 178,31.0 179,32.5 180,35.1 181,38.3 182,44.3 183,45.9 184,42.7 185,32.9 186,26.4 187,22.5 188,22.4 189,30.1 190,38.9 191,45.0 192,48.9 193,52.6 194,50.6 195,51.8 196,53.8 197,51.9 198,42.8 199,26.4 200,19.3 201,19.8 202,24.7 203,30.6 204,34.4 205,36.3 206,36.8 207,33.6 208,26.8 209,18.6 210,13.1 211,10.6 212,11.8 213,20.7 214,31.1 215,39.3 216,42.9 217,45.8 218,44.4 219,44.0 220,48.1 221,47.6 222,39.4 223,22.6 224,15.3 225,12.8 226,13.0 227,12.3 228,11.4 229,11.3 230,12.2 231,11.9 232,9.4 233,5.8 234,4.2 235,4.0 236,8.4 237,17.8 238,29.3 239,37.0 240,41.5 241,45.4 242,44.3 243,45.9 244,49.4 245,48.7 246,39.0 247,22.3 248,16.8 249,17.6 250,21.0 251,27.3 252,30.7 253,32.5 254,34.1 255,31.9 256,26.7 257,19.3 258,14.6 259,10.3 260,11.0 261,19.4 262,30.0 263,37.9 264,42.8 265,47.3 266,44.7 267,46.9 268,49.6 269,48.1 270,39.4 271,22.0 272,15.8 273,18.7 274,25.1 275,29.3 276,31.3 277,31.2 278,31.4 279,26.6 280,20.9 281,14.1 282,11.2 283,8.1 284,10.8 285,19.9 286,30.3 287,38.0 288,41.8 289,45.8 290,44.0 291,45.6 292,48.3 293,47.3 294,38.1 295,22.6 296,14.8 297,15.3 298,18.1 299,17.1 300,14.7 301,15.5 302,17.7 303,18.3 304,14.5 305,10.9 306,9.9 307,9.0 308,12.9 309,21.0 310,29.2 311,35.2 312,39.6 313,43.8 314,42.0 315,43.4 316,46.8 317,48.2 318,45.5 319,39.2 320,31.2 321,26.8 322,28.6 323,34.3 324,38.8 325,41.9 326,44.9 327,44.5 328,39.4 329,30.2 330,22.5 331,19.5 332,23.4 333,30.0 334,37.4 335,42.3"/></svg><small>ROI demand, last 14 days</small></div>
+    <div class="b-tile"><b>CSO MEC02</b><span>data centres: 23.2% of ROI power</span><svg class="b-spark" viewBox="0 0 176 60" preserveAspectRatio="none" aria-hidden="true"><rect x="0.5" y="49.8" width="3" height="10.2" fill="var(--peat)"/><rect x="4.5" y="48.5" width="3" height="11.5" fill="var(--peat)"/><rect x="8.5" y="47.5" width="3" height="12.5" fill="var(--peat)"/><rect x="12.5" y="47.8" width="3" height="12.2" fill="var(--peat)"/><rect x="16.5" y="48.2" width="3" height="11.8" fill="var(--peat)"/><rect x="20.5" y="47.2" width="3" height="12.8" fill="var(--peat)"/><rect x="24.5" y="45.1" width="3" height="14.9" fill="var(--peat)"/><rect x="28.5" y="45.6" width="3" height="14.4" fill="var(--peat)"/><rect x="32.5" y="46.4" width="3" height="13.6" fill="var(--peat)"/><rect x="36.5" y="44.6" width="3" height="15.4" fill="var(--peat)"/><rect x="40.5" y="42.7" width="3" height="17.3" fill="var(--peat)"/><rect x="44.5" y="43.2" width="3" height="16.8" fill="var(--peat)"/><rect x="48.5" y="44.1" width="3" height="15.9" fill="var(--peat)"/><rect x="52.5" y="42.3" width="3" height="17.7" fill="var(--peat)"/><rect x="56.5" y="38.7" width="3" height="21.3" fill="var(--peat)"/><rect x="60.5" y="39.5" width="3" height="20.5" fill="var(--peat)"/><rect x="64.5" y="41.4" width="3" height="18.6" fill="var(--peat)"/><rect x="68.5" y="38.3" width="3" height="21.7" fill="var(--peat)"/><rect x="72.5" y="36.8" width="3" height="23.2" fill="var(--peat)"/><rect x="76.5" y="37.1" width="3" height="22.9" fill="var(--peat)"/><rect x="80.5" y="38.6" width="3" height="21.4" fill="var(--peat)"/><rect x="84.5" y="34.2" width="3" height="25.8" fill="var(--peat)"/><rect x="88.5" y="32.5" width="3" height="27.5" fill="var(--peat)"/><rect x="92.5" y="31.5" width="3" height="28.5" fill="var(--peat)"/><rect x="96.5" y="31.2" width="3" height="28.8" fill="var(--peat)"/><rect x="100.5" y="28.7" width="3" height="31.3" fill="var(--peat)"/><rect x="104.5" y="25.0" width="3" height="35.0" fill="var(--peat)"/><rect x="108.5" y="25.8" width="3" height="34.2" fill="var(--peat)"/><rect x="112.5" y="25.1" width="3" height="34.9" fill="var(--peat)"/><rect x="116.5" y="20.8" width="3" height="39.2" fill="var(--peat)"/><rect x="120.5" y="16.5" width="3" height="43.5" fill="var(--peat)"/><rect x="124.5" y="14.9" width="3" height="45.1" fill="var(--peat)"/><rect x="128.5" y="17.3" width="3" height="42.7" fill="var(--peat)"/><rect x="132.5" y="13.8" width="3" height="46.2" fill="var(--peat)"/><rect x="136.5" y="7.8" width="3" height="52.2" fill="var(--peat)"/><rect x="140.5" y="10.5" width="3" height="49.5" fill="var(--peat)"/><rect x="144.5" y="14.4" width="3" height="45.6" fill="var(--peat)"/><rect x="148.5" y="11.1" width="3" height="48.9" fill="var(--peat)"/><rect x="152.5" y="5.3" width="3" height="54.7" fill="var(--peat)"/><rect x="156.5" y="8.2" width="3" height="51.8" fill="var(--peat)"/><rect x="160.5" y="12.0" width="3" height="48.0" fill="var(--peat)"/><rect x="164.5" y="6.6" width="3" height="53.4" fill="var(--peat)"/><rect x="168.5" y="2.0" width="3" height="58.0" fill="var(--peat)"/><rect x="172.5" y="5.8" width="3" height="54.2" fill="var(--peat)"/></svg><small>2015Q1 → 2025Q4</small></div>
+    <div class="b-tile b-t3"><b>CSO MEC03</b><span>use by county</span><img class="b-tmap" src="img/b-map-mec.svg" alt=""></div>
+    <div class="b-pair"><div class="b-tile"><b>NISRA</b><span>NI population</span></div><div class="b-tile"><b>OSi · OSNI</b><span>boundaries</span></div></div>
+  </div>
+  <aside class="notes"><ul>
+    <li>EirGrid Smart Grid Dashboard API: 15-min demand, wind, solar, CO₂ intensity, wind forecast. ROI + NI, 12 months.</li>
+    <li>CSO PxStat MEC02: data-centre share of metered electricity, quarterly, 2015–2025 (bars: share rising every quarter).</li>
+    <li>CSO PxStat MEC03: metered consumption by county and Dublin postal district, 2025 (map: darker = more use).</li>
+    <li>NISRA: population by NI district. OSi / OSNI: county and district boundaries.</li>
+    <li>Next data: ESB Networks smart meters per Eircode (with consent), EirGrid connected wind-farm list per node, SEAI energy statistics.</li>
+  </ul></aside>
+</section>
+
+<section class="slide c-t" data-n="22">
+  <div class="eyebrow">Technical details · the model</div>
+  <h2>Five steps from open data to a routing plan.</h2>
+
+  <ol class="c-pipe">
+    <li><span class="c-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="11" rx="14" ry="5"/><path d="M10 11v26c0 2.8 6.3 5 14 5s14-2.2 14-5V11M10 24c0 2.8 6.3 5 14 5s14-2.2 14-5"/></svg></span><i>1</i><b>Real data in</b><small>EirGrid every 15 min + CSO</small><em>12 mo · ROI + NI</em></li>
+    <li><span class="c-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10l11-3 10 5 11-3v29l-11 3-10-5-11 3z M19 7v29 M29 12v29"/></svg></span><i>2</i><b>Split into areas</b><small>data centres + metered use</small><em>45 areas</em></li>
+    <li><span class="c-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 40h36M8 32l7-9 7 5 6-10"/><path d="M28 18l6 3 7-9" stroke-dasharray="3 3"/></svg></span><i>3</i><b>Forecast each area</b><small>same hour last 8 weeks × trend</small><em>7 days · 2.8% miss</em></li>
+    <li><span class="c-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h32M8 24h22M8 36h13" stroke-width="5"/></svg></span><i>4</i><b>Rank the peaks</b><small>biggest forecast hours first</small><em>Dublin City 696 MW</em></li>
+    <li><span class="c-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="10" cy="36" r="4"/><circle cx="38" cy="12" r="5"/><path d="M13 33C20 20 26 26 33 15" stroke-dasharray="3 3"/><path d="M27 14l6 0 0 6"/></svg></span><i>5</i><b>Route spare wind</b><small>wind farms → biggest peaks</small><em>12.8 GWh this week</em></li>
+  </ol>
+  <div class="c-brace"><span style="grid-column:1/3">measured inputs</span><span style="grid-column:3/5">forecast</span><span class="s" style="grid-column:5/6">GridSense routing</span></div>
+  <aside class="notes"><ul><li>Everything is Python standard library: no ML framework, no server.</li><li>Inputs: EirGrid Smart Grid Dashboard 15-min demand, wind, solar, CO₂ intensity, wind forecast, 2 Oct 2025 – 3 Oct 2026, averaged to hourly. CSO MEC02 and MEC03.</li><li>Each step feeds the next; the next slides take them one at a time.</li></ul></aside>
+</section>
+
+<section class="slide c-t" data-n="23">
+  <div class="eyebrow">Technical details · the model</div>
+  <h2>Step 2: share the national load out to 45 areas.</h2>
+
+  <svg class="c-svg c-grow" viewBox="0 0 1400 460" role="img" aria-label="ROI electricity use: a 23.2% data-centre block, and the rest split into 34 council areas by CSO metered consumption">
+    <text x="0" y="32" class="c-lab">CSO MEC02 · data centres</text>
+    <text x="339.1826477097038" y="32" class="c-lab">CSO MEC03 · metered use per county + Dublin postcode, 2025</text>
+    <rect x="0" y="56" width="325.1826477097038" height="400" fill="var(--ink)"/>
+    <text x="22" y="126" class="c-wt" style="font:800 64px var(--display)">23.2%</text>
+    <text x="22" y="166" class="c-wt c-big">of all ROI use</text>
+    <text x="22" y="206" class="c-wt c-sm">flat, 24/7 baseload</text>
+    <text x="22" y="386" class="c-wt c-sm">placed at Fingal,</text><text x="22" y="412" class="c-wt c-sm">South Dublin, Dublin City,</text><text x="22" y="438" class="c-wt c-sm">Meath</text>
+    <rect x="339.1826477097038" y="56" width="237.3705552409781" height="253.69831100757133" fill="#1F7A8C" stroke="var(--paper)" stroke-width="3"/><text x="349.1826477097038" y="84" class="c-wt">Dublin City</text><text x="349.1826477097038" y="106" class="c-wt c-sm">3,267 GWh</text><rect x="339.1826477097038" y="309.6983110075713" width="237.3705552409781" height="146.30168899242867" fill="#1F7A8C" stroke="var(--paper)" stroke-width="3"/><text x="349.1826477097038" y="337.6983110075713" class="c-wt">Cork Co.</text><text x="349.1826477097038" y="359.6983110075713" class="c-wt c-sm">1,884 GWh</text><rect x="576.5532029506819" y="56" width="166.6340376143228" height="149.1150442477876" fill="#1F7A8C" stroke="var(--paper)" stroke-width="3"/><text x="586.5532029506819" y="84" class="c-wt">South Dublin</text><text x="586.5532029506819" y="106" class="c-wt c-sm">1,348 GWh</text><rect x="576.5532029506819" y="205.1150442477876" width="166.6340376143228" height="129.5353982300885" fill="#1F7A8C" stroke="var(--paper)" stroke-width="3"/><text x="586.5532029506819" y="233.1150442477876" class="c-wt">Cork City</text><text x="586.5532029506819" y="255.1150442477876" class="c-wt c-sm">1,171 GWh</text><rect x="576.5532029506819" y="334.65044247787614" width="166.6340376143228" height="121.34955752212387" fill="#3B90A1" stroke="var(--paper)" stroke-width="3"/><text x="586.5532029506819" y="362.65044247787614" class="c-wt">Fingal</text><text x="586.5532029506819" y="384.65044247787614" class="c-wt c-sm">1,097 GWh</text><rect x="743.1872405650047" y="56" width="120.87419266105331" height="155.85207777354177" fill="#3B90A1" stroke="var(--paper)" stroke-width="3"/><text x="753.1872405650047" y="84" class="c-wt">Kildare</text><text x="753.1872405650047" y="106" class="c-wt c-sm">1,022 GWh</text><rect x="743.1872405650047" y="211.85207777354177" width="120.87419266105331" height="124.13267251239037" fill="#3B90A1" stroke="var(--paper)" stroke-width="3"/><text x="753.1872405650047" y="239.85207777354177" class="c-wt">Galway</text><text x="753.1872405650047" y="261.85207777354174" class="c-wt c-sm">814 GWh</text><rect x="743.1872405650047" y="335.98475028593214" width="120.87419266105331" height="120.01524971406783" fill="#3B90A1" stroke="var(--paper)" stroke-width="3"/><rect x="864.0614332260579" y="56" width="125.52851727362149" height="109.2511013215859" fill="#5AA3B2" stroke="var(--paper)" stroke-width="3"/><text x="874.0614332260579" y="84" class="c-wt">Meath</text><text x="874.0614332260579" y="106" class="c-wt c-sm">744 GWh</text><rect x="864.0614332260579" y="165.2511013215859" width="125.52851727362149" height="100.14684287812041" fill="#5AA3B2" stroke="var(--paper)" stroke-width="3"/><text x="874.0614332260579" y="193.2511013215859" class="c-wt">Wexford</text><text x="874.0614332260579" y="215.2511013215859" class="c-wt c-sm">682 GWh</text><rect x="864.0614332260579" y="265.39794419970633" width="125.52851727362149" height="95.74155653450809" fill="#5AA3B2" stroke="var(--paper)" stroke-width="3"/><text x="874.0614332260579" y="293.39794419970633" class="c-wt">Kerry</text><text x="874.0614332260579" y="315.39794419970633" class="c-wt c-sm">652 GWh</text><rect x="864.0614332260579" y="361.13950073421444" width="125.52851727362149" height="94.8604992657856" fill="#5AA3B2" stroke="var(--paper)" stroke-width="3"/><text x="874.0614332260579" y="389.13950073421444" class="c-wt">Donegal</text><text x="874.0614332260579" y="411.13950073421444" class="c-wt c-sm">646 GWh</text><rect x="989.5899504996794" y="56" width="111.01255437303752" height="101.45288501452885" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><text x="999.5899504996794" y="84" class="c-wt">Mayo</text><text x="999.5899504996794" y="106" class="c-wt c-sm">611 GWh</text><rect x="989.5899504996794" y="157.45288501452885" width="111.01255437303752" height="101.28684101286841" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><text x="999.5899504996794" y="185.45288501452885" class="c-wt">Limerick</text><text x="999.5899504996794" y="207.45288501452885" class="c-wt c-sm">610 GWh</text><rect x="989.5899504996794" y="258.73972602739724" width="111.01255437303752" height="101.12079701120797" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><text x="999.5899504996794" y="286.73972602739724" class="c-wt">Wicklow</text><text x="999.5899504996794" y="308.73972602739724" class="c-wt c-sm">609 GWh</text><rect x="989.5899504996794" y="359.8605230386052" width="111.01255437303752" height="96.13947696139478" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1100.602504872717" y="56" width="107.14673481187658" height="96.16746190549482" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><text x="1110.602504872717" y="84" class="c-wt">Louth</text><text x="1110.602504872717" y="106" class="c-wt c-sm">559 GWh</text><rect x="1207.7492396845935" y="56" width="101.20478708527878" height="96.16746190549482" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><text x="1217.7492396845935" y="84" class="c-wt">Clare</text><text x="1217.7492396845935" y="106" class="c-wt c-sm">528 GWh</text><rect x="1308.9540267698724" y="56" width="91.04597323012769" height="96.16746190549482" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><text x="1318.9540267698724" y="84" class="c-wt">Cavan</text><text x="1318.9540267698724" y="106" class="c-wt c-sm">475 GWh</text><rect x="1100.602504872717" y="152.1674619054948" width="103.74726387927097" height="84.03878713252269" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1204.349768751988" y="152.1674619054948" width="103.08924740646374" height="84.03878713252269" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1307.4390161584518" y="152.1674619054948" width="92.56098384154832" height="84.03878713252269" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1100.602504872717" y="236.2062490380175" width="90.3224376056257" height="75.7135390964675" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1100.602504872717" y="311.919788134485" width="90.3224376056257" height="72.65234479337582" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1100.602504872717" y="384.5721329278608" width="90.3224376056257" height="71.42786707213915" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1190.9249424783427" y="236.2062490380175" width="70.87644449984185" height="88.16436059445742" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1261.8013869781846" y="236.2062490380175" width="69.2038440396686" height="88.16436059445742" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1331.005231017853" y="236.2062490380175" width="68.99476898214694" height="88.16436059445742" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1190.9249424783427" y="324.3706096324749" width="85.2824581585326" height="67.21960657520576" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1190.9249424783427" y="391.59021620768067" width="85.2824581585326" height="64.40978379231935" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><text x="1200.9249424783427" y="419.59021620768067" class="c-wt">Sligo</text><text x="1200.9249424783427" y="441.59021620768067" class="c-wt c-sm">298 GWh</text><rect x="1276.2074006368753" y="324.3706096324749" width="64.42022646469404" height="76.68454303085441" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1340.6276271015693" y="324.3706096324749" width="59.372372898430704" height="76.68454303085441" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1276.2074006368753" y="401.0551526633293" width="82.52839957541612" height="54.9448473366707" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/><rect x="1358.7358002122915" y="401.0551526633293" width="41.264199787708634" height="54.94484733666993" fill="#7BB6C2" stroke="var(--paper)" stroke-width="3"/>
+  </svg>
+  <div class="c-row"><span class="c-chip">tile size = electricity really used</span><span class="c-chip">+ NI: 11 districts, by population</span><span class="c-chip c-ok">✓ adds up to EirGrid demand, ±1%</span></div>
+  <aside class="notes"><ul><li>23.2% of ROI metered electricity is data centres (CSO MEC02, last 4 quarters). Modelled as flat baseload at the clusters, with small shares in Kildare, Cork and Clare.</li><li>The rest is split by real 2025 CSO MEC03 consumption. Dublin postal districts mapped to the four Dublin councils; city/county pairs (Cork, Galway, Limerick, Waterford, Tipperary) split by population.</li><li>MEC03 'Not coded' (~30%, mostly large users) is left to the data-centre term.</li><li>Limit: each area is assumed to follow the national hourly shape.</li></ul></aside>
+</section>
+
+<section class="slide c-t" data-n="24">
+  <div class="eyebrow">Technical details · forecasting</div>
+  <h2>Step 3: forecast every hour of next week.</h2>
+
+  <svg class="c-svg c-grow" viewBox="0 0 1400 500" role="img" aria-label="ROI demand: last week's actual vs a forecast made a week earlier, then next week's forecast">
+    <rect x="726.955223880597" y="70" width="653.044776119403" height="386" fill="var(--paper2)"/>
+    <line x1="70" x2="1380" y1="366.9230769230769" y2="366.9230769230769" class="c-gl"/><text x="60" y="372.9230769230769" text-anchor="end" class="c-ax">3,000</text><line x1="70" x2="1380" y1="218.46153846153845" y2="218.46153846153845" class="c-gl"/><text x="60" y="224.46153846153845" text-anchor="end" class="c-ax">4,000</text><line x1="70" x2="1380" y1="70" y2="70" class="c-gl"/><text x="60" y="76" text-anchor="end" class="c-ax">5,000</text><text x="116.92537313432837" y="482" text-anchor="middle" class="c-ax">Sun 27</text><line x1="70" x2="70" y1="70" y2="456" class="c-gl c-gv"/><text x="210.77611940298507" y="482" text-anchor="middle" class="c-ax">Mon 28</text><line x1="163.85074626865674" x2="163.85074626865674" y1="70" y2="456" class="c-gl c-gv"/><text x="304.6268656716418" y="482" text-anchor="middle" class="c-ax">Tue 29</text><line x1="257.70149253731347" x2="257.70149253731347" y1="70" y2="456" class="c-gl c-gv"/><text x="398.4776119402985" y="482" text-anchor="middle" class="c-ax">Wed 30</text><line x1="351.55223880597015" x2="351.55223880597015" y1="70" y2="456" class="c-gl c-gv"/><text x="492.32835820895525" y="482" text-anchor="middle" class="c-ax">Thu 1</text><line x1="445.4029850746269" x2="445.4029850746269" y1="70" y2="456" class="c-gl c-gv"/><text x="586.179104477612" y="482" text-anchor="middle" class="c-ax">Fri 2</text><line x1="539.2537313432836" x2="539.2537313432836" y1="70" y2="456" class="c-gl c-gv"/><text x="680.0298507462686" y="482" text-anchor="middle" class="c-ax">Sat 3</text><line x1="633.1044776119403" x2="633.1044776119403" y1="70" y2="456" class="c-gl c-gv"/><text x="773.8805970149253" y="482" text-anchor="middle" class="c-ax">Sun 4</text><line x1="726.955223880597" x2="726.955223880597" y1="70" y2="456" class="c-gl c-gv"/><text x="867.7313432835821" y="482" text-anchor="middle" class="c-ax">Mon 5</text><line x1="820.8059701492538" x2="820.8059701492538" y1="70" y2="456" class="c-gl c-gv"/><text x="961.5820895522388" y="482" text-anchor="middle" class="c-ax">Tue 6</text><line x1="914.6567164179105" x2="914.6567164179105" y1="70" y2="456" class="c-gl c-gv"/><text x="1055.4328358208954" y="482" text-anchor="middle" class="c-ax">Wed 7</text><line x1="1008.5074626865671" x2="1008.5074626865671" y1="70" y2="456" class="c-gl c-gv"/><text x="1149.2835820895523" y="482" text-anchor="middle" class="c-ax">Thu 8</text><line x1="1102.358208955224" x2="1102.358208955224" y1="70" y2="456" class="c-gl c-gv"/><text x="1243.134328358209" y="482" text-anchor="middle" class="c-ax">Fri 9</text><line x1="1196.2089552238806" x2="1196.2089552238806" y1="70" y2="456" class="c-gl c-gv"/><text x="1336.9850746268658" y="482" text-anchor="middle" class="c-ax">Sat 10</text><line x1="1290.0597014925372" x2="1290.0597014925372" y1="70" y2="456" class="c-gl c-gv"/>
+    <text x="60" y="60" text-anchor="end" class="c-ax">MW</text>
+    <path d="M70.0 299.1L73.9 317.8L77.8 313.3L81.7 321.3L85.6 332.6L89.6 338.7L93.5 329.8L97.4 301.6L101.3 268.6L105.2 230.8L109.1 217.4L113.0 225.1L116.9 237.3L120.8 252.9L124.7 281.9L128.7 289.6L132.6 274.3L136.5 226.6L140.4 195.3L144.3 176.3L148.2 175.9L152.1 213.4L156.0 255.7L159.9 285.3L163.9 304.6L167.8 322.2L171.7 312.4L175.6 318.5L179.5 328.0L183.4 318.8L187.3 274.6L191.2 195.6L195.1 160.9L199.0 163.5L203.0 187.1L206.9 215.8L210.8 234.2L214.7 243.1L218.6 245.9L222.5 230.2L226.4 197.4L230.3 157.4L234.2 130.9L238.1 118.8L242.1 124.9L246.0 167.7L249.9 218.0L253.8 257.7L257.7 275.2L261.6 289.4L265.5 282.4L269.4 280.8L273.3 300.3L277.3 297.9L281.2 258.2L285.1 177.2L289.0 141.6L292.9 129.4L296.8 130.4L300.7 127.3L304.6 122.6L308.5 122.4L312.4 126.7L316.4 125.1L320.3 113.1L324.2 95.8L328.1 87.7L332.0 86.9L335.9 108.2L339.8 153.7L343.7 209.6L347.6 246.5L351.6 268.6L355.5 287.2L359.4 282.0L363.3 290.0L367.2 306.6L371.1 303.5L375.0 256.3L378.9 175.7L382.8 148.7L386.7 152.5L390.7 169.3L394.6 199.8L398.5 216.4L402.4 225.1L406.3 232.7L410.2 222.0L414.1 196.8L418.0 161.0L421.9 138.4L425.9 117.4L429.8 120.8L433.7 161.5L437.6 212.8L441.5 251.1L445.4 274.9L449.3 296.7L453.2 284.2L457.1 294.6L461.0 307.5L465.0 300.6L468.9 258.1L472.8 174.1L476.7 144.2L480.6 157.9L484.5 189.1L488.4 209.4L492.3 218.9L496.2 218.5L500.1 219.5L504.1 196.5L508.0 168.7L511.9 135.6L515.8 121.7L519.7 107.0L523.6 119.7L527.5 164.1L531.4 214.3L535.3 251.4L539.3 270.1L543.2 289.1L547.1 280.5L551.0 288.4L554.9 301.6L558.8 296.6L562.7 252.2L566.6 176.9L570.5 139.2L574.4 141.6L578.4 155.2L582.3 150.2L586.2 138.7L590.1 142.4L594.0 153.1L597.9 156.1L601.8 138.0L605.7 120.2L609.6 115.6L613.6 111.0L617.5 129.8L621.4 169.2L625.3 209.0L629.2 238.1L633.1 259.1L637.0 279.5L640.9 270.9L644.8 277.7L648.7 294.3L652.7 300.7L656.6 287.9L660.5 257.4L664.4 218.6L668.3 197.5L672.2 205.8L676.1 233.8L680.0 255.4L683.9 270.3L687.9 285.1L691.8 282.9L695.7 258.2L699.6 213.7L703.5 176.6L707.4 162.0L711.3 181.0L715.2 212.7L719.1 248.7L723.0 272.4" class="c-ln c-act"/>
+    <path d="M70.0 284.7L73.9 303.4L77.8 298.8L81.7 309.3L85.6 324.3L89.6 331.1L93.5 328.5L97.4 311.7L101.3 283.6L105.2 258.0L109.1 245.8L113.0 245.8L116.9 245.2L120.8 248.6L124.7 258.0L128.7 259.3L132.6 244.6L136.5 219.9L140.4 201.2L144.3 193.8L148.2 193.5L152.1 210.6L156.0 248.0L159.9 276.1L163.9 296.7L167.8 314.7L171.7 305.9L175.6 313.9L179.5 324.0L183.4 320.5L187.3 287.2L191.2 225.9L195.1 190.1L199.0 182.5L203.0 195.6L206.9 206.1L210.8 214.0L214.7 220.5L218.6 222.2L222.5 208.2L226.4 182.1L230.3 152.0L234.2 142.6L238.1 145.7L242.1 150.2L246.0 170.2L249.9 217.7L253.8 254.2L257.7 279.0L261.6 298.3L265.5 290.9L269.4 293.1L273.3 307.8L277.3 308.0L281.2 272.8L285.1 206.9L289.0 168.0L292.9 162.2L296.8 178.4L300.7 186.8L304.6 193.5L308.5 198.0L312.4 200.6L316.4 189.7L320.3 166.6L324.2 138.9L328.1 130.3L332.0 132.8L335.9 135.8L339.8 157.7L343.7 207.2L347.6 244.3L351.6 270.7L355.5 291.2L359.4 283.3L363.3 292.7L367.2 305.3L371.1 299.7L375.0 263.4L378.9 195.9L382.8 157.0L386.7 155.2L390.7 173.0L394.6 185.8L398.5 194.7L402.4 202.4L406.3 205.2L410.2 197.4L414.1 177.0L418.0 148.2L421.9 139.6L425.9 139.9L429.8 141.0L433.7 158.9L437.6 205.5L441.5 243.6L445.4 268.3L449.3 288.1L453.2 282.3L457.1 291.4L461.0 304.9L465.0 300.3L468.9 264.3L472.8 197.1L476.7 155.8L480.6 146.3L484.5 156.1L488.4 164.4L492.3 174.1L496.2 183.6L500.1 185.4L504.1 178.1L508.0 161.2L511.9 138.6L515.8 131.6L519.7 132.1L523.6 133.7L527.5 153.6L531.4 200.9L535.3 238.1L539.3 262.4L543.2 281.0L547.1 276.4L551.0 284.5L554.9 297.6L558.8 293.9L562.7 259.7L566.6 193.8L570.5 153.9L574.4 149.1L578.4 164.1L582.3 177.0L586.2 180.5L590.1 196.3L594.0 208.1L597.9 209.6L601.8 198.9L605.7 173.3L609.6 156.8L613.6 153.0L617.5 154.2L621.4 174.2L625.3 211.5L629.2 239.5L633.1 263.0L637.0 284.5L640.9 278.7L644.8 289.9L648.7 304.6L652.7 309.5L656.6 298.2L660.5 271.3L664.4 237.0L668.3 214.0L672.2 213.0L676.1 221.4L680.0 230.6L683.9 244.9L687.9 257.7L691.8 257.8L695.7 242.2L699.6 211.9L703.5 192.6L707.4 189.7L711.3 192.6L715.2 210.1L719.1 243.4L723.0 265.8" class="c-ln c-bt"/>
+    <path d="M727.0 283.9L730.9 302.2L734.8 297.4L738.7 307.4L742.6 322.1L746.5 328.9L750.4 325.2L754.3 306.5L758.2 277.4L762.1 250.7L766.1 238.5L770.0 240.0L773.9 241.8L777.8 246.2L781.7 258.0L785.6 260.5L789.5 245.6L793.4 217.6L797.3 196.2L801.3 185.5L805.2 184.2L809.1 204.8L813.0 244.9L816.9 273.8L820.8 294.6L824.7 312.4L828.6 303.4L832.5 310.7L836.4 320.9L840.4 315.9L844.3 277.5L848.2 209.1L852.1 170.8L856.0 166.1L859.9 183.0L863.8 197.1L867.7 207.5L871.6 215.0L875.6 217.6L879.5 203.8L883.4 177.3L887.3 146.0L891.2 133.7L895.1 133.8L899.0 137.3L902.9 161.3L906.8 212.5L910.7 250.5L914.7 274.7L918.6 293.9L922.5 286.2L926.4 288.2L930.3 304.1L934.2 303.8L938.1 267.3L942.0 198.4L945.9 162.3L949.9 157.4L953.8 172.3L957.7 179.1L961.6 183.6L965.5 186.8L969.4 189.7L973.3 179.0L977.2 156.1L981.1 130.4L985.0 121.1L989.0 122.1L992.9 126.0L996.8 152.1L1000.7 204.5L1004.6 241.5L1008.5 267.5L1012.4 287.8L1016.3 279.6L1020.2 289.1L1024.1 302.5L1028.1 296.7L1032.0 257.2L1035.9 185.9L1039.8 149.1L1043.7 149.0L1047.6 166.8L1051.5 181.3L1055.4 190.8L1059.3 198.6L1063.3 202.1L1067.2 193.7L1071.1 171.7L1075.0 141.9L1078.9 131.6L1082.8 129.4L1086.7 130.4L1090.6 153.1L1094.5 202.9L1098.4 241.5L1102.4 266.0L1106.3 285.9L1110.2 279.2L1114.1 288.5L1118.0 302.3L1121.9 297.4L1125.8 259.4L1129.7 188.3L1133.6 149.1L1137.6 142.4L1141.5 154.5L1145.4 164.6L1149.3 174.7L1153.2 182.1L1157.1 183.6L1161.0 174.2L1164.9 155.2L1168.8 132.1L1172.7 124.0L1176.7 121.7L1180.6 124.6L1184.5 149.9L1188.4 199.5L1192.3 236.4L1196.2 259.7L1200.1 278.4L1204.0 273.1L1207.9 281.3L1211.9 294.3L1215.8 290.5L1219.7 253.5L1223.6 184.0L1227.5 143.3L1231.4 139.5L1235.3 154.6L1239.2 166.6L1243.1 167.2L1247.0 181.6L1251.0 192.5L1254.9 194.0L1258.8 182.5L1262.7 158.3L1266.6 144.4L1270.5 141.4L1274.4 145.7L1278.3 169.9L1282.2 209.0L1286.1 237.0L1290.1 259.6L1294.0 280.8L1297.9 274.4L1301.8 285.0L1305.7 299.8L1309.6 305.2L1313.5 293.1L1317.4 265.4L1321.3 229.7L1325.3 206.6L1329.2 206.0L1333.1 216.4L1337.0 227.7L1340.9 241.5L1344.8 253.8L1348.7 253.9L1352.6 237.8L1356.5 206.0L1360.4 185.4L1364.4 181.6L1368.3 186.5L1372.2 207.3L1376.1 242.2L1380.0 264.6" class="c-ln c-fw"/>
+    <line x1="726.955223880597" x2="726.955223880597" y1="58" y2="456" class="c-now"/>
+    <text x="736.955223880597" y="442" class="c-lab">today → next 7 days</text>
+    <text x="70" y="22" class="c-lab">last week: did the forecast hold up?</text>
+    <line x1="70" x2="110" y1="48" y2="48" class="c-ln c-act"/><text x="120" y="55" class="c-key">actual demand</text>
+    <line x1="330" x2="370" y1="48" y2="48" class="c-ln c-bt"/><text x="380" y="55" class="c-key" fill="var(--wind)">forecast made a week earlier</text>
+    <text x="398.4776119402985" y="389.1923076923077" text-anchor="middle" class="c-big2" fill="var(--wind)">2.8% average miss</text>
+    <text x="398.4776119402985" y="419.1923076923077" text-anchor="middle" class="c-ann c-mute">Republic of Ireland · NI: 5.5%</text>
+    <circle cx="985.044776119403" cy="121.07076923076924" r="9" fill="var(--sodium)" stroke="var(--paper)" stroke-width="3"/>
+    <text x="985.044776119403" y="99.07076923076924" text-anchor="middle" class="c-ann" font-weight="600">peak: Tue 18:00, 4,656 MW</text>
+  </svg>
+  <div class="c-row"><span class="c-recipe">how: average of the same hour over the last 8 weeks <i>×</i> last week's trend</span></div>
+  <aside class="notes"><ul><li>Method: for each grid take 8 weeks of hourly demand, average by hour of the week (every Tuesday 18:00…), multiply by a trend factor = last week's actual ÷ what the averages predicted.</li><li>Backtest: forecast last week as if it hadn't happened yet, compare with EirGrid actuals. MAPE 2.82% ROI, 5.47% NI.</li><li>Area forecast = its data-centre share + its MEC03 share of the regional forecast.</li><li>Why simple: demand is driven by time of week; this is transparent and hard to overfit. Upgrade: weather inputs, gradient boosting.</li></ul></aside>
+</section>
+
+<section class="slide c-t" data-n="25">
+  <div class="eyebrow">Technical details · forecasting</div>
+  <h2>Step 4: rank where next week's peaks hit.</h2>
+
+  <svg class="c-svg" viewBox="0 0 1400 574" role="img" aria-label="Top 8 areas by forecast peak load next 7 days">
+    <text x="214" y="73" text-anchor="end" class="c-nm">Dublin City</text><rect x="230" y="48" width="700" height="40" fill="var(--ink)"/>
+    <text x="942" y="73" class="c-v">696 MW</text><text x="1080" y="73" class="c-v" font-weight="600">Tue 18:00</text><text x="214" y="131" text-anchor="end" class="c-nm">Fingal</text><rect x="230" y="106" width="505.89080459770116" height="40" fill="var(--ink)"/>
+    <text x="747.8908045977012" y="131" class="c-v">503 MW</text><text x="1080" y="131" class="c-v" font-weight="600">Tue 18:00</text><text x="214" y="189" text-anchor="end" class="c-nm">South Dublin</text><rect x="230" y="164" width="397.2701149425287" height="40" fill="var(--ink)"/>
+    <text x="639.2701149425287" y="189" class="c-v">395 MW</text><text x="1080" y="189" class="c-v" font-weight="600">Tue 18:00</text><text x="214" y="247" text-anchor="end" class="c-nm">Cork County</text><rect x="230" y="222" width="334.91379310344826" height="40" fill="#8796A8"/>
+    <text x="576.9137931034483" y="247" class="c-v">333 MW</text><text x="1080" y="247" class="c-v" font-weight="600">Tue 18:00</text><text x="214" y="305" text-anchor="end" class="c-nm">Meath</text><rect x="230" y="280" width="252.44252873563218" height="40" fill="var(--ink)"/>
+    <text x="494.4425287356322" y="305" class="c-v">251 MW</text><text x="1080" y="305" class="c-v" font-weight="600">Tue 18:00</text><text x="214" y="363" text-anchor="end" class="c-nm">Cork City</text><rect x="230" y="338" width="209.19540229885058" height="40" fill="#8796A8"/>
+    <text x="451.1954022988506" y="363" class="c-v">208 MW</text><text x="1080" y="363" class="c-v c-mute">Thu 19:00</text><text x="214" y="421" text-anchor="end" class="c-nm">Kildare</text><rect x="230" y="396" width="204.16666666666666" height="40" fill="#8796A8"/>
+    <text x="446.16666666666663" y="421" class="c-v">203 MW</text><text x="1080" y="421" class="c-v" font-weight="600">Tue 18:00</text><text x="214" y="479" text-anchor="end" class="c-nm">Belfast</text><rect x="230" y="454" width="185.05747126436782" height="40" fill="#8796A8"/>
+    <text x="427.0574712643678" y="479" class="c-v">184 MW</text><text x="1080" y="479" class="c-v c-mute">Wed 17:00</text>
+    <text x="1080" y="26" class="c-lab">when</text>
+    <rect x="230" y="528" width="26" height="18" fill="var(--ink)"/><text x="266" y="544" class="c-ann">Dublin–Meath data-centre corridor</text>
+    <rect x="670" y="528" width="26" height="18" fill="#8796A8"/><text x="706" y="544" class="c-ann">other areas</text>
+    <text x="1080" y="544" class="c-key">6 of 8: Tue 18:00, evening peak</text>
+  </svg>
+  <p class="c-tag">The biggest peaks get first call on spare wind →</p>
+  <aside class="notes"><ul><li>Each area's highest forecast hour over the next 7 days, from the 168-hour forecast.</li><li>Routing also uses each day's 6 highest forecast hours.</li><li>Corridor combined peak (Dublin City, Fingal, South Dublin, Meath): 1,845 MW.</li></ul></aside>
+</section>
+
+<section class="slide c-t" data-n="26">
+  <div class="eyebrow">Technical details · routing</div>
+  <h2>Step 5a: find the wind that gets switched off.</h2>
+
+  <svg class="c-svg c-grow" viewBox="0 0 1400 520" role="img" aria-label="Of every 100 MWh of ROI wind, 91 are used, 9 are dispatched down, and GridSense recovers about half of those">
+    <defs><pattern id="c-hat" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="var(--paper2)"/><line x1="0" y1="0" x2="0" y2="8" stroke="var(--peat)" stroke-width="3"/></pattern></defs>
+    <rect x="40" y="10" width="40" height="40" fill="var(--wind)"/><rect x="87" y="10" width="40" height="40" fill="var(--wind)"/><rect x="134" y="10" width="40" height="40" fill="var(--wind)"/><rect x="181" y="10" width="40" height="40" fill="var(--wind)"/><rect x="228" y="10" width="40" height="40" fill="var(--wind)"/><rect x="275" y="10" width="40" height="40" fill="var(--wind)"/><rect x="322" y="10" width="40" height="40" fill="var(--wind)"/><rect x="369" y="10" width="40" height="40" fill="var(--wind)"/><rect x="416" y="10" width="40" height="40" fill="var(--wind)"/><rect x="463" y="10" width="40" height="40" fill="var(--wind)"/><rect x="40" y="57" width="40" height="40" fill="var(--wind)"/><rect x="87" y="57" width="40" height="40" fill="var(--wind)"/><rect x="134" y="57" width="40" height="40" fill="var(--wind)"/><rect x="181" y="57" width="40" height="40" fill="var(--wind)"/><rect x="228" y="57" width="40" height="40" fill="var(--wind)"/><rect x="275" y="57" width="40" height="40" fill="var(--wind)"/><rect x="322" y="57" width="40" height="40" fill="var(--wind)"/><rect x="369" y="57" width="40" height="40" fill="var(--wind)"/><rect x="416" y="57" width="40" height="40" fill="var(--wind)"/><rect x="463" y="57" width="40" height="40" fill="var(--wind)"/><rect x="40" y="104" width="40" height="40" fill="var(--wind)"/><rect x="87" y="104" width="40" height="40" fill="var(--wind)"/><rect x="134" y="104" width="40" height="40" fill="var(--wind)"/><rect x="181" y="104" width="40" height="40" fill="var(--wind)"/><rect x="228" y="104" width="40" height="40" fill="var(--wind)"/><rect x="275" y="104" width="40" height="40" fill="var(--wind)"/><rect x="322" y="104" width="40" height="40" fill="var(--wind)"/><rect x="369" y="104" width="40" height="40" fill="var(--wind)"/><rect x="416" y="104" width="40" height="40" fill="var(--wind)"/><rect x="463" y="104" width="40" height="40" fill="var(--wind)"/><rect x="40" y="151" width="40" height="40" fill="var(--wind)"/><rect x="87" y="151" width="40" height="40" fill="var(--wind)"/><rect x="134" y="151" width="40" height="40" fill="var(--wind)"/><rect x="181" y="151" width="40" height="40" fill="var(--wind)"/><rect x="228" y="151" width="40" height="40" fill="var(--wind)"/><rect x="275" y="151" width="40" height="40" fill="var(--wind)"/><rect x="322" y="151" width="40" height="40" fill="var(--wind)"/><rect x="369" y="151" width="40" height="40" fill="var(--wind)"/><rect x="416" y="151" width="40" height="40" fill="var(--wind)"/><rect x="463" y="151" width="40" height="40" fill="var(--wind)"/><rect x="40" y="198" width="40" height="40" fill="var(--wind)"/><rect x="87" y="198" width="40" height="40" fill="var(--wind)"/><rect x="134" y="198" width="40" height="40" fill="var(--wind)"/><rect x="181" y="198" width="40" height="40" fill="var(--wind)"/><rect x="228" y="198" width="40" height="40" fill="var(--wind)"/><rect x="275" y="198" width="40" height="40" fill="var(--wind)"/><rect x="322" y="198" width="40" height="40" fill="var(--wind)"/><rect x="369" y="198" width="40" height="40" fill="var(--wind)"/><rect x="416" y="198" width="40" height="40" fill="var(--wind)"/><rect x="463" y="198" width="40" height="40" fill="var(--wind)"/><rect x="40" y="245" width="40" height="40" fill="var(--wind)"/><rect x="87" y="245" width="40" height="40" fill="var(--wind)"/><rect x="134" y="245" width="40" height="40" fill="var(--wind)"/><rect x="181" y="245" width="40" height="40" fill="var(--wind)"/><rect x="228" y="245" width="40" height="40" fill="var(--wind)"/><rect x="275" y="245" width="40" height="40" fill="var(--wind)"/><rect x="322" y="245" width="40" height="40" fill="var(--wind)"/><rect x="369" y="245" width="40" height="40" fill="var(--wind)"/><rect x="416" y="245" width="40" height="40" fill="var(--wind)"/><rect x="463" y="245" width="40" height="40" fill="var(--wind)"/><rect x="40" y="292" width="40" height="40" fill="var(--wind)"/><rect x="87" y="292" width="40" height="40" fill="var(--wind)"/><rect x="134" y="292" width="40" height="40" fill="var(--wind)"/><rect x="181" y="292" width="40" height="40" fill="var(--wind)"/><rect x="228" y="292" width="40" height="40" fill="var(--wind)"/><rect x="275" y="292" width="40" height="40" fill="var(--wind)"/><rect x="322" y="292" width="40" height="40" fill="var(--wind)"/><rect x="369" y="292" width="40" height="40" fill="var(--wind)"/><rect x="416" y="292" width="40" height="40" fill="var(--wind)"/><rect x="463" y="292" width="40" height="40" fill="var(--wind)"/><rect x="40" y="339" width="40" height="40" fill="var(--wind)"/><rect x="87" y="339" width="40" height="40" fill="var(--wind)"/><rect x="134" y="339" width="40" height="40" fill="var(--wind)"/><rect x="181" y="339" width="40" height="40" fill="var(--wind)"/><rect x="228" y="339" width="40" height="40" fill="var(--wind)"/><rect x="275" y="339" width="40" height="40" fill="var(--wind)"/><rect x="322" y="339" width="40" height="40" fill="var(--wind)"/><rect x="369" y="339" width="40" height="40" fill="var(--wind)"/><rect x="416" y="339" width="40" height="40" fill="var(--wind)"/><rect x="463" y="339" width="40" height="40" fill="var(--wind)"/><rect x="40" y="386" width="40" height="40" fill="var(--wind)"/><rect x="87" y="386" width="40" height="40" fill="var(--wind)"/><rect x="134" y="386" width="40" height="40" fill="var(--wind)"/><rect x="181" y="386" width="40" height="40" fill="var(--wind)"/><rect x="228" y="386" width="40" height="40" fill="var(--wind)"/><rect x="275" y="386" width="40" height="40" fill="var(--wind)"/><rect x="322" y="386" width="40" height="40" fill="var(--wind)"/><rect x="369" y="386" width="40" height="40" fill="var(--wind)"/><rect x="416" y="386" width="40" height="40" fill="var(--wind)"/><rect x="463" y="386" width="40" height="40" fill="var(--wind)"/><rect x="40" y="433" width="40" height="40" fill="var(--wind)"/><rect x="87" y="433" width="40" height="40" fill="var(--sodium)"/><rect x="134" y="433" width="40" height="40" fill="var(--sodium)"/><rect x="181" y="433" width="40" height="40" fill="var(--sodium)"/><rect x="228" y="433" width="40" height="40" fill="var(--sodium)"/><rect x="275" y="433" width="40" height="40" fill="url(#c-hat)" stroke="var(--peat)" stroke-width="2"/><rect x="275" y="433" width="24" height="40" fill="var(--sodium)"/><rect x="322" y="433" width="40" height="40" fill="url(#c-hat)" stroke="var(--peat)" stroke-width="2"/><rect x="369" y="433" width="40" height="40" fill="url(#c-hat)" stroke="var(--peat)" stroke-width="2"/><rect x="416" y="433" width="40" height="40" fill="url(#c-hat)" stroke="var(--peat)" stroke-width="2"/><rect x="463" y="433" width="40" height="40" fill="url(#c-hat)" stroke="var(--peat)" stroke-width="2"/>
+    <text x="40" y="510" class="c-cap">every square = 1% of ROI wind, 12 months</text>
+    <path d="M530 171h40" class="c-lead"/><text x="584" y="165" class="c-big2" fill="var(--wind)">91% reaches customers</text>
+    <text x="584" y="197" class="c-ann c-mute">wind that the grid could absorb</text>
+    <path d="M530 463h40" class="c-lead"/><text x="584" y="423" class="c-big2" fill="var(--peat)">9.2% dispatched down</text>
+    <text x="584" y="455" class="c-ann c-mute">wind farms told to stop: forecast − actual, when the grid is ≥ 60% renewable</text>
+    <text x="584" y="483" class="c-ann c-mute">EirGrid reports ~10% ✓</text>
+        <rect x="584" y="503" width="560" height="74" fill="#FBE7D8" stroke="var(--sodium)" stroke-width="2"/>
+    <text x="604" y="535" class="c-ann" font-weight="600" fill="#B0571A">Half of it (≈4.6%) is grid congestion.</text>
+    <text x="604" y="563" class="c-ann" fill="#B0571A">GridSense schedules that part into forecast peaks.</text>
+  </svg>
+  <aside class="notes"><ul><li>Dispatch-down estimate = EirGrid wind forecast − actual wind, counted only when the grid is ≥ 60% renewable. Gives 9.2% of ROI wind, 12.2% of NI; EirGrid reports ~10%.</li><li>Assumption: 50% is recoverable (the network-constraint share, per EirGrid annual reports) by scheduling transmission and storage against the forecast.</li><li>The pool each day = 50% of that day's dispatch-down.</li></ul></aside>
+</section>
+
+<section class="slide c-t" data-n="27">
+  <div class="eyebrow">Technical details · routing</div>
+  <h2>Step 5b: share it out, biggest peaks first.</h2>
+
+  <svg class="c-svg c-grow" viewBox="0 0 1400 526" role="img" aria-label="Forecast peak per area against wind booked for it this week">
+    <text x="590" y="30" text-anchor="end" class="c-lab">forecast peak, next 7 days</text>
+    <text x="810" y="30" class="c-lab" fill="#B0571A">spare wind booked for it</text>
+    <rect x="120" y="70" width="470" height="42" fill="var(--ink)"/><text x="108" y="100" text-anchor="end" class="c-v">696 MW</text>
+    <text x="700" y="100" text-anchor="middle" class="c-nm">Dublin City</text>
+    <rect x="810" y="70" width="470" height="42" fill="var(--sodium)"/><text x="1292" y="100" class="c-v" fill="#B0571A">3.5 GWh</text><rect x="250.33045977011494" y="136" width="339.66954022988506" height="42" fill="var(--ink)"/><text x="238.33045977011494" y="166" text-anchor="end" class="c-v">503 MW</text>
+    <text x="700" y="166" text-anchor="middle" class="c-nm">Fingal</text>
+    <rect x="810" y="136" width="254.17961027958205" height="42" fill="var(--sodium)"/><text x="1076.179610279582" y="166" class="c-v" fill="#B0571A">1.9 GWh</text><rect x="323.26149425287355" y="202" width="266.73850574712645" height="42" fill="var(--ink)"/><text x="311.26149425287355" y="232" text-anchor="end" class="c-v">395 MW</text>
+    <text x="700" y="232" text-anchor="middle" class="c-nm">South Dublin</text>
+    <rect x="810" y="202" width="154.10053657158994" height="42" fill="var(--sodium)"/><text x="976.1005365715899" y="232" class="c-v" fill="#B0571A">1.2 GWh</text><rect x="365.12931034482756" y="268" width="224.8706896551724" height="42" fill="var(--ink)"/><text x="353.12931034482756" y="298" text-anchor="end" class="c-v">333 MW</text>
+    <text x="700" y="298" text-anchor="middle" class="c-nm">Cork County</text>
+    <rect x="810" y="268" width="106.0519627223948" height="42" fill="var(--sodium)"/><text x="928.0519627223948" y="298" class="c-v" fill="#B0571A">0.8 GWh</text><rect x="420.5028735632184" y="334" width="169.4971264367816" height="42" fill="var(--ink)"/><text x="408.5028735632184" y="364" text-anchor="end" class="c-v">251 MW</text>
+    <text x="700" y="364" text-anchor="middle" class="c-nm">Meath</text>
+    <rect x="810" y="334" width="62.516238350748374" height="42" fill="var(--sodium)"/><text x="884.5162383507484" y="364" class="c-v" fill="#B0571A">0.5 GWh</text><rect x="449.54022988505744" y="400" width="140.45977011494253" height="42" fill="var(--ink)"/><text x="437.54022988505744" y="430" text-anchor="end" class="c-v">208 MW</text>
+    <text x="700" y="430" text-anchor="middle" class="c-nm">Cork City</text>
+    <rect x="810" y="400" width="41.54476136684552" height="42" fill="var(--sodium)"/><text x="863.5447613668455" y="430" class="c-v" fill="#B0571A">0.3 GWh</text>
+    <text x="700" y="496" text-anchor="middle" class="c-ann">Share grows with peak²: Dublin City's peak is 1.4× Fingal's, so it gets 1.8× the wind. Everyone gets some.</text>
+  </svg>
+  <div class="c-row"><span class="c-chip">into each day's 6 highest forecast hours</span><span class="c-chip">capped at the area's gas-fired load in those hours</span><span class="c-chip">leftover re-shared</span></div>
+  <aside class="notes"><ul><li>Allocation weight = forecast peak². Biggest peaks get first call, but not winner-takes-all.</li><li>Each area is capped at its fossil load in the peak hours, so it never goes past 100% renewable; overflow is re-shared among areas still under their cap (water-filling).</li><li>Numbers: week-ahead plan, 12.8 GWh in total. Dublin City 3.5 GWh, Fingal 1.9, South Dublin 1.2, Cork County 0.8, Meath 0.5.</li></ul></aside>
+</section>
+
+<section class="slide c-t" data-n="28">
+  <div class="eyebrow">Technical details · routing</div>
+  <h2>Step 5c: every flow has a source and a number.</h2>
+
+  <svg class="c-svg c-grow" viewBox="0 0 1400 592" role="img" aria-label="Recovered wind flows from the six biggest wind areas to the forecast peaks this week">
+    <text x="282" y="584" text-anchor="end" class="c-lab">6 biggest wind areas</text><text x="1060" y="584" class="c-lab">forecast peaks</text>
+    <path d="M282 74.45594479830149C660 74.45594479830149 660 74.45594479830149 1060 74.45594479830149" stroke="var(--wind)" stroke-opacity="0.75" stroke-width="48.911889596602975" fill="none"/><path d="M282 112.12314225053079C660 112.12314225053079 660 284.11889596602975 1060 284.11889596602975" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="26.422505307855626" fill="none"/><path d="M282 133.3519108280255C660 133.3519108280255 660 412.093949044586 1060 412.093949044586" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="16.03503184713376" fill="none"/><path d="M282 182.6151804670913C660 182.6151804670913 660 122.15764331210191 1060 122.15764331210191" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="46.49150743099788" fill="none"/><path d="M282 218.41666666666666C660 218.41666666666666 660 309.88588110403396 1060 309.88588110403396" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="25.111464968152866" fill="none"/><path d="M282 238.5865180467091C660 238.5865180467091 660 427.72558386411896 1060 427.72558386411896" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="15.22823779193206" fill="none"/><path d="M282 282.55520169851377C660 282.55520169851377 660 163.7579617834395 1060 163.7579617834395" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="36.70912951167728" fill="none"/><path d="M282 310.84341825902334C660 310.84341825902334 660 332.3752653927813 1060 332.3752653927813" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="19.86730360934183" fill="none"/><path d="M282 326.77760084925694C660 326.77760084925694 660 441.3402335456476 1060 441.3402335456476" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="12.001061571125266" fill="none"/><path d="M282 367.92250530785566C660 367.92250530785566 660 199.2569002123142 1060 199.2569002123142" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="34.28874734607219" fill="none"/><path d="M282 394.34501061571126C660 394.34501061571126 660 351.58704883227176 1060 351.58704883227176" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="18.556263269639068" fill="none"/><path d="M282 409.2202760084926C660 409.2202760084926 660 452.937898089172 1060 452.937898089172" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="11.194267515923567" fill="none"/><path d="M282 445.07059447983016C660 445.07059447983016 660 228.6544585987261 1060 228.6544585987261" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="24.506369426751593" fill="none"/><path d="M282 463.92940552016984C660 463.92940552016984 660 367.4708067940552 1060 367.4708067940552" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="13.211252653927813" fill="none"/><path d="M282 474.5690021231423C660 474.5690021231423 660 462.5690021231423 1060 462.5690021231423" stroke="var(--wind)" stroke-opacity="0.32" stroke-width="8.067940552016985" fill="none"/><path d="M282 508.3014861995754C660 508.3014861995754 660 508.3014861995754 1060 508.3014861995754" stroke="var(--ink)" stroke-opacity="0.32" stroke-width="23.39702760084926" fill="none"/><rect x="260" y="50" width="22" height="91.36942675159236" fill="var(--wind)"/><text x="246" y="102.68471337579618" text-anchor="end" class="c-nm">Cork County</text><rect x="260" y="159.36942675159236" width="22" height="86.8312101910828" fill="var(--wind)"/><text x="246" y="209.78503184713375" text-anchor="end" class="c-nm">Kerry</text><rect x="260" y="264.20063694267515" width="22" height="68.57749469214438" fill="var(--wind)"/><text x="246" y="305.4893842887473" text-anchor="end" class="c-nm">Donegal</text><rect x="260" y="350.77813163481954" width="22" height="64.03927813163482" fill="var(--wind)"/><text x="246" y="389.79777070063693" text-anchor="end" class="c-nm">Galway County</text><rect x="260" y="432.8174097664544" width="22" height="45.78556263269639" fill="var(--wind)"/><text x="246" y="462.71019108280257" text-anchor="end" class="c-nm">Mayo</text><rect x="260" y="496.60297239915076" width="22" height="23.39702760084926" fill="var(--wind)"/><text x="246" y="515.3014861995754" text-anchor="end" class="c-nm">Derry & Strabane</text><rect x="1060" y="50" width="22" height="190.90764331210192" fill="var(--ink)"/><text x="1096" y="152.45382165605096" class="c-nm">Dublin City</text><text x="1096" y="178.45382165605096" class="c-v c-mute">1.9 of 3.5 GWh</text><rect x="1060" y="270.9076433121019" width="22" height="103.1687898089172" fill="var(--ink)"/><text x="1096" y="329.4920382165605" class="c-nm">Fingal</text><text x="1096" y="355.4920382165605" class="c-v c-mute">1.0 of 1.9 GWh</text><rect x="1060" y="404.07643312101914" width="22" height="62.52653927813164" fill="var(--ink)"/><text x="1096" y="442.33970276008495" class="c-nm">South Dublin</text><text x="1096" y="468.33970276008495" class="c-v c-mute">0.6 of 1.2 GWh</text><rect x="1060" y="496.60297239915076" width="22" height="23.39702760084926" fill="var(--ink)"/><text x="1096" y="515.3014861995754" class="c-nm">Belfast</text><text x="1096" y="541.3014861995754" class="c-v c-mute">0.2 of 1.0 GWh</text>
+    <text x="660" y="36" text-anchor="middle" class="c-ann" font-weight="600">Cork County → Dublin City: 485 MWh this week</text>
+    <text x="660" y="550" text-anchor="middle" class="c-ann c-mute">NI wind serves NI peaks</text>
+  </svg>
+  <div class="c-row"><span class="c-chip">thicker = more energy, next 7 days</span><span class="c-chip">each wind area supplies in line with its wind capacity</span><span class="c-chip s">12.8 GWh planned</span></div>
+  <aside class="notes"><ul><li>Dispatch-down happens at wind farms, so each area supplies the pool in proportion to its wind capacity.</li><li>Shown: the 6 biggest suppliers. Cork County 1.3 GWh, Kerry 1.3, Donegal 1.0, Galway County 0.94, Derry & Strabane 0.72.</li><li>CO₂ saved is priced at the real carbon intensity of each peak hour the wind displaces.</li><li>'Routing' = scheduling transmission, storage and renewable allocation against the forecast, not steering electrons. Starts once 2 weeks of history exist.</li></ul></aside>
+</section>
+
+<section class="slide c-t" data-n="29">
+  <div class="eyebrow">Technical details · the dashboard</div>
+  <h2>One screen: where peaks hit, where wind comes from.</h2>
+
+  <div class="c-shot">
+    <figure><img src="img/c-dashboard.png" alt="GridSense dashboard, 12 months, with GridSense routing on"><span class="c-pin" style="left:49.375%;top:3.3333333333333335%">1</span><span class="c-pin" style="left:16.375%;top:15.555555555555555%">2</span><span class="c-pin" style="left:19.5%;top:19.666666666666668%">3</span><span class="c-pin" style="left:31.5625%;top:23.77777777777778%">4</span><span class="c-pin" style="left:28.4375%;top:57.77777777777778%">5</span><span class="c-pin" style="left:91.875%;top:19.11111111111111%">6</span><span class="c-pin" style="left:91.875%;top:59.77777777777778%">7</span><span class="c-pin" style="left:67.5%;top:96%">8</span></figure>
+    <ol class="c-legend"><li>Island headline numbers</li><li>Period: 1, 3 or 12 months</li><li>Today vs with GridSense</li><li>Three map colourings</li><li>Routing lines: wind → peaks</li><li>Biggest peaks, next 7 days</li><li>Where the wind comes from</li><li>View as: data centre, government…</li></ol>
+  </div>
+  <aside class="notes"><ul><li>Header: island wind + solar share 37.6% → 39.1%, 621 GWh routed, 71.2 kt CO₂ avoided (12 months; follows the period buttons).</li><li>Map colourings: Forecast peak load (default, the moat view) · Local generation ÷ use (above 1× = exports wind: Kerry, Donegal, Leitrim) · Wind + solar share (hour-matched; every ROI area ~32.9% over 3 months because generation is national).</li><li>Routing lines: thicker = more energy; hover for MWh. Rank rows and flows are clickable.</li><li>View as: Data centre (1,845 MW corridor, −33.8 kt) · Government (80% target gap) · Siting new load · Household.</li></ul></aside>
+</section>
+
+<section class="slide c-t" data-n="30">
+  <div class="eyebrow">Technical details · the dashboard</div>
+  <h2>Click any area: see what GridSense saves there.</h2>
+
+  <div class="c-shot c-shot2">
+    <figure><img src="img/c-area.png" alt="Fingal area panel: 37.6% to 39.6% wind and solar, 9.3 kt CO2 avoided over 12 months"><span class="c-pin" style="left:50%;top:30%">1</span><span class="c-pin" style="left:36%;top:52%">2</span><span class="c-pin" style="left:44%;top:66%">3</span><span class="c-pin" style="left:80%;top:88%">4</span></figure>
+    <ol class="c-legend"><li>Wind + solar share: today → with GridSense</li><li>CO₂ avoided, this period</li><li>Footprint before → after</li><li>Next week's forecast peak</li></ol>
+  </div>
+  <aside class="notes"><ul><li>Fingal, 12 months, with GridSense: −9.3 kt CO₂ (670.3 → 661.0 kt, −1.4%), 82.3 GWh more wind, 37.6% → 39.6%.</li><li>Load stays the same; nothing changes on site.</li><li>Shift-click to compare areas; Esc for all-island.</li></ul></aside>
+</section>
+
+<section class="slide c-t" data-n="31">
+  <div class="eyebrow">Technical details · experiments</div>
+  <h2>What we tried, and what we changed.</h2>
+
+  <div class="c-exps">
+    <div class="c-exp"><h3>Allocation · Fingal's share</h3><svg class="c-svg" viewBox="0 0 640 140"><text x="0" y="20" class="c-ann c-mute">biggest peak takes all</text><rect x="0" y="30" width="4" height="24" fill="#A3AFBD"/><text x="14" y="49" class="c-v">0 GWh</text><text x="0" y="90" class="c-ann c-mute">share grows with peak²</text><rect x="0" y="100" width="310.9090909090909" height="24" fill="var(--sodium)"/><text x="320.9090909090909" y="119" class="c-v" fill="#B0571A">1.9 GWh / week</text></svg><p>Greedy starved the #2 peak. Water-filling fixed it.</p></div>
+    <div class="c-exp"><h3>Area split · forecast peak</h3><svg class="c-svg" viewBox="0 0 640 204"><text x="0" y="20" class="c-ann c-mute">by population</text><rect x="0" y="30" width="298" height="24" fill="#A3AFBD"/><text x="308" y="49" class="c-v">Dublin City 596 MW</text><rect x="0" y="62" width="282.5" height="24" fill="#A3AFBD"/><text x="292.5" y="81" class="c-v">Fingal 565 MW</text><text x="0" y="122" class="c-ann c-mute">by CSO metered use</text><rect x="0" y="132" width="348" height="24" fill="var(--wind)"/><text x="358" y="151" class="c-v">Dublin City 696 MW</text><rect x="0" y="164" width="251.5" height="24" fill="var(--wind)"/><text x="261.5" y="183" class="c-v">Fingal 503 MW</text></svg><p>Real consumption moved the peaks.</p></div>
+    <div class="c-exp"><h3>Product · 12 months</h3><svg class="c-svg" viewBox="0 0 640 140"><text x="0" y="20" class="c-ann c-mute">shift data-centre load</text><rect x="0" y="30" width="176.5" height="24" fill="#A3AFBD"/><text x="186.5" y="49" class="c-v">353 GWh · 48.6 kt CO₂</text><text x="0" y="90" class="c-ann c-mute">forecast-led routing</text><rect x="0" y="100" width="310.5" height="24" fill="var(--sodium)"/><text x="320.5" y="119" class="c-v" fill="#B0571A">621 GWh · 71.2 kt CO₂</text></svg><p>Routing wins, and customers change nothing.</p></div>
+    <div class="c-exp"><h3>Reality check · wind switched off</h3><svg class="c-svg" viewBox="0 0 640 140"><text x="0" y="20" class="c-ann c-mute">EirGrid reports</text><rect x="0" y="30" width="327.27272727272725" height="24" fill="#A3AFBD"/><text x="337.27272727272725" y="49" class="c-v">~10%</text><text x="0" y="90" class="c-ann c-mute">our estimate</text><rect x="0" y="100" width="301.09090909090907" height="24" fill="var(--wind)"/><text x="311.09090909090907" y="119" class="c-v">9.2%</text></svg><p>Our dispatch-down estimate matches EirGrid.</p></div>
+  </div>
+  <aside class="notes"><ul><li>Allocation: greedy 'biggest peak takes all' gave Fingal 0 GWh. Switched to peak²-weighted water-filling.</li><li>Area split: population gave Dublin City 596 MW, Fingal 565 MW; real MEC03 gives 696 and 503. Island totals unchanged.</li><li>Pivot: shifting data-centre load into windy hours gave 38.4%, 353 GWh, 48.6 kt. Forecast-led routing: 39.1%, 621 GWh, 71.2 kt, with no customer change.</li><li>Dispatch-down estimate: 9.2% of ROI wind, 12.2% of NI, vs EirGrid's ~10%.</li><li>Forecast backtest: 2.8% ROI, 5.5% NI on the last 7 days of real data.</li></ul></aside>
+</section>
+
+<section class="slide c-t" data-n="32">
+  <div class="eyebrow">Technical details · testing</div>
+  <h2>Every build checks itself. If one fails, it stops.</h2>
+
+  <div class="c-term" role="img" aria-label="Build log with six passing self-checks">
+    <div class="c-cmd">$ python3 build_data.py</div>
+    <div class="c-mute2">CSO MEC02: data centres = 23.2% of ROI metered electricity</div>
+    <div class="c-mute2">ROI: forecast backtest MAPE 2.8% · NI: 5.5%</div>
+    <ul>
+      <li>areas add up to EirGrid system demand <i>within 1%</i></li>
+      <li>CSO county split adds up to the CSO total</li>
+      <li>GridSense only adds renewables and only cuts CO₂</li>
+      <li>no area goes past 100% renewable</li>
+      <li>biggest peak gets at least as much as the 5th</li>
+      <li>flows add up to what's routed <i>within 5%</i></li>
+    </ul>
+    <div class="c-mute2">$ node chk.cjs <span>→ headless Chrome clicks every control: no JS errors, expected numbers</span></div>
+  </div>
+  <aside class="notes"><ul><li>Six asserts run at the end of build_data.py; the data file isn't trusted if any fails.</li><li>UI: a headless Chrome script clicks through every control after each change and checks for JS errors and the expected numbers.</li><li>Data audit: we investigated the identical-looking ~32.9% area values, confirmed they're correct (generation is published grid-wide), and relabelled the share as 'wind + solar'.</li></ul></aside>
+</section>
+
+<section class="slide c-t" data-n="33">
+  <div class="eyebrow">Technical details · honest limits</div>
+  <h2>What's measured, what's modelled, what replaces it.</h2>
+
+  <div class="c-mm">
+    <div><h3><i class="c-sw"></i>Measured</h3>
+      <span class="c-m">EirGrid demand, wind, solar, CO₂ · every 15 min</span><span class="c-m">EirGrid wind forecast</span><span class="c-m">CSO data-centre share · 23.2%</span><span class="c-m">CSO metered use per county</span><span class="c-m">Forecast error · 2.8% / 5.5%</span></div>
+    <div><h3><i class="c-sw c-d"></i>Modelled</h3>
+      <span class="c-x">Each area's hourly shape<em>→ ESB Networks smart meters</em></span><span class="c-x">County wind + solar capacity<em>→ EirGrid / SONI generator lists</em></span><span class="c-x">Dispatch-down estimate<em>→ EirGrid dispatch-down reports</em></span><span class="c-x">50% recoverable<em>→ live routing with EirGrid + SONI</em></span></div>
+  </div>
+  <aside class="notes"><ul><li>Area load split uses real CSO shares, but each area is assumed to follow the national hourly shape.</li><li>County wind/solar capacity: approximate weights from connected lists.</li><li>Dispatch-down: estimated from EirGrid forecast − actual. 50% recoverable: assumption from EirGrid annual reports.</li><li>v2 replaces each modelled input with the source on the right.</li></ul></aside>
+</section>
+
+<section class="slide c-t" data-n="34">
+  <div class="eyebrow">Technical details · Q&amp;A</div>
+  <h2>What judges ask.</h2>
+
+  <ul class="c-qa"><li><b>“You can't route electrons.”</b><span>True. We route schedules: transmission, storage, allocation.</span></li><li><b>“Why is every area ~32.9%?”</b><span>Generation is only published grid-wide. That's the gap we fill.</span></li><li><b>“Why such a simple forecast?”</b><span>2.8% error, fully explainable. Weather + ML next.</span></li><li><b>“Is 621 GWh realistic?”</b><span>13 TWh wind × ~9% switched off × half ≈ 600 GWh.</span></li><li><b>“Who pays?”</b><span>Data centres (24/7 CFE, Scope 2), EirGrid, the CRU.</span></li></ul>
+  <aside class="notes"><ul><li>621 GWh: ROI wind ≈ 13 TWh/yr, ~9% dispatched down ≈ 1.2 TWh, recover half ≈ 600 GWh.</li><li>Who pays: data centres for 24/7 carbon-free and Scope 2 proof; EirGrid and the CRU for connection and siting decisions; later, green-hour tokens.</li></ul></aside>
+</section>
+
+<section class="slide sec" data-n="35">
+  <div class="secnum">Section 06 / 07</div>
+  <h1>Live demo</h1>
+  <p class="lede">The real dashboard, all 45 areas.</p>
+  <div class="rail"><span class="done">The problem</span><span class="done">What GridSense does</span><span class="done">Who it's for</span><span class="done">Impact</span><span class="done">Technical details</span><span class="on">Live demo</span><span class="">What's next</span></div>
+</section>
+
+<section class="slide" data-n="36">
+  <div class="eyebrow">Live demo · 5 steps</div>
+  <h2 style="max-width:none">Follow the wind.</h2>
+  <div class="b-body b-demo">
+    <div class="b-shot"><img src="img/b-dashboard.jpg" alt="GridSense dashboard: map of forecast peaks with routing lines, ranking and flows"><i style="left:50.6%;top:23.4%">1</i><i style="left:40%;top:58.8%">2</i><i style="left:22%;top:13.8%">3</i><i style="left:23.5%;top:73.2%">4</i><i style="left:50.6%;top:56.9%">5</i></div>
+    <ol class="b-steps">
+      <li><i>1</i>Read next week's peaks</li>
+      <li><i>2</i>Click Dublin City, then Fingal</li>
+      <li><i>3</i><span>Turn on <b class="s">GridSense</b> · 12 months</span></li>
+      <li><i>4</i>Hover a routing line</li>
+      <li><i>5</i>See where the wind comes from</li>
+    </ol>
+  </div>
+  <aside class="notes"><ul>
+    <li>1 · "Highest forecast load": Dublin City 696 MW, Tue 18:00.</li>
+    <li>2 · Click Dublin City, then Fingal, Ireland's data-centre hub. Fingal 12 months with GridSense: −9.3 kt CO₂.</li>
+    <li>3 · Toggle "With GridSense routing" and switch to 12 months: 37.6% → 39.1%, 621 GWh, 71.2 kt.</li>
+    <li>4 · Hover a line: Cork County → Dublin City, 485 MWh this week.</li>
+    <li>5 · "Where the routed wind comes from": Cork County 1.3 GWh, Kerry 1.3, Donegal 1.0; 12.8 GWh planned.</li>
+  </ul></aside>
+</section>
+
+<section class="slide sec" data-n="37">
+  <div class="secnum">Section 07 / 07</div>
+  <h1>What's next</h1>
+  <p class="lede">From prototype to live routing.</p>
+  <div class="rail"><span class="done">The problem</span><span class="done">What GridSense does</span><span class="done">Who it's for</span><span class="done">Impact</span><span class="done">Technical details</span><span class="done">Live demo</span><span class="on">What's next</span></div>
+</section>
+
+<section class="slide" data-n="38">
+  <div class="eyebrow">Roadmap</div>
+  <h2 style="max-width:none">From open data to live routing.</h2>
+  <ol class="b-road">
+    <li class="b-done"><time>Now</time><b>Island-wide view, real data</b></li>
+    <li><time>Next</time><b>Per-Eircode forecasts</b></li>
+    <li><time>Then</time><b>Live routing with EirGrid + SONI</b></li>
+    <li><time>Later</time><b>Hourly 24/7 CFE certificates</b></li>
+  </ol>
+  <p class="b-addon">Add-on: flex signals for customers who want more</p>
+  <aside class="notes"><ul>
+    <li>Now: island-wide observability and forecast-led routing plans on real EirGrid data (this prototype).</li>
+    <li>Next: per-Eircode load forecasts from ESB Networks smart meters.</li>
+    <li>Then: live day-ahead routing plans with EirGrid and SONI.</li>
+    <li>Later: hourly certificates for 24/7 CFE and Scope 2 reporting.</li>
+    <li>Flex is an add-on only, never the pitch.</li>
+  </ul></aside>
+</section>
+<section class="slide" data-n="39">
+  <div class="eyebrow">The ask</div>
+  <h2 style="max-width:none">Three things get us live.</h2>
+  <div class="b-ask">
+    <div><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="var(--ink)" stroke-width="2.6" stroke-linejoin="round"><path d="M24 4 L14 44 M24 4 L34 44 M10 14 H38 M12 24 H36 M17 32 L31 32 M19 22 L29 34 M29 22 L19 34"/></svg><b>Node-level wind data</b><span>EirGrid + SONI</span></div>
+    <div><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="var(--ink)" stroke-width="2.6"><circle cx="24" cy="24" r="7"/><path d="M36.0 24.0 L43.0 24.0 M32.5 32.5 L37.4 37.4 M24.0 36.0 L24.0 43.0 M15.5 32.5 L10.6 37.4 M12.0 24.0 L5.0 24.0 M15.5 15.5 L10.6 10.6 M24.0 12.0 L24.0 5.0 M32.5 15.5 L37.4 10.6"/><circle cx="24" cy="24" r="13"/></svg><b>A data-centre pilot</b><span>Fingal or Meath</span></div>
+    <div><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="var(--ink)" stroke-width="2.6"><rect x="6" y="8" width="36" height="32"/><path d="M6 18 H42 M6 29 H42 M20 8 V40"/></svg><b>A policy sponsor</b><span>forecast-led grid scheduling</span></div>
+  </div>
+  <aside class="notes"><ul>
+    <li>Node-level wind and constraint data replaces our dispatch-down estimate.</li>
+    <li>One data-centre partner in the Fingal or Meath corridor to prove hourly-matched routing.</li>
+    <li>A policy sponsor for forecast-led grid scheduling (CRU / DECC).</li>
+  </ul></aside>
+</section>
+
+<section class="slide" data-n="40">
+  <div class="eyebrow">Next · bet 1 of 2</div>
+  <h2 style="max-width:none">Green-hour tokens.</h2>
+  <div class="b-bet"><svg class="b-tok" viewBox="-20 0 980 150" role="img" aria-label="24 hourly tokens for 2026-10-02, sized by renewable share">
+<circle cx="20" cy="60" r="12.9" fill="var(--wind)" fill-opacity="0.62"/><circle cx="60" cy="60" r="12.6" fill="var(--wind)" fill-opacity="0.61"/><circle cx="100" cy="60" r="12.6" fill="var(--wind)" fill-opacity="0.60"/><circle cx="140" cy="60" r="13.0" fill="var(--wind)" fill-opacity="0.63"/><circle cx="180" cy="60" r="13.6" fill="var(--wind)" fill-opacity="0.66"/><circle cx="220" cy="60" r="14.2" fill="var(--wind)" fill-opacity="0.69"/><circle cx="260" cy="60" r="14.1" fill="var(--wind)" fill-opacity="0.68"/><circle cx="300" cy="60" r="13.4" fill="var(--wind)" fill-opacity="0.65"/><circle cx="340" cy="60" r="14.0" fill="var(--wind)" fill-opacity="0.68"/><circle cx="380" cy="60" r="14.8" fill="var(--wind)" fill-opacity="0.72"/><circle cx="420" cy="60" r="15.5" fill="var(--wind)" fill-opacity="0.76"/><circle cx="460" cy="60" r="16.2" fill="var(--wind)" fill-opacity="0.80"/><circle cx="500" cy="60" r="16.1" fill="var(--wind)" fill-opacity="0.79"/><circle cx="540" cy="60" r="15.4" fill="var(--wind)" fill-opacity="0.76"/><circle cx="580" cy="60" r="15.3" fill="var(--wind)" fill-opacity="0.75"/><circle cx="620" cy="60" r="15.2" fill="var(--wind)" fill-opacity="0.74"/><circle cx="660" cy="60" r="14.3" fill="var(--wind)" fill-opacity="0.69"/><circle cx="700" cy="60" r="12.3" fill="var(--wind)" fill-opacity="0.59"/><circle cx="740" cy="60" r="10.7" fill="var(--wind)" fill-opacity="0.50"/><circle cx="780" cy="60" r="9.9" fill="var(--wind)" fill-opacity="0.46"/><circle cx="820" cy="60" r="9.2" fill="var(--wind)" fill-opacity="0.42"/><circle cx="860" cy="60" r="9.2" fill="var(--wind)" fill-opacity="0.42"/><circle cx="900" cy="60" r="9.1" fill="var(--wind)" fill-opacity="0.42"/><circle cx="940" cy="60" r="8.8" fill="var(--wind)" fill-opacity="0.40"/>
+<text class="b-ax" x="20" y="120" text-anchor="middle">00:00</text><text class="b-ax" x="260" y="120" text-anchor="middle">06:00</text><text class="b-ax" x="500" y="120" text-anchor="middle">12:00</text><text class="b-ax" x="740" y="120" text-anchor="middle">18:00</text>
+<text class="b-ax" x="940" y="146" text-anchor="end">a real day, 2 Oct 2026: bigger = greener hour</text></svg>
+    <ul class="b-pts"><li>Fund renewables, earn priority green hours</li><li>A cap per company: no cornering the wind</li><li>Every token is an auditable hourly record</li></ul>
+  </div>
+  <aside class="notes"><ul>
+    <li>Ration the island's forecast renewable output into hourly tokens, the way an API rate-limits requests.</li>
+    <li>Companies earn priority access to green hours by funding new renewables. Unused tokens go back to the pool.</li>
+    <li>Every token spent is an hourly record for CSR and Scope 2 reports. The circles are a real day of ROI wind + solar share.</li>
+  </ul></aside>
+</section>
+<section class="slide" data-n="41">
+  <div class="eyebrow">Next · bet 2 of 2</div>
+  <h2 style="max-width:none">Micro-turbines on Ireland's canals.</h2>
+  <div class="b-bet b-bet2"><svg class="b-lock" viewBox="0 0 520 300" role="img" aria-label="Canal lock with a small turbine where the water drops">
+<path d="M0 120 H200 V200 H520" fill="none" stroke="var(--ink)" stroke-width="4"/>
+<path d="M0 120 H200 V300 H0Z" fill="var(--wind)" fill-opacity=".35"/><path d="M200 200 H520 V300 H200Z" fill="var(--wind)" fill-opacity=".35"/>
+<path d="M0 300 H520" stroke="var(--ink)" stroke-width="4"/>
+<rect x="196" y="40" width="10" height="160" fill="var(--ink)"/>
+<path d="M150 150 q30 0 50 30 q10 15 30 18" fill="none" stroke="var(--wind)" stroke-width="5" stroke-linecap="round"/>
+<g transform="translate(248 222)"><circle r="24" fill="none" stroke="var(--ink)" stroke-width="3"/><path d="M0 0 L22.0 0.0" stroke="var(--ink)" stroke-width="4"/><path d="M0 0 L11.0 19.1" stroke="var(--ink)" stroke-width="4"/><path d="M0 0 L-11.0 19.1" stroke="var(--ink)" stroke-width="4"/><path d="M0 0 L-22.0 0.0" stroke="var(--ink)" stroke-width="4"/><path d="M0 0 L-11.0 -19.1" stroke="var(--ink)" stroke-width="4"/><path d="M0 0 L11.0 -19.1" stroke="var(--ink)" stroke-width="4"/><circle r="5" fill="var(--sodium)"/></g>
+<path d="M248 222 V40 H330" fill="none" stroke="var(--sodium)" stroke-width="3" stroke-dasharray="6 6"/>
+<text class="b-ax" x="340" y="46">power to the grid</text><text class="b-ax" x="12" y="108">upper level</text><text class="b-ax" x="300" y="188">lower level</text></svg>
+    <ul class="b-pts"><li>Turbines at locks and weirs, where water drops</li><li>Steady output, day and night</li><li>GridSense picks the sites</li></ul>
+  </div>
+  <aside class="notes"><ul>
+    <li>The Grand, Royal, Barrow and Shannon–Erne waterways and their feeders were built to manage water flow. That flow can turn small turbines.</li>
+    <li>Unlike wind, the output is steady. GridSense picks sites where local generation is lowest compared with demand.</li>
+    <li>Honest: canal water moves slowly, so the energy is at the drops (locks, weirs), not in the open channel. A pilot at one lock would show the real yield.</li>
+    <li>Partners: Waterways Ireland, local councils, community energy groups.</li>
+  </ul></aside>
+</section>
+
+<section class="slide title" data-n="42" style="align-items:center;text-align:center">
   <svg class="bunny" viewBox="0 -30 240 260" role="img" aria-label="A bunny dancing next to a spinning wind turbine">
     <line x1="200" y1="60" x2="200" y2="215" stroke="var(--ink)" stroke-width="4"/>
     <g class="blade" fill="var(--wind)"><path d="M200 60 L196 18 L204 18Z"/><path d="M200 60 L236 80 L232 87Z"/><path d="M200 60 L164 80 L168 87Z"/></g>
@@ -423,11 +952,11 @@ td:first-child{font-weight:600}
   <p class="lede" style="margin:1em auto 0">This bunny's moves are powered by wind that would otherwise have been switched off. Questions?</p>
 </section>
 
-<div class="nav">← → / space · P to print</div>
+<div class="nav">← → / space · N notes · P to print</div>
 <script>
 const S=[...document.querySelectorAll(".slide")];let i=+(location.hash.slice(1)||1)-1;
 const show=n=>{i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle("on",k===i));history.replaceState(null,"","#"+(i+1))};
-addEventListener("keydown",e=>{if(["ArrowRight","PageDown"," "].includes(e.key))show(i+1);else if(["ArrowLeft","PageUp"].includes(e.key))show(i-1);else if(e.key==="p")print()});
+addEventListener("keydown",e=>{if(["ArrowRight","PageDown"," "].includes(e.key))show(i+1);else if(["ArrowLeft","PageUp"].includes(e.key))show(i-1);else if(e.key==="p")print();else if(e.key==="n")document.body.classList.toggle("shownotes")});
 addEventListener("click",e=>show(i+(e.clientX>innerWidth/2?1:-1)));
 show(i);
 </script>
